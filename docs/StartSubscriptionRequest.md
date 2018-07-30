@@ -3,11 +3,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiKey** | **string** |  | [optional] 
 **CallbackUrl** | **string** |  | [optional] 
+**CompanySiteName** | **string** |  | [optional] 
 **CouponCode** | **string** |  | [optional] 
-**Offer** | [**SubscriptionPlan**](SubscriptionPlan.md) |  | [optional] 
+**Offer** | [**Offer**](Offer.md) |  | [optional] 
 **PaymentCard** | [**PaymentCard**](PaymentCard.md) |  | [optional] 
+**Price** | **decimal?** |  | [optional] 
 **Subscriber** | [**Subscriber**](Subscriber.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

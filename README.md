@@ -75,17 +75,17 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
-            var apiInstance = new AnalyticsResourceApi();
+            var apiInstance = new AccountResourceApi();
 
             try
             {
-                // getDashboardAnalytics
-                Object result = apiInstance.GetDashboardAnalyticsUsingGET();
+                // isAuthenticated
+                string result = apiInstance.IsAuthenticatedUsingGET();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling AnalyticsResourceApi.GetDashboardAnalyticsUsingGET: " + e.Message );
+                Debug.Print("Exception when calling AccountResourceApi.IsAuthenticatedUsingGET: " + e.Message );
             }
 
         }
@@ -100,12 +100,9 @@ All URIs are relative to *https://localhost:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountResourceApi* | [**IsAuthenticatedUsingGET**](docs/AccountResourceApi.md#isauthenticatedusingget) | **GET** /api/authenticate | isAuthenticated
+*AccountResourceApi* | [**RegisterAccountUsingPOST**](docs/AccountResourceApi.md#registeraccountusingpost) | **POST** /api/register | registerAccount
 *AnalyticsResourceApi* | [**GetDashboardAnalyticsUsingGET**](docs/AnalyticsResourceApi.md#getdashboardanalyticsusingget) | **GET** /api/analytics/dashboard | getDashboardAnalytics
-*CardResourceApi* | [**CreateCardUsingPOST**](docs/CardResourceApi.md#createcardusingpost) | **POST** /api/cards | createCard
-*CardResourceApi* | [**DeleteCardUsingDELETE**](docs/CardResourceApi.md#deletecardusingdelete) | **DELETE** /api/cards/{id} | deleteCard
-*CardResourceApi* | [**GetAllCardsUsingGET**](docs/CardResourceApi.md#getallcardsusingget) | **GET** /api/cards | getAllCards
-*CardResourceApi* | [**GetCardUsingGET**](docs/CardResourceApi.md#getcardusingget) | **GET** /api/cards/{id} | getCard
-*CardResourceApi* | [**UpdateCardUsingPUT**](docs/CardResourceApi.md#updatecardusingput) | **PUT** /api/cards | updateCard
 *ChargingLogResourceApi* | [**CreateChargingLogUsingPOST**](docs/ChargingLogResourceApi.md#createcharginglogusingpost) | **POST** /api/charging-logs | createChargingLog
 *ChargingLogResourceApi* | [**DeleteChargingLogUsingDELETE**](docs/ChargingLogResourceApi.md#deletecharginglogusingdelete) | **DELETE** /api/charging-logs/{id} | deleteChargingLog
 *ChargingLogResourceApi* | [**GetAllChargingLogsUsingGET**](docs/ChargingLogResourceApi.md#getallcharginglogsusingget) | **GET** /api/charging-logs | getAllChargingLogs
@@ -159,6 +156,11 @@ Class | Method | HTTP request | Description
 *OfferResourceApi* | [**GetOfferUsingGET**](docs/OfferResourceApi.md#getofferusingget) | **GET** /api/offers/{id} | getOffer
 *OfferResourceApi* | [**UpdateOfferUsingPUT**](docs/OfferResourceApi.md#updateofferusingput) | **PUT** /api/offers | updateOffer
 *ProfileInfoResourceApi* | [**GetActiveProfilesUsingGET**](docs/ProfileInfoResourceApi.md#getactiveprofilesusingget) | **GET** /api/profile-info | getActiveProfiles
+*SavedCardResourceApi* | [**CreateCardUsingPOST**](docs/SavedCardResourceApi.md#createcardusingpost) | **POST** /api/saved-cards | createCard
+*SavedCardResourceApi* | [**DeleteCardUsingDELETE**](docs/SavedCardResourceApi.md#deletecardusingdelete) | **DELETE** /api/saved-cards/{id} | deleteCard
+*SavedCardResourceApi* | [**GetAllCardsUsingGET**](docs/SavedCardResourceApi.md#getallcardsusingget) | **GET** /api/saved-cards | getAllCards
+*SavedCardResourceApi* | [**GetCardUsingGET**](docs/SavedCardResourceApi.md#getcardusingget) | **GET** /api/saved-cards/{id} | getCard
+*SavedCardResourceApi* | [**UpdateCardUsingPUT**](docs/SavedCardResourceApi.md#updatecardusingput) | **PUT** /api/saved-cards | updateCard
 *ServiceInstanceResourceApi* | [**CreateServiceInstanceUsingPOST**](docs/ServiceInstanceResourceApi.md#createserviceinstanceusingpost) | **POST** /api/service-instances | createServiceInstance
 *ServiceInstanceResourceApi* | [**DeleteServiceInstanceUsingDELETE**](docs/ServiceInstanceResourceApi.md#deleteserviceinstanceusingdelete) | **DELETE** /api/service-instances/{id} | deleteServiceInstance
 *ServiceInstanceResourceApi* | [**GetAllServiceInstancesUsingGET**](docs/ServiceInstanceResourceApi.md#getallserviceinstancesusingget) | **GET** /api/service-instances | getAllServiceInstances
@@ -179,6 +181,7 @@ Class | Method | HTTP request | Description
 *SubscriberResourceApi* | [**GetAllSubscribersUsingGET**](docs/SubscriberResourceApi.md#getallsubscribersusingget) | **GET** /api/subscribers | getAllSubscribers
 *SubscriberResourceApi* | [**GetSubscriberByEmailUsingGET**](docs/SubscriberResourceApi.md#getsubscriberbyemailusingget) | **GET** /api/subscribers/email/{email} | getSubscriberByEmail
 *SubscriberResourceApi* | [**GetSubscriberByNameUsingGET**](docs/SubscriberResourceApi.md#getsubscriberbynameusingget) | **GET** /api/subscribers/name/{name} | getSubscriberByName
+*SubscriberResourceApi* | [**GetSubscriberBySecureIdUsingGET**](docs/SubscriberResourceApi.md#getsubscriberbysecureidusingget) | **GET** /api/subscribers/secureId/{secureId} | getSubscriberBySecureId
 *SubscriberResourceApi* | [**GetSubscriberUsingGET**](docs/SubscriberResourceApi.md#getsubscriberusingget) | **GET** /api/subscribers/{id} | getSubscriber
 *SubscriberResourceApi* | [**UpdateSubscriberUsingPUT**](docs/SubscriberResourceApi.md#updatesubscriberusingput) | **PUT** /api/subscribers | updateSubscriber
 *SubsriptionResourceApi* | [**CancelSubscriptionUsingPUT**](docs/SubsriptionResourceApi.md#cancelsubscriptionusingput) | **PUT** /api/subscriptions/cancel | cancelSubscription
@@ -191,12 +194,24 @@ Class | Method | HTTP request | Description
 *UsageNotificationResourceApi* | [**GetAllUsageNotificationsUsingGET**](docs/UsageNotificationResourceApi.md#getallusagenotificationsusingget) | **GET** /api/usage-notifications | getAllUsageNotifications
 *UsageNotificationResourceApi* | [**GetUsageNotificationUsingGET**](docs/UsageNotificationResourceApi.md#getusagenotificationusingget) | **GET** /api/usage-notifications/{id} | getUsageNotification
 *UsageNotificationResourceApi* | [**UpdateUsageNotificationUsingPUT**](docs/UsageNotificationResourceApi.md#updateusagenotificationusingput) | **PUT** /api/usage-notifications | updateUsageNotification
+*UserJwtControllerApi* | [**AuthorizeUsingPOST**](docs/UserJwtControllerApi.md#authorizeusingpost) | **POST** /api/authenticate | authorize
 *UserResourceApi* | [**CreateUserUsingPOST**](docs/UserResourceApi.md#createuserusingpost) | **POST** /api/users | createUser
 *UserResourceApi* | [**DeleteUserUsingDELETE**](docs/UserResourceApi.md#deleteuserusingdelete) | **DELETE** /api/users/{login} | deleteUser
 *UserResourceApi* | [**GetAllUsersUsingGET**](docs/UserResourceApi.md#getallusersusingget) | **GET** /api/users | getAllUsers
 *UserResourceApi* | [**GetAuthoritiesUsingGET**](docs/UserResourceApi.md#getauthoritiesusingget) | **GET** /api/users/authorities | getAuthorities
 *UserResourceApi* | [**GetUserUsingGET**](docs/UserResourceApi.md#getuserusingget) | **GET** /api/users/{login} | getUser
 *UserResourceApi* | [**UpdateUserUsingPUT**](docs/UserResourceApi.md#updateuserusingput) | **PUT** /api/users | updateUser
+*WebHookResourceApi* | [**CreateWebHookUsingPOST**](docs/WebHookResourceApi.md#createwebhookusingpost) | **POST** /api/web-hooks | createWebHook
+*WebHookResourceApi* | [**DeleteWebHookUsingDELETE**](docs/WebHookResourceApi.md#deletewebhookusingdelete) | **DELETE** /api/web-hooks/{id} | deleteWebHook
+*WebHookResourceApi* | [**GetAllWebHooksUsingGET**](docs/WebHookResourceApi.md#getallwebhooksusingget) | **GET** /api/web-hooks | getAllWebHooks
+*WebHookResourceApi* | [**GetWebHookUsingGET**](docs/WebHookResourceApi.md#getwebhookusingget) | **GET** /api/web-hooks/{id} | getWebHook
+*WebHookResourceApi* | [**UpdateWebHookUsingPUT**](docs/WebHookResourceApi.md#updatewebhookusingput) | **PUT** /api/web-hooks | updateWebHook
+*WebHookServerApi* | [**SubscriberCreatedUsingPOST**](docs/WebHookServerApi.md#subscribercreatedusingpost) | **POST** /subscreasy/webhook/subscriber-created | subscriberCreated
+*WebHookServerApi* | [**SubscriberUpdatedUsingPOST**](docs/WebHookServerApi.md#subscriberupdatedusingpost) | **POST** /subscreasy/webhook/subscriber-updated | subscriberUpdated
+*WebHookServerApi* | [**SubscriptionEndedUsingPOST**](docs/WebHookServerApi.md#subscriptionendedusingpost) | **POST** /subscreasy/webhook/subscription-ended | subscriptionEnded
+*WebHookServerApi* | [**SubscriptionRenewalFailedUsingPOST**](docs/WebHookServerApi.md#subscriptionrenewalfailedusingpost) | **POST** /subscreasy/webhook/subscription-renewal-failed | subscriptionRenewalFailed
+*WebHookServerApi* | [**SubscriptionRenewedUsingPOST**](docs/WebHookServerApi.md#subscriptionrenewedusingpost) | **POST** /subscreasy/webhook/subscription-renewed | subscriptionRenewed
+*WebHookServerApi* | [**SubscriptionStartedUsingPOST**](docs/WebHookServerApi.md#subscriptionstartedusingpost) | **POST** /subscreasy/webhook/subscription-started | subscriptionStarted
 
 
 <a name="documentation-for-models"></a>
@@ -216,6 +231,7 @@ Class | Method | HTTP request | Description
  - [com.kodfarki.subscreasy.client.model.History](docs/History.md)
  - [com.kodfarki.subscreasy.client.model.Invoice](docs/Invoice.md)
  - [com.kodfarki.subscreasy.client.model.InvoiceRequest](docs/InvoiceRequest.md)
+ - [com.kodfarki.subscreasy.client.model.LoginVM](docs/LoginVM.md)
  - [com.kodfarki.subscreasy.client.model.ManagedUserVM](docs/ManagedUserVM.md)
  - [com.kodfarki.subscreasy.client.model.MessageTemplate](docs/MessageTemplate.md)
  - [com.kodfarki.subscreasy.client.model.Offer](docs/Offer.md)
@@ -230,12 +246,14 @@ Class | Method | HTTP request | Description
  - [com.kodfarki.subscreasy.client.model.ServiceOffering](docs/ServiceOffering.md)
  - [com.kodfarki.subscreasy.client.model.ServiceOfferingResult](docs/ServiceOfferingResult.md)
  - [com.kodfarki.subscreasy.client.model.StartSubscriptionRequest](docs/StartSubscriptionRequest.md)
+ - [com.kodfarki.subscreasy.client.model.StartSubscriptionResult](docs/StartSubscriptionResult.md)
  - [com.kodfarki.subscreasy.client.model.Subscriber](docs/Subscriber.md)
- - [com.kodfarki.subscreasy.client.model.SubscriptionCreateResult](docs/SubscriptionCreateResult.md)
- - [com.kodfarki.subscreasy.client.model.SubscriptionPlan](docs/SubscriptionPlan.md)
  - [com.kodfarki.subscreasy.client.model.Subsription](docs/Subsription.md)
  - [com.kodfarki.subscreasy.client.model.UsageNotification](docs/UsageNotification.md)
  - [com.kodfarki.subscreasy.client.model.User](docs/User.md)
+ - [com.kodfarki.subscreasy.client.model.UserDTO](docs/UserDTO.md)
+ - [com.kodfarki.subscreasy.client.model.WebHook](docs/WebHook.md)
+ - [com.kodfarki.subscreasy.client.model.WebHookRequest](docs/WebHookRequest.md)
 
 
 <a name="documentation-for-authorization"></a>

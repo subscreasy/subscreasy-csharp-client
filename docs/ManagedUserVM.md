@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Login** | **string** |  | 
 **Password** | **string** |  | [optional] 
 **ResetDate** | **string** |  | [optional] 
+**SiteName** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

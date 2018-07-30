@@ -50,16 +50,34 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             RENEWED = 2,
             
             /// <summary>
+            /// Enum RENEWALFAILED for value: RENEWAL_FAILED
+            /// </summary>
+            [EnumMember(Value = "RENEWAL_FAILED")]
+            RENEWALFAILED = 3,
+            
+            /// <summary>
             /// Enum FINISHED for value: FINISHED
             /// </summary>
             [EnumMember(Value = "FINISHED")]
-            FINISHED = 3,
+            FINISHED = 4,
             
             /// <summary>
             /// Enum CANCELLED for value: CANCELLED
             /// </summary>
             [EnumMember(Value = "CANCELLED")]
-            CANCELLED = 4
+            CANCELLED = 5,
+            
+            /// <summary>
+            /// Enum SUBSCRIBERCREATED for value: SUBSCRIBER_CREATED
+            /// </summary>
+            [EnumMember(Value = "SUBSCRIBER_CREATED")]
+            SUBSCRIBERCREATED = 6,
+            
+            /// <summary>
+            /// Enum SUBSCRIBERUPDATED for value: SUBSCRIBER_UPDATED
+            /// </summary>
+            [EnumMember(Value = "SUBSCRIBER_UPDATED")]
+            SUBSCRIBERUPDATED = 7
         }
 
         /// <summary>

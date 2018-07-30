@@ -41,7 +41,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Address">Address.</param>
         /// <param name="Id">Id.</param>
         /// <param name="Name">Name (required).</param>
-        public Company(Address Address = default(Address), long? Id = default(long?), string Name = default(string))
+        /// <param name="SiteName">SiteName.</param>
+        public Company(Address Address = default(Address), long? Id = default(long?), string Name = default(string), string SiteName = default(string))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -54,6 +55,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             }
             this.Address = Address;
             this.Id = Id;
+            this.SiteName = SiteName;
         }
         
         /// <summary>
@@ -75,6 +77,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or Sets SiteName
+        /// </summary>
+        [DataMember(Name="siteName", EmitDefaultValue=false)]
+        public string SiteName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -85,6 +93,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  SiteName: ").Append(SiteName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,6 +142,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.SiteName == input.SiteName ||
+                    (this.SiteName != null &&
+                    this.SiteName.Equals(input.SiteName))
                 );
         }
 
@@ -151,6 +165,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.SiteName != null)
+                    hashCode = hashCode * 59 + this.SiteName.GetHashCode();
                 return hashCode;
             }
         }

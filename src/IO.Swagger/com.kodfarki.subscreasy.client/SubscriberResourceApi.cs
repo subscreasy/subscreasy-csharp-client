@@ -128,6 +128,27 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <returns>ApiResponse of List&lt;Subscriber&gt;</returns>
         ApiResponse<List<Subscriber>> GetSubscriberByNameUsingGETWithHttpInfo (string name);
         /// <summary>
+        /// getSubscriberBySecureId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>Subscriber</returns>
+        Subscriber GetSubscriberBySecureIdUsingGET (string secureId);
+
+        /// <summary>
+        /// getSubscriberBySecureId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>ApiResponse of Subscriber</returns>
+        ApiResponse<Subscriber> GetSubscriberBySecureIdUsingGETWithHttpInfo (string secureId);
+        /// <summary>
         /// getSubscriber
         /// </summary>
         /// <remarks>
@@ -274,6 +295,27 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <param name="name">name</param>
         /// <returns>Task of ApiResponse (List&lt;Subscriber&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Subscriber>>> GetSubscriberByNameUsingGETAsyncWithHttpInfo (string name);
+        /// <summary>
+        /// getSubscriberBySecureId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>Task of Subscriber</returns>
+        System.Threading.Tasks.Task<Subscriber> GetSubscriberBySecureIdUsingGETAsync (string secureId);
+
+        /// <summary>
+        /// getSubscriberBySecureId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>Task of ApiResponse (Subscriber)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Subscriber>> GetSubscriberBySecureIdUsingGETAsyncWithHttpInfo (string secureId);
         /// <summary>
         /// getSubscriber
         /// </summary>
@@ -1131,6 +1173,149 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             return new ApiResponse<List<Subscriber>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<Subscriber>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subscriber>)));
+        }
+
+        /// <summary>
+        /// getSubscriberBySecureId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>Subscriber</returns>
+        public Subscriber GetSubscriberBySecureIdUsingGET (string secureId)
+        {
+             ApiResponse<Subscriber> localVarResponse = GetSubscriberBySecureIdUsingGETWithHttpInfo(secureId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// getSubscriberBySecureId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>ApiResponse of Subscriber</returns>
+        public ApiResponse< Subscriber > GetSubscriberBySecureIdUsingGETWithHttpInfo (string secureId)
+        {
+            // verify the required parameter 'secureId' is set
+            if (secureId == null)
+                throw new ApiException(400, "Missing required parameter 'secureId' when calling SubscriberResourceApi->GetSubscriberBySecureIdUsingGET");
+
+            var localVarPath = "/api/subscribers/secureId/{secureId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (secureId != null) localVarPathParams.Add("secureId", Configuration.ApiClient.ParameterToString(secureId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubscriberBySecureIdUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Subscriber>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Subscriber) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Subscriber)));
+        }
+
+        /// <summary>
+        /// getSubscriberBySecureId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>Task of Subscriber</returns>
+        public async System.Threading.Tasks.Task<Subscriber> GetSubscriberBySecureIdUsingGETAsync (string secureId)
+        {
+             ApiResponse<Subscriber> localVarResponse = await GetSubscriberBySecureIdUsingGETAsyncWithHttpInfo(secureId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// getSubscriberBySecureId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>Task of ApiResponse (Subscriber)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Subscriber>> GetSubscriberBySecureIdUsingGETAsyncWithHttpInfo (string secureId)
+        {
+            // verify the required parameter 'secureId' is set
+            if (secureId == null)
+                throw new ApiException(400, "Missing required parameter 'secureId' when calling SubscriberResourceApi->GetSubscriberBySecureIdUsingGET");
+
+            var localVarPath = "/api/subscribers/secureId/{secureId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (secureId != null) localVarPathParams.Add("secureId", Configuration.ApiClient.ParameterToString(secureId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubscriberBySecureIdUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Subscriber>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Subscriber) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Subscriber)));
         }
 
         /// <summary>

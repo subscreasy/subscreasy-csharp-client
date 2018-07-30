@@ -33,33 +33,35 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <summary>
         /// Initializes a new instance of the <see cref="StartSubscriptionRequest" /> class.
         /// </summary>
-        /// <param name="ApiKey">ApiKey.</param>
         /// <param name="CallbackUrl">CallbackUrl.</param>
+        /// <param name="CompanySiteName">CompanySiteName.</param>
         /// <param name="CouponCode">CouponCode.</param>
         /// <param name="Offer">Offer.</param>
         /// <param name="PaymentCard">PaymentCard.</param>
+        /// <param name="Price">Price.</param>
         /// <param name="Subscriber">Subscriber.</param>
-        public StartSubscriptionRequest(string ApiKey = default(string), string CallbackUrl = default(string), string CouponCode = default(string), SubscriptionPlan Offer = default(SubscriptionPlan), PaymentCard PaymentCard = default(PaymentCard), Subscriber Subscriber = default(Subscriber))
+        public StartSubscriptionRequest(string CallbackUrl = default(string), string CompanySiteName = default(string), string CouponCode = default(string), Offer Offer = default(Offer), PaymentCard PaymentCard = default(PaymentCard), decimal? Price = default(decimal?), Subscriber Subscriber = default(Subscriber))
         {
-            this.ApiKey = ApiKey;
             this.CallbackUrl = CallbackUrl;
+            this.CompanySiteName = CompanySiteName;
             this.CouponCode = CouponCode;
             this.Offer = Offer;
             this.PaymentCard = PaymentCard;
+            this.Price = Price;
             this.Subscriber = Subscriber;
         }
         
-        /// <summary>
-        /// Gets or Sets ApiKey
-        /// </summary>
-        [DataMember(Name="apiKey", EmitDefaultValue=false)]
-        public string ApiKey { get; set; }
-
         /// <summary>
         /// Gets or Sets CallbackUrl
         /// </summary>
         [DataMember(Name="callbackUrl", EmitDefaultValue=false)]
         public string CallbackUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CompanySiteName
+        /// </summary>
+        [DataMember(Name="companySiteName", EmitDefaultValue=false)]
+        public string CompanySiteName { get; set; }
 
         /// <summary>
         /// Gets or Sets CouponCode
@@ -71,13 +73,19 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// Gets or Sets Offer
         /// </summary>
         [DataMember(Name="offer", EmitDefaultValue=false)]
-        public SubscriptionPlan Offer { get; set; }
+        public Offer Offer { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentCard
         /// </summary>
         [DataMember(Name="paymentCard", EmitDefaultValue=false)]
         public PaymentCard PaymentCard { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Price
+        /// </summary>
+        [DataMember(Name="price", EmitDefaultValue=false)]
+        public decimal? Price { get; set; }
 
         /// <summary>
         /// Gets or Sets Subscriber
@@ -93,11 +101,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         {
             var sb = new StringBuilder();
             sb.Append("class StartSubscriptionRequest {\n");
-            sb.Append("  ApiKey: ").Append(ApiKey).Append("\n");
             sb.Append("  CallbackUrl: ").Append(CallbackUrl).Append("\n");
+            sb.Append("  CompanySiteName: ").Append(CompanySiteName).Append("\n");
             sb.Append("  CouponCode: ").Append(CouponCode).Append("\n");
             sb.Append("  Offer: ").Append(Offer).Append("\n");
             sb.Append("  PaymentCard: ").Append(PaymentCard).Append("\n");
+            sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("  Subscriber: ").Append(Subscriber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -134,14 +143,14 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
 
             return 
                 (
-                    this.ApiKey == input.ApiKey ||
-                    (this.ApiKey != null &&
-                    this.ApiKey.Equals(input.ApiKey))
-                ) && 
-                (
                     this.CallbackUrl == input.CallbackUrl ||
                     (this.CallbackUrl != null &&
                     this.CallbackUrl.Equals(input.CallbackUrl))
+                ) && 
+                (
+                    this.CompanySiteName == input.CompanySiteName ||
+                    (this.CompanySiteName != null &&
+                    this.CompanySiteName.Equals(input.CompanySiteName))
                 ) && 
                 (
                     this.CouponCode == input.CouponCode ||
@@ -159,6 +168,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.PaymentCard.Equals(input.PaymentCard))
                 ) && 
                 (
+                    this.Price == input.Price ||
+                    (this.Price != null &&
+                    this.Price.Equals(input.Price))
+                ) && 
+                (
                     this.Subscriber == input.Subscriber ||
                     (this.Subscriber != null &&
                     this.Subscriber.Equals(input.Subscriber))
@@ -174,16 +188,18 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ApiKey != null)
-                    hashCode = hashCode * 59 + this.ApiKey.GetHashCode();
                 if (this.CallbackUrl != null)
                     hashCode = hashCode * 59 + this.CallbackUrl.GetHashCode();
+                if (this.CompanySiteName != null)
+                    hashCode = hashCode * 59 + this.CompanySiteName.GetHashCode();
                 if (this.CouponCode != null)
                     hashCode = hashCode * 59 + this.CouponCode.GetHashCode();
                 if (this.Offer != null)
                     hashCode = hashCode * 59 + this.Offer.GetHashCode();
                 if (this.PaymentCard != null)
                     hashCode = hashCode * 59 + this.PaymentCard.GetHashCode();
+                if (this.Price != null)
+                    hashCode = hashCode * 59 + this.Price.GetHashCode();
                 if (this.Subscriber != null)
                     hashCode = hashCode * 59 + this.Subscriber.GetHashCode();
                 return hashCode;

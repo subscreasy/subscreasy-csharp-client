@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GetAllSubscribersUsingGET**](SubscriberResourceApi.md#getallsubscribersusingget) | **GET** /api/subscribers | getAllSubscribers
 [**GetSubscriberByEmailUsingGET**](SubscriberResourceApi.md#getsubscriberbyemailusingget) | **GET** /api/subscribers/email/{email} | getSubscriberByEmail
 [**GetSubscriberByNameUsingGET**](SubscriberResourceApi.md#getsubscriberbynameusingget) | **GET** /api/subscribers/name/{name} | getSubscriberByName
+[**GetSubscriberBySecureIdUsingGET**](SubscriberResourceApi.md#getsubscriberbysecureidusingget) | **GET** /api/subscribers/secureId/{secureId} | getSubscriberBySecureId
 [**GetSubscriberUsingGET**](SubscriberResourceApi.md#getsubscriberusingget) | **GET** /api/subscribers/{id} | getSubscriber
 [**UpdateSubscriberUsingPUT**](SubscriberResourceApi.md#updatesubscriberusingput) | **PUT** /api/subscribers | updateSubscriber
 
@@ -316,6 +317,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List<Subscriber>**](Subscriber.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getsubscriberbysecureidusingget"></a>
+# **GetSubscriberBySecureIdUsingGET**
+> Subscriber GetSubscriberBySecureIdUsingGET (string secureId)
+
+getSubscriberBySecureId
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class GetSubscriberBySecureIdUsingGETExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new SubscriberResourceApi();
+            var secureId = secureId_example;  // string | secureId
+
+            try
+            {
+                // getSubscriberBySecureId
+                Subscriber result = apiInstance.GetSubscriberBySecureIdUsingGET(secureId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SubscriberResourceApi.GetSubscriberBySecureIdUsingGET: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **secureId** | **string**| secureId | 
+
+### Return type
+
+[**Subscriber**](Subscriber.md)
 
 ### Authorization
 

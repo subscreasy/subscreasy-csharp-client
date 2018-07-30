@@ -92,9 +92,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Services">Services.</param>
         /// <param name="StartDate">StartDate.</param>
         /// <param name="Status">Status.</param>
-        /// <param name="SubscriberId">SubscriberId.</param>
-        /// <param name="Version">Version.</param>
-        public Subsription(Coupon AppliedCoupon = default(Coupon), DateTime? CancelDate = default(DateTime?), SavedCard Card = default(SavedCard), Company Company = default(Company), DateTime? EndDate = default(DateTime?), long? Id = default(long?), DateTime? NextChargingDate = default(DateTime?), Offer Offer = default(Offer), List<ServiceInstance> Services = default(List<ServiceInstance>), DateTime? StartDate = default(DateTime?), StatusEnum? Status = default(StatusEnum?), string SubscriberId = default(string), long? Version = default(long?))
+        /// <param name="Subscriber">Subscriber.</param>
+        /// <param name="SubscriberSecureId">SubscriberSecureId.</param>
+        public Subsription(Coupon AppliedCoupon = default(Coupon), DateTime? CancelDate = default(DateTime?), SavedCard Card = default(SavedCard), Company Company = default(Company), DateTime? EndDate = default(DateTime?), long? Id = default(long?), DateTime? NextChargingDate = default(DateTime?), Offer Offer = default(Offer), List<ServiceInstance> Services = default(List<ServiceInstance>), DateTime? StartDate = default(DateTime?), StatusEnum? Status = default(StatusEnum?), Subscriber Subscriber = default(Subscriber), string SubscriberSecureId = default(string))
         {
             // to ensure "Company" is required (not null)
             if (Company == null)
@@ -123,8 +123,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.Services = Services;
             this.StartDate = StartDate;
             this.Status = Status;
-            this.SubscriberId = SubscriberId;
-            this.Version = Version;
+            this.Subscriber = Subscriber;
+            this.SubscriberSecureId = SubscriberSecureId;
         }
         
         /// <summary>
@@ -189,16 +189,16 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
 
 
         /// <summary>
-        /// Gets or Sets SubscriberId
+        /// Gets or Sets Subscriber
         /// </summary>
-        [DataMember(Name="subscriberId", EmitDefaultValue=false)]
-        public string SubscriberId { get; set; }
+        [DataMember(Name="subscriber", EmitDefaultValue=false)]
+        public Subscriber Subscriber { get; set; }
 
         /// <summary>
-        /// Gets or Sets Version
+        /// Gets or Sets SubscriberSecureId
         /// </summary>
-        [DataMember(Name="version", EmitDefaultValue=false)]
-        public long? Version { get; set; }
+        [DataMember(Name="subscriberSecureId", EmitDefaultValue=false)]
+        public string SubscriberSecureId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -219,8 +219,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  Services: ").Append(Services).Append("\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  SubscriberId: ").Append(SubscriberId).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  Subscriber: ").Append(Subscriber).Append("\n");
+            sb.Append("  SubscriberSecureId: ").Append(SubscriberSecureId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -311,14 +311,14 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
-                    this.SubscriberId == input.SubscriberId ||
-                    (this.SubscriberId != null &&
-                    this.SubscriberId.Equals(input.SubscriberId))
+                    this.Subscriber == input.Subscriber ||
+                    (this.Subscriber != null &&
+                    this.Subscriber.Equals(input.Subscriber))
                 ) && 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this.SubscriberSecureId == input.SubscriberSecureId ||
+                    (this.SubscriberSecureId != null &&
+                    this.SubscriberSecureId.Equals(input.SubscriberSecureId))
                 );
         }
 
@@ -353,10 +353,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.StartDate.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.SubscriberId != null)
-                    hashCode = hashCode * 59 + this.SubscriberId.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.Subscriber != null)
+                    hashCode = hashCode * 59 + this.Subscriber.GetHashCode();
+                if (this.SubscriberSecureId != null)
+                    hashCode = hashCode * 59 + this.SubscriberSecureId.GetHashCode();
                 return hashCode;
             }
         }

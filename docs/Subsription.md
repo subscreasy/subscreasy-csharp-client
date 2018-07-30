@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **Services** | [**List&lt;ServiceInstance&gt;**](ServiceInstance.md) |  | [optional] 
 **StartDate** | **DateTime?** |  | [optional] 
 **Status** | **string** |  | [optional] 
-**SubscriberId** | **string** |  | [optional] 
-**Version** | **long?** |  | [optional] 
+**Subscriber** | [**Subscriber**](Subscriber.md) |  | [optional] 
+**SubscriberSecureId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

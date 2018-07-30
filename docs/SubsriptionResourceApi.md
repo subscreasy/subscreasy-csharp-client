@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 <a name="startsubscriptionusingpost"></a>
 # **StartSubscriptionUsingPOST**
-> SubscriptionCreateResult StartSubscriptionUsingPOST (StartSubscriptionRequest request)
+> StartSubscriptionResult StartSubscriptionUsingPOST (StartSubscriptionRequest request)
 
 startSubscription
 
@@ -298,7 +298,7 @@ namespace Example
             try
             {
                 // startSubscription
-                SubscriptionCreateResult result = apiInstance.StartSubscriptionUsingPOST(request);
+                StartSubscriptionResult result = apiInstance.StartSubscriptionUsingPOST(request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubscriptionCreateResult**](SubscriptionCreateResult.md)
+[**StartSubscriptionResult**](StartSubscriptionResult.md)
 
 ### Authorization
 

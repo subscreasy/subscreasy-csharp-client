@@ -118,8 +118,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="login">login</param>
-        /// <returns>User</returns>
-        User GetUserUsingGET (string login);
+        /// <returns>UserDTO</returns>
+        UserDTO GetUserUsingGET (string login);
 
         /// <summary>
         /// getUser
@@ -129,8 +129,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="login">login</param>
-        /// <returns>ApiResponse of User</returns>
-        ApiResponse<User> GetUserUsingGETWithHttpInfo (string login);
+        /// <returns>ApiResponse of UserDTO</returns>
+        ApiResponse<UserDTO> GetUserUsingGETWithHttpInfo (string login);
         /// <summary>
         /// updateUser
         /// </summary>
@@ -248,8 +248,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="login">login</param>
-        /// <returns>Task of User</returns>
-        System.Threading.Tasks.Task<User> GetUserUsingGETAsync (string login);
+        /// <returns>Task of UserDTO</returns>
+        System.Threading.Tasks.Task<UserDTO> GetUserUsingGETAsync (string login);
 
         /// <summary>
         /// getUser
@@ -259,8 +259,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="login">login</param>
-        /// <returns>Task of ApiResponse (User)</returns>
-        System.Threading.Tasks.Task<ApiResponse<User>> GetUserUsingGETAsyncWithHttpInfo (string login);
+        /// <returns>Task of ApiResponse (UserDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserDTO>> GetUserUsingGETAsyncWithHttpInfo (string login);
         /// <summary>
         /// updateUser
         /// </summary>
@@ -967,10 +967,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="login">login</param>
-        /// <returns>User</returns>
-        public User GetUserUsingGET (string login)
+        /// <returns>UserDTO</returns>
+        public UserDTO GetUserUsingGET (string login)
         {
-             ApiResponse<User> localVarResponse = GetUserUsingGETWithHttpInfo(login);
+             ApiResponse<UserDTO> localVarResponse = GetUserUsingGETWithHttpInfo(login);
              return localVarResponse.Data;
         }
 
@@ -979,8 +979,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="login">login</param>
-        /// <returns>ApiResponse of User</returns>
-        public ApiResponse< User > GetUserUsingGETWithHttpInfo (string login)
+        /// <returns>ApiResponse of UserDTO</returns>
+        public ApiResponse< UserDTO > GetUserUsingGETWithHttpInfo (string login)
         {
             // verify the required parameter 'login' is set
             if (login == null)
@@ -1028,9 +1028,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<User>(localVarStatusCode,
+            return new ApiResponse<UserDTO>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (User) Configuration.ApiClient.Deserialize(localVarResponse, typeof(User)));
+                (UserDTO) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDTO)));
         }
 
         /// <summary>
@@ -1038,10 +1038,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="login">login</param>
-        /// <returns>Task of User</returns>
-        public async System.Threading.Tasks.Task<User> GetUserUsingGETAsync (string login)
+        /// <returns>Task of UserDTO</returns>
+        public async System.Threading.Tasks.Task<UserDTO> GetUserUsingGETAsync (string login)
         {
-             ApiResponse<User> localVarResponse = await GetUserUsingGETAsyncWithHttpInfo(login);
+             ApiResponse<UserDTO> localVarResponse = await GetUserUsingGETAsyncWithHttpInfo(login);
              return localVarResponse.Data;
 
         }
@@ -1051,8 +1051,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="login">login</param>
-        /// <returns>Task of ApiResponse (User)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<User>> GetUserUsingGETAsyncWithHttpInfo (string login)
+        /// <returns>Task of ApiResponse (UserDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserDTO>> GetUserUsingGETAsyncWithHttpInfo (string login)
         {
             // verify the required parameter 'login' is set
             if (login == null)
@@ -1100,9 +1100,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<User>(localVarStatusCode,
+            return new ApiResponse<UserDTO>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (User) Configuration.ApiClient.Deserialize(localVarResponse, typeof(User)));
+                (UserDTO) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDTO)));
         }
 
         /// <summary>

@@ -33,65 +33,53 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <summary>
         /// Initializes a new instance of the <see cref="Subscriber" /> class.
         /// </summary>
-        /// <param name="Address">Address.</param>
-        /// <param name="City">City.</param>
-        /// <param name="Country">Country.</param>
+        /// <param name="BillingAddress">BillingAddress.</param>
+        /// <param name="CompanyId">CompanyId.</param>
+        /// <param name="CreateDate">CreateDate.</param>
         /// <param name="Email">Email.</param>
-        /// <param name="GsmNumber">GsmNumber.</param>
-        /// <param name="IdentityNumber">IdentityNumber.</param>
-        /// <param name="Ip">Ip.</param>
-        /// <param name="LastLoginDate">LastLoginDate.</param>
+        /// <param name="Id">Id.</param>
+        /// <param name="IdentificationNo">IdentificationNo.</param>
         /// <param name="Name">Name.</param>
-        /// <param name="RegistrationDate">RegistrationDate.</param>
+        /// <param name="PhoneNumber">PhoneNumber.</param>
         /// <param name="SecureId">SecureId.</param>
         /// <param name="ShippingAddress">ShippingAddress.</param>
-        /// <param name="ShippingCity">ShippingCity.</param>
-        /// <param name="ShippingCountry">ShippingCountry.</param>
-        /// <param name="ShippingName">ShippingName.</param>
-        /// <param name="ShippingZipCode">ShippingZipCode.</param>
         /// <param name="Surname">Surname.</param>
-        /// <param name="UseBillingAddressForShipping">UseBillingAddressForShipping.</param>
-        /// <param name="ZipCode">ZipCode.</param>
-        public Subscriber(string Address = default(string), string City = default(string), string Country = default(string), string Email = default(string), string GsmNumber = default(string), string IdentityNumber = default(string), string Ip = default(string), string LastLoginDate = default(string), string Name = default(string), string RegistrationDate = default(string), string SecureId = default(string), string ShippingAddress = default(string), string ShippingCity = default(string), string ShippingCountry = default(string), string ShippingName = default(string), string ShippingZipCode = default(string), string Surname = default(string), bool? UseBillingAddressForShipping = default(bool?), string ZipCode = default(string))
+        /// <param name="TaxNumber">TaxNumber.</param>
+        /// <param name="WorksFor">WorksFor.</param>
+        public Subscriber(Address BillingAddress = default(Address), Company CompanyId = default(Company), DateTime? CreateDate = default(DateTime?), string Email = default(string), long? Id = default(long?), string IdentificationNo = default(string), string Name = default(string), string PhoneNumber = default(string), string SecureId = default(string), Address ShippingAddress = default(Address), string Surname = default(string), string TaxNumber = default(string), string WorksFor = default(string))
         {
-            this.Address = Address;
-            this.City = City;
-            this.Country = Country;
+            this.BillingAddress = BillingAddress;
+            this.CompanyId = CompanyId;
+            this.CreateDate = CreateDate;
             this.Email = Email;
-            this.GsmNumber = GsmNumber;
-            this.IdentityNumber = IdentityNumber;
-            this.Ip = Ip;
-            this.LastLoginDate = LastLoginDate;
+            this.Id = Id;
+            this.IdentificationNo = IdentificationNo;
             this.Name = Name;
-            this.RegistrationDate = RegistrationDate;
+            this.PhoneNumber = PhoneNumber;
             this.SecureId = SecureId;
             this.ShippingAddress = ShippingAddress;
-            this.ShippingCity = ShippingCity;
-            this.ShippingCountry = ShippingCountry;
-            this.ShippingName = ShippingName;
-            this.ShippingZipCode = ShippingZipCode;
             this.Surname = Surname;
-            this.UseBillingAddressForShipping = UseBillingAddressForShipping;
-            this.ZipCode = ZipCode;
+            this.TaxNumber = TaxNumber;
+            this.WorksFor = WorksFor;
         }
         
         /// <summary>
-        /// Gets or Sets Address
+        /// Gets or Sets BillingAddress
         /// </summary>
-        [DataMember(Name="address", EmitDefaultValue=false)]
-        public string Address { get; set; }
+        [DataMember(Name="billingAddress", EmitDefaultValue=false)]
+        public Address BillingAddress { get; set; }
 
         /// <summary>
-        /// Gets or Sets City
+        /// Gets or Sets CompanyId
         /// </summary>
-        [DataMember(Name="city", EmitDefaultValue=false)]
-        public string City { get; set; }
+        [DataMember(Name="companyId", EmitDefaultValue=false)]
+        public Company CompanyId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Country
+        /// Gets or Sets CreateDate
         /// </summary>
-        [DataMember(Name="country", EmitDefaultValue=false)]
-        public string Country { get; set; }
+        [DataMember(Name="createDate", EmitDefaultValue=false)]
+        public DateTime? CreateDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
@@ -100,28 +88,16 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string Email { get; set; }
 
         /// <summary>
-        /// Gets or Sets GsmNumber
+        /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="gsmNumber", EmitDefaultValue=false)]
-        public string GsmNumber { get; set; }
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public long? Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets IdentityNumber
+        /// Gets or Sets IdentificationNo
         /// </summary>
-        [DataMember(Name="identityNumber", EmitDefaultValue=false)]
-        public string IdentityNumber { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Ip
-        /// </summary>
-        [DataMember(Name="ip", EmitDefaultValue=false)]
-        public string Ip { get; set; }
-
-        /// <summary>
-        /// Gets or Sets LastLoginDate
-        /// </summary>
-        [DataMember(Name="lastLoginDate", EmitDefaultValue=false)]
-        public string LastLoginDate { get; set; }
+        [DataMember(Name="identificationNo", EmitDefaultValue=false)]
+        public string IdentificationNo { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -130,10 +106,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets RegistrationDate
+        /// Gets or Sets PhoneNumber
         /// </summary>
-        [DataMember(Name="registrationDate", EmitDefaultValue=false)]
-        public string RegistrationDate { get; set; }
+        [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
+        public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets SecureId
@@ -145,31 +121,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// Gets or Sets ShippingAddress
         /// </summary>
         [DataMember(Name="shippingAddress", EmitDefaultValue=false)]
-        public string ShippingAddress { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ShippingCity
-        /// </summary>
-        [DataMember(Name="shippingCity", EmitDefaultValue=false)]
-        public string ShippingCity { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ShippingCountry
-        /// </summary>
-        [DataMember(Name="shippingCountry", EmitDefaultValue=false)]
-        public string ShippingCountry { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ShippingName
-        /// </summary>
-        [DataMember(Name="shippingName", EmitDefaultValue=false)]
-        public string ShippingName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ShippingZipCode
-        /// </summary>
-        [DataMember(Name="shippingZipCode", EmitDefaultValue=false)]
-        public string ShippingZipCode { get; set; }
+        public Address ShippingAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets Surname
@@ -178,16 +130,16 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string Surname { get; set; }
 
         /// <summary>
-        /// Gets or Sets UseBillingAddressForShipping
+        /// Gets or Sets TaxNumber
         /// </summary>
-        [DataMember(Name="useBillingAddressForShipping", EmitDefaultValue=false)]
-        public bool? UseBillingAddressForShipping { get; set; }
+        [DataMember(Name="taxNumber", EmitDefaultValue=false)]
+        public string TaxNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets ZipCode
+        /// Gets or Sets WorksFor
         /// </summary>
-        [DataMember(Name="zipCode", EmitDefaultValue=false)]
-        public string ZipCode { get; set; }
+        [DataMember(Name="worksFor", EmitDefaultValue=false)]
+        public string WorksFor { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -197,25 +149,19 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         {
             var sb = new StringBuilder();
             sb.Append("class Subscriber {\n");
-            sb.Append("  Address: ").Append(Address).Append("\n");
-            sb.Append("  City: ").Append(City).Append("\n");
-            sb.Append("  Country: ").Append(Country).Append("\n");
+            sb.Append("  BillingAddress: ").Append(BillingAddress).Append("\n");
+            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
+            sb.Append("  CreateDate: ").Append(CreateDate).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
-            sb.Append("  GsmNumber: ").Append(GsmNumber).Append("\n");
-            sb.Append("  IdentityNumber: ").Append(IdentityNumber).Append("\n");
-            sb.Append("  Ip: ").Append(Ip).Append("\n");
-            sb.Append("  LastLoginDate: ").Append(LastLoginDate).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  IdentificationNo: ").Append(IdentificationNo).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  RegistrationDate: ").Append(RegistrationDate).Append("\n");
+            sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  SecureId: ").Append(SecureId).Append("\n");
             sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
-            sb.Append("  ShippingCity: ").Append(ShippingCity).Append("\n");
-            sb.Append("  ShippingCountry: ").Append(ShippingCountry).Append("\n");
-            sb.Append("  ShippingName: ").Append(ShippingName).Append("\n");
-            sb.Append("  ShippingZipCode: ").Append(ShippingZipCode).Append("\n");
             sb.Append("  Surname: ").Append(Surname).Append("\n");
-            sb.Append("  UseBillingAddressForShipping: ").Append(UseBillingAddressForShipping).Append("\n");
-            sb.Append("  ZipCode: ").Append(ZipCode).Append("\n");
+            sb.Append("  TaxNumber: ").Append(TaxNumber).Append("\n");
+            sb.Append("  WorksFor: ").Append(WorksFor).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -251,19 +197,19 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
 
             return 
                 (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
+                    this.BillingAddress == input.BillingAddress ||
+                    (this.BillingAddress != null &&
+                    this.BillingAddress.Equals(input.BillingAddress))
                 ) && 
                 (
-                    this.City == input.City ||
-                    (this.City != null &&
-                    this.City.Equals(input.City))
+                    this.CompanyId == input.CompanyId ||
+                    (this.CompanyId != null &&
+                    this.CompanyId.Equals(input.CompanyId))
                 ) && 
                 (
-                    this.Country == input.Country ||
-                    (this.Country != null &&
-                    this.Country.Equals(input.Country))
+                    this.CreateDate == input.CreateDate ||
+                    (this.CreateDate != null &&
+                    this.CreateDate.Equals(input.CreateDate))
                 ) && 
                 (
                     this.Email == input.Email ||
@@ -271,24 +217,14 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Email.Equals(input.Email))
                 ) && 
                 (
-                    this.GsmNumber == input.GsmNumber ||
-                    (this.GsmNumber != null &&
-                    this.GsmNumber.Equals(input.GsmNumber))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.IdentityNumber == input.IdentityNumber ||
-                    (this.IdentityNumber != null &&
-                    this.IdentityNumber.Equals(input.IdentityNumber))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.LastLoginDate == input.LastLoginDate ||
-                    (this.LastLoginDate != null &&
-                    this.LastLoginDate.Equals(input.LastLoginDate))
+                    this.IdentificationNo == input.IdentificationNo ||
+                    (this.IdentificationNo != null &&
+                    this.IdentificationNo.Equals(input.IdentificationNo))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -296,9 +232,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.RegistrationDate == input.RegistrationDate ||
-                    (this.RegistrationDate != null &&
-                    this.RegistrationDate.Equals(input.RegistrationDate))
+                    this.PhoneNumber == input.PhoneNumber ||
+                    (this.PhoneNumber != null &&
+                    this.PhoneNumber.Equals(input.PhoneNumber))
                 ) && 
                 (
                     this.SecureId == input.SecureId ||
@@ -311,39 +247,19 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.ShippingAddress.Equals(input.ShippingAddress))
                 ) && 
                 (
-                    this.ShippingCity == input.ShippingCity ||
-                    (this.ShippingCity != null &&
-                    this.ShippingCity.Equals(input.ShippingCity))
-                ) && 
-                (
-                    this.ShippingCountry == input.ShippingCountry ||
-                    (this.ShippingCountry != null &&
-                    this.ShippingCountry.Equals(input.ShippingCountry))
-                ) && 
-                (
-                    this.ShippingName == input.ShippingName ||
-                    (this.ShippingName != null &&
-                    this.ShippingName.Equals(input.ShippingName))
-                ) && 
-                (
-                    this.ShippingZipCode == input.ShippingZipCode ||
-                    (this.ShippingZipCode != null &&
-                    this.ShippingZipCode.Equals(input.ShippingZipCode))
-                ) && 
-                (
                     this.Surname == input.Surname ||
                     (this.Surname != null &&
                     this.Surname.Equals(input.Surname))
                 ) && 
                 (
-                    this.UseBillingAddressForShipping == input.UseBillingAddressForShipping ||
-                    (this.UseBillingAddressForShipping != null &&
-                    this.UseBillingAddressForShipping.Equals(input.UseBillingAddressForShipping))
+                    this.TaxNumber == input.TaxNumber ||
+                    (this.TaxNumber != null &&
+                    this.TaxNumber.Equals(input.TaxNumber))
                 ) && 
                 (
-                    this.ZipCode == input.ZipCode ||
-                    (this.ZipCode != null &&
-                    this.ZipCode.Equals(input.ZipCode))
+                    this.WorksFor == input.WorksFor ||
+                    (this.WorksFor != null &&
+                    this.WorksFor.Equals(input.WorksFor))
                 );
         }
 
@@ -356,44 +272,32 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.City != null)
-                    hashCode = hashCode * 59 + this.City.GetHashCode();
-                if (this.Country != null)
-                    hashCode = hashCode * 59 + this.Country.GetHashCode();
+                if (this.BillingAddress != null)
+                    hashCode = hashCode * 59 + this.BillingAddress.GetHashCode();
+                if (this.CompanyId != null)
+                    hashCode = hashCode * 59 + this.CompanyId.GetHashCode();
+                if (this.CreateDate != null)
+                    hashCode = hashCode * 59 + this.CreateDate.GetHashCode();
                 if (this.Email != null)
                     hashCode = hashCode * 59 + this.Email.GetHashCode();
-                if (this.GsmNumber != null)
-                    hashCode = hashCode * 59 + this.GsmNumber.GetHashCode();
-                if (this.IdentityNumber != null)
-                    hashCode = hashCode * 59 + this.IdentityNumber.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.LastLoginDate != null)
-                    hashCode = hashCode * 59 + this.LastLoginDate.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.IdentificationNo != null)
+                    hashCode = hashCode * 59 + this.IdentificationNo.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.RegistrationDate != null)
-                    hashCode = hashCode * 59 + this.RegistrationDate.GetHashCode();
+                if (this.PhoneNumber != null)
+                    hashCode = hashCode * 59 + this.PhoneNumber.GetHashCode();
                 if (this.SecureId != null)
                     hashCode = hashCode * 59 + this.SecureId.GetHashCode();
                 if (this.ShippingAddress != null)
                     hashCode = hashCode * 59 + this.ShippingAddress.GetHashCode();
-                if (this.ShippingCity != null)
-                    hashCode = hashCode * 59 + this.ShippingCity.GetHashCode();
-                if (this.ShippingCountry != null)
-                    hashCode = hashCode * 59 + this.ShippingCountry.GetHashCode();
-                if (this.ShippingName != null)
-                    hashCode = hashCode * 59 + this.ShippingName.GetHashCode();
-                if (this.ShippingZipCode != null)
-                    hashCode = hashCode * 59 + this.ShippingZipCode.GetHashCode();
                 if (this.Surname != null)
                     hashCode = hashCode * 59 + this.Surname.GetHashCode();
-                if (this.UseBillingAddressForShipping != null)
-                    hashCode = hashCode * 59 + this.UseBillingAddressForShipping.GetHashCode();
-                if (this.ZipCode != null)
-                    hashCode = hashCode * 59 + this.ZipCode.GetHashCode();
+                if (this.TaxNumber != null)
+                    hashCode = hashCode * 59 + this.TaxNumber.GetHashCode();
+                if (this.WorksFor != null)
+                    hashCode = hashCode * 59 + this.WorksFor.GetHashCode();
                 return hashCode;
             }
         }

@@ -54,7 +54,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Login">Login (required).</param>
         /// <param name="Password">Password.</param>
         /// <param name="ResetDate">ResetDate.</param>
-        public ManagedUserVM(bool? Activated = default(bool?), List<string> Authorities = default(List<string>), Company Company = default(Company), string CreatedBy = default(string), DateTime? CreatedDate = default(DateTime?), string Email = default(string), string FirstName = default(string), long? Id = default(long?), string ImageUrl = default(string), string LangKey = default(string), string LastModifiedBy = default(string), DateTime? LastModifiedDate = default(DateTime?), string LastName = default(string), string Login = default(string), string Password = default(string), string ResetDate = default(string))
+        /// <param name="SiteName">SiteName.</param>
+        public ManagedUserVM(bool? Activated = default(bool?), List<string> Authorities = default(List<string>), Company Company = default(Company), string CreatedBy = default(string), DateTime? CreatedDate = default(DateTime?), string Email = default(string), string FirstName = default(string), long? Id = default(long?), string ImageUrl = default(string), string LangKey = default(string), string LastModifiedBy = default(string), DateTime? LastModifiedDate = default(DateTime?), string LastName = default(string), string Login = default(string), string Password = default(string), string ResetDate = default(string), string SiteName = default(string))
         {
             // to ensure "Login" is required (not null)
             if (Login == null)
@@ -80,6 +81,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.LastName = LastName;
             this.Password = Password;
             this.ResetDate = ResetDate;
+            this.SiteName = SiteName;
         }
         
         /// <summary>
@@ -179,6 +181,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string ResetDate { get; set; }
 
         /// <summary>
+        /// Gets or Sets SiteName
+        /// </summary>
+        [DataMember(Name="siteName", EmitDefaultValue=false)]
+        public string SiteName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -202,6 +210,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  Login: ").Append(Login).Append("\n");
             sb.Append("  Password: ").Append(Password).Append("\n");
             sb.Append("  ResetDate: ").Append(ResetDate).Append("\n");
+            sb.Append("  SiteName: ").Append(SiteName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -315,6 +324,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.ResetDate == input.ResetDate ||
                     (this.ResetDate != null &&
                     this.ResetDate.Equals(input.ResetDate))
+                ) && 
+                (
+                    this.SiteName == input.SiteName ||
+                    (this.SiteName != null &&
+                    this.SiteName.Equals(input.SiteName))
                 );
         }
 
@@ -359,6 +373,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Password.GetHashCode();
                 if (this.ResetDate != null)
                     hashCode = hashCode * 59 + this.ResetDate.GetHashCode();
+                if (this.SiteName != null)
+                    hashCode = hashCode * 59 + this.SiteName.GetHashCode();
                 return hashCode;
             }
         }
@@ -459,6 +475,18 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             if(this.Password != null && this.Password.Length < 4)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Password, length must be greater than 4.", new [] { "Password" });
+            }
+
+            // SiteName (string) maxLength
+            if(this.SiteName != null && this.SiteName.Length > 50)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SiteName, length must be less than 50.", new [] { "SiteName" });
+            }
+
+            // SiteName (string) minLength
+            if(this.SiteName != null && this.SiteName.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SiteName, length must be greater than 1.", new [] { "SiteName" });
             }
 
             yield break;

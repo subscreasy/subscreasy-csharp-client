@@ -56,37 +56,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         [DataMember(Name="quotaOrigin", EmitDefaultValue=false)]
         public QuotaOriginEnum? QuotaOrigin { get; set; }
         /// <summary>
-        /// Defines ServiceType
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ServiceTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum ONOFF for value: ONOFF
-            /// </summary>
-            [EnumMember(Value = "ONOFF")]
-            ONOFF = 1,
-            
-            /// <summary>
-            /// Enum SEATBASED for value: SEAT_BASED
-            /// </summary>
-            [EnumMember(Value = "SEAT_BASED")]
-            SEATBASED = 2,
-            
-            /// <summary>
-            /// Enum USAGEBASED for value: USAGE_BASED
-            /// </summary>
-            [EnumMember(Value = "USAGE_BASED")]
-            USAGEBASED = 3
-        }
-
-        /// <summary>
-        /// Gets or Sets ServiceType
-        /// </summary>
-        [DataMember(Name="serviceType", EmitDefaultValue=false)]
-        public ServiceTypeEnum? ServiceType { get; set; }
-        /// <summary>
         /// Defines Status
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -163,7 +132,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceInstance" /> class.
         /// </summary>
-        /// <param name="Capacity">Capacity.</param>
         /// <param name="CurrentUsage">CurrentUsage.</param>
         /// <param name="EndDate">EndDate.</param>
         /// <param name="Id">Id.</param>
@@ -174,16 +142,14 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="OverUsageQuota">OverUsageQuota.</param>
         /// <param name="QuotaOrigin">QuotaOrigin.</param>
         /// <param name="ServiceOffering">ServiceOffering.</param>
-        /// <param name="ServiceType">ServiceType.</param>
         /// <param name="StartDate">StartDate.</param>
         /// <param name="Status">Status.</param>
         /// <param name="SubscriberId">SubscriberId.</param>
         /// <param name="Subscription">Subscription.</param>
         /// <param name="Type">Type.</param>
         /// <param name="Version">Version.</param>
-        public ServiceInstance(decimal? Capacity = default(decimal?), decimal? CurrentUsage = default(decimal?), DateTime? EndDate = default(DateTime?), long? Id = default(long?), string Name = default(string), int? NumberOfUnits = default(int?), Offer Offer = default(Offer), decimal? OverUsage = default(decimal?), decimal? OverUsageQuota = default(decimal?), QuotaOriginEnum? QuotaOrigin = default(QuotaOriginEnum?), ServiceOffering ServiceOffering = default(ServiceOffering), ServiceTypeEnum? ServiceType = default(ServiceTypeEnum?), DateTime? StartDate = default(DateTime?), StatusEnum? Status = default(StatusEnum?), string SubscriberId = default(string), Subsription Subscription = default(Subsription), TypeEnum? Type = default(TypeEnum?), long? Version = default(long?))
+        public ServiceInstance(decimal? CurrentUsage = default(decimal?), DateTime? EndDate = default(DateTime?), long? Id = default(long?), string Name = default(string), int? NumberOfUnits = default(int?), Offer Offer = default(Offer), decimal? OverUsage = default(decimal?), decimal? OverUsageQuota = default(decimal?), QuotaOriginEnum? QuotaOrigin = default(QuotaOriginEnum?), ServiceOffering ServiceOffering = default(ServiceOffering), DateTime? StartDate = default(DateTime?), StatusEnum? Status = default(StatusEnum?), string SubscriberId = default(string), Subsription Subscription = default(Subsription), TypeEnum? Type = default(TypeEnum?), long? Version = default(long?))
         {
-            this.Capacity = Capacity;
             this.CurrentUsage = CurrentUsage;
             this.EndDate = EndDate;
             this.Id = Id;
@@ -194,7 +160,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.OverUsageQuota = OverUsageQuota;
             this.QuotaOrigin = QuotaOrigin;
             this.ServiceOffering = ServiceOffering;
-            this.ServiceType = ServiceType;
             this.StartDate = StartDate;
             this.Status = Status;
             this.SubscriberId = SubscriberId;
@@ -203,12 +168,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.Version = Version;
         }
         
-        /// <summary>
-        /// Gets or Sets Capacity
-        /// </summary>
-        [DataMember(Name="capacity", EmitDefaultValue=false)]
-        public decimal? Capacity { get; set; }
-
         /// <summary>
         /// Gets or Sets CurrentUsage
         /// </summary>
@@ -264,7 +223,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         [DataMember(Name="serviceOffering", EmitDefaultValue=false)]
         public ServiceOffering ServiceOffering { get; set; }
 
-
         /// <summary>
         /// Gets or Sets StartDate
         /// </summary>
@@ -299,7 +257,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         {
             var sb = new StringBuilder();
             sb.Append("class ServiceInstance {\n");
-            sb.Append("  Capacity: ").Append(Capacity).Append("\n");
             sb.Append("  CurrentUsage: ").Append(CurrentUsage).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
@@ -310,7 +267,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  OverUsageQuota: ").Append(OverUsageQuota).Append("\n");
             sb.Append("  QuotaOrigin: ").Append(QuotaOrigin).Append("\n");
             sb.Append("  ServiceOffering: ").Append(ServiceOffering).Append("\n");
-            sb.Append("  ServiceType: ").Append(ServiceType).Append("\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  SubscriberId: ").Append(SubscriberId).Append("\n");
@@ -351,11 +307,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                 return false;
 
             return 
-                (
-                    this.Capacity == input.Capacity ||
-                    (this.Capacity != null &&
-                    this.Capacity.Equals(input.Capacity))
-                ) && 
                 (
                     this.CurrentUsage == input.CurrentUsage ||
                     (this.CurrentUsage != null &&
@@ -407,11 +358,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.ServiceOffering.Equals(input.ServiceOffering))
                 ) && 
                 (
-                    this.ServiceType == input.ServiceType ||
-                    (this.ServiceType != null &&
-                    this.ServiceType.Equals(input.ServiceType))
-                ) && 
-                (
                     this.StartDate == input.StartDate ||
                     (this.StartDate != null &&
                     this.StartDate.Equals(input.StartDate))
@@ -452,8 +398,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Capacity != null)
-                    hashCode = hashCode * 59 + this.Capacity.GetHashCode();
                 if (this.CurrentUsage != null)
                     hashCode = hashCode * 59 + this.CurrentUsage.GetHashCode();
                 if (this.EndDate != null)
@@ -474,8 +418,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.QuotaOrigin.GetHashCode();
                 if (this.ServiceOffering != null)
                     hashCode = hashCode * 59 + this.ServiceOffering.GetHashCode();
-                if (this.ServiceType != null)
-                    hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
                 if (this.StartDate != null)
                     hashCode = hashCode * 59 + this.StartDate.GetHashCode();
                 if (this.Status != null)

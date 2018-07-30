@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **Id** | **long?** |  | [optional] 
 **InvoiceId** | **long?** |  | [optional] 
 **JobId** | **long?** |  | [optional] 
-**Parent** | [**ChargingLog**](ChargingLog.md) |  | [optional] 
 **PaymentGateway** | **string** |  | [optional] 
 **PaymentId** | **string** |  | [optional] 
 **Price** | **decimal?** |  | [optional] 

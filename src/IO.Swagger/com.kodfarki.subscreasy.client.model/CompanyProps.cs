@@ -31,10 +31,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
     public partial class CompanyProps :  IEquatable<CompanyProps>, IValidatableObject
     {
         /// <summary>
-        /// Defines PaymentMethod
+        /// Defines PaymentGateway
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum PaymentMethodEnum
+        public enum PaymentGatewayEnum
         {
             
             /// <summary>
@@ -57,10 +57,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         }
 
         /// <summary>
-        /// Gets or Sets PaymentMethod
+        /// Gets or Sets PaymentGateway
         /// </summary>
-        [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
-        public PaymentMethodEnum? PaymentMethod { get; set; }
+        [DataMember(Name="paymentGateway", EmitDefaultValue=false)]
+        public PaymentGatewayEnum? PaymentGateway { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyProps" /> class.
         /// </summary>
@@ -68,19 +68,19 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="CallbackUrl">CallbackUrl.</param>
         /// <param name="Company">Company.</param>
         /// <param name="Id">Id.</param>
+        /// <param name="PaymentGateway">PaymentGateway.</param>
         /// <param name="PaymentGatewayApiKey">PaymentGatewayApiKey.</param>
         /// <param name="PaymentGatewaySecurityKey">PaymentGatewaySecurityKey.</param>
-        /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="SecureKey">SecureKey.</param>
-        public CompanyProps(string ApiKey = default(string), string CallbackUrl = default(string), Company Company = default(Company), long? Id = default(long?), string PaymentGatewayApiKey = default(string), string PaymentGatewaySecurityKey = default(string), PaymentMethodEnum? PaymentMethod = default(PaymentMethodEnum?), string SecureKey = default(string))
+        public CompanyProps(string ApiKey = default(string), string CallbackUrl = default(string), Company Company = default(Company), long? Id = default(long?), PaymentGatewayEnum? PaymentGateway = default(PaymentGatewayEnum?), string PaymentGatewayApiKey = default(string), string PaymentGatewaySecurityKey = default(string), string SecureKey = default(string))
         {
             this.ApiKey = ApiKey;
             this.CallbackUrl = CallbackUrl;
             this.Company = Company;
             this.Id = Id;
+            this.PaymentGateway = PaymentGateway;
             this.PaymentGatewayApiKey = PaymentGatewayApiKey;
             this.PaymentGatewaySecurityKey = PaymentGatewaySecurityKey;
-            this.PaymentMethod = PaymentMethod;
             this.SecureKey = SecureKey;
         }
         
@@ -108,6 +108,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         [DataMember(Name="id", EmitDefaultValue=false)]
         public long? Id { get; set; }
 
+
         /// <summary>
         /// Gets or Sets PaymentGatewayApiKey
         /// </summary>
@@ -119,7 +120,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// </summary>
         [DataMember(Name="paymentGatewaySecurityKey", EmitDefaultValue=false)]
         public string PaymentGatewaySecurityKey { get; set; }
-
 
         /// <summary>
         /// Gets or Sets SecureKey
@@ -139,9 +139,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  CallbackUrl: ").Append(CallbackUrl).Append("\n");
             sb.Append("  Company: ").Append(Company).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  PaymentGateway: ").Append(PaymentGateway).Append("\n");
             sb.Append("  PaymentGatewayApiKey: ").Append(PaymentGatewayApiKey).Append("\n");
             sb.Append("  PaymentGatewaySecurityKey: ").Append(PaymentGatewaySecurityKey).Append("\n");
-            sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  SecureKey: ").Append(SecureKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -198,6 +198,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.PaymentGateway == input.PaymentGateway ||
+                    (this.PaymentGateway != null &&
+                    this.PaymentGateway.Equals(input.PaymentGateway))
+                ) && 
+                (
                     this.PaymentGatewayApiKey == input.PaymentGatewayApiKey ||
                     (this.PaymentGatewayApiKey != null &&
                     this.PaymentGatewayApiKey.Equals(input.PaymentGatewayApiKey))
@@ -206,11 +211,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.PaymentGatewaySecurityKey == input.PaymentGatewaySecurityKey ||
                     (this.PaymentGatewaySecurityKey != null &&
                     this.PaymentGatewaySecurityKey.Equals(input.PaymentGatewaySecurityKey))
-                ) && 
-                (
-                    this.PaymentMethod == input.PaymentMethod ||
-                    (this.PaymentMethod != null &&
-                    this.PaymentMethod.Equals(input.PaymentMethod))
                 ) && 
                 (
                     this.SecureKey == input.SecureKey ||
@@ -236,12 +236,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Company.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.PaymentGateway != null)
+                    hashCode = hashCode * 59 + this.PaymentGateway.GetHashCode();
                 if (this.PaymentGatewayApiKey != null)
                     hashCode = hashCode * 59 + this.PaymentGatewayApiKey.GetHashCode();
                 if (this.PaymentGatewaySecurityKey != null)
                     hashCode = hashCode * 59 + this.PaymentGatewaySecurityKey.GetHashCode();
-                if (this.PaymentMethod != null)
-                    hashCode = hashCode * 59 + this.PaymentMethod.GetHashCode();
                 if (this.SecureKey != null)
                     hashCode = hashCode * 59 + this.SecureKey.GetHashCode();
                 return hashCode;

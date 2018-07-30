@@ -116,8 +116,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request">request</param>
-        /// <returns>SubscriptionCreateResult</returns>
-        SubscriptionCreateResult StartSubscriptionUsingPOST (StartSubscriptionRequest request);
+        /// <returns>StartSubscriptionResult</returns>
+        StartSubscriptionResult StartSubscriptionUsingPOST (StartSubscriptionRequest request);
 
         /// <summary>
         /// startSubscription
@@ -127,8 +127,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request">request</param>
-        /// <returns>ApiResponse of SubscriptionCreateResult</returns>
-        ApiResponse<SubscriptionCreateResult> StartSubscriptionUsingPOSTWithHttpInfo (StartSubscriptionRequest request);
+        /// <returns>ApiResponse of StartSubscriptionResult</returns>
+        ApiResponse<StartSubscriptionResult> StartSubscriptionUsingPOSTWithHttpInfo (StartSubscriptionRequest request);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -223,8 +223,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request">request</param>
-        /// <returns>Task of SubscriptionCreateResult</returns>
-        System.Threading.Tasks.Task<SubscriptionCreateResult> StartSubscriptionUsingPOSTAsync (StartSubscriptionRequest request);
+        /// <returns>Task of StartSubscriptionResult</returns>
+        System.Threading.Tasks.Task<StartSubscriptionResult> StartSubscriptionUsingPOSTAsync (StartSubscriptionRequest request);
 
         /// <summary>
         /// startSubscription
@@ -234,8 +234,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request">request</param>
-        /// <returns>Task of ApiResponse (SubscriptionCreateResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscriptionCreateResult>> StartSubscriptionUsingPOSTAsyncWithHttpInfo (StartSubscriptionRequest request);
+        /// <returns>Task of ApiResponse (StartSubscriptionResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<StartSubscriptionResult>> StartSubscriptionUsingPOSTAsyncWithHttpInfo (StartSubscriptionRequest request);
         #endregion Asynchronous Operations
     }
 
@@ -929,10 +929,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request">request</param>
-        /// <returns>SubscriptionCreateResult</returns>
-        public SubscriptionCreateResult StartSubscriptionUsingPOST (StartSubscriptionRequest request)
+        /// <returns>StartSubscriptionResult</returns>
+        public StartSubscriptionResult StartSubscriptionUsingPOST (StartSubscriptionRequest request)
         {
-             ApiResponse<SubscriptionCreateResult> localVarResponse = StartSubscriptionUsingPOSTWithHttpInfo(request);
+             ApiResponse<StartSubscriptionResult> localVarResponse = StartSubscriptionUsingPOSTWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -941,8 +941,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request">request</param>
-        /// <returns>ApiResponse of SubscriptionCreateResult</returns>
-        public ApiResponse< SubscriptionCreateResult > StartSubscriptionUsingPOSTWithHttpInfo (StartSubscriptionRequest request)
+        /// <returns>ApiResponse of StartSubscriptionResult</returns>
+        public ApiResponse< StartSubscriptionResult > StartSubscriptionUsingPOSTWithHttpInfo (StartSubscriptionRequest request)
         {
             // verify the required parameter 'request' is set
             if (request == null)
@@ -998,9 +998,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SubscriptionCreateResult>(localVarStatusCode,
+            return new ApiResponse<StartSubscriptionResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubscriptionCreateResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubscriptionCreateResult)));
+                (StartSubscriptionResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(StartSubscriptionResult)));
         }
 
         /// <summary>
@@ -1008,10 +1008,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request">request</param>
-        /// <returns>Task of SubscriptionCreateResult</returns>
-        public async System.Threading.Tasks.Task<SubscriptionCreateResult> StartSubscriptionUsingPOSTAsync (StartSubscriptionRequest request)
+        /// <returns>Task of StartSubscriptionResult</returns>
+        public async System.Threading.Tasks.Task<StartSubscriptionResult> StartSubscriptionUsingPOSTAsync (StartSubscriptionRequest request)
         {
-             ApiResponse<SubscriptionCreateResult> localVarResponse = await StartSubscriptionUsingPOSTAsyncWithHttpInfo(request);
+             ApiResponse<StartSubscriptionResult> localVarResponse = await StartSubscriptionUsingPOSTAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -1021,8 +1021,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request">request</param>
-        /// <returns>Task of ApiResponse (SubscriptionCreateResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SubscriptionCreateResult>> StartSubscriptionUsingPOSTAsyncWithHttpInfo (StartSubscriptionRequest request)
+        /// <returns>Task of ApiResponse (StartSubscriptionResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<StartSubscriptionResult>> StartSubscriptionUsingPOSTAsyncWithHttpInfo (StartSubscriptionRequest request)
         {
             // verify the required parameter 'request' is set
             if (request == null)
@@ -1078,9 +1078,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SubscriptionCreateResult>(localVarStatusCode,
+            return new ApiResponse<StartSubscriptionResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubscriptionCreateResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubscriptionCreateResult)));
+                (StartSubscriptionResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(StartSubscriptionResult)));
         }
 
     }

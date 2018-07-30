@@ -269,7 +269,7 @@ This endpoint does not need any parameter.
 
 <a name="getuserusingget"></a>
 # **GetUserUsingGET**
-> User GetUserUsingGET (string login)
+> UserDTO GetUserUsingGET (string login)
 
 getUser
 
@@ -298,7 +298,7 @@ namespace Example
             try
             {
                 // getUser
-                User result = apiInstance.GetUserUsingGET(login);
+                UserDTO result = apiInstance.GetUserUsingGET(login);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+[**UserDTO**](UserDTO.md)
 
 ### Authorization
 

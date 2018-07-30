@@ -3,25 +3,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address** | **string** |  | [optional] 
-**City** | **string** |  | [optional] 
-**Country** | **string** |  | [optional] 
+**BillingAddress** | [**Address**](Address.md) |  | [optional] 
+**CompanyId** | [**Company**](Company.md) |  | [optional] 
+**CreateDate** | **DateTime?** |  | [optional] 
 **Email** | **string** |  | [optional] 
-**GsmNumber** | **string** |  | [optional] 
-**IdentityNumber** | **string** |  | [optional] 
-**Ip** | **string** |  | [optional] 
-**LastLoginDate** | **string** |  | [optional] 
+**Id** | **long?** |  | [optional] 
+**IdentificationNo** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**RegistrationDate** | **string** |  | [optional] 
+**PhoneNumber** | **string** |  | [optional] 
 **SecureId** | **string** |  | [optional] 
-**ShippingAddress** | **string** |  | [optional] 
-**ShippingCity** | **string** |  | [optional] 
-**ShippingCountry** | **string** |  | [optional] 
-**ShippingName** | **string** |  | [optional] 
-**ShippingZipCode** | **string** |  | [optional] 
+**ShippingAddress** | [**Address**](Address.md) |  | [optional] 
 **Surname** | **string** |  | [optional] 
-**UseBillingAddressForShipping** | **bool?** |  | [optional] 
-**ZipCode** | **string** |  | [optional] 
+**TaxNumber** | **string** |  | [optional] 
+**WorksFor** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
