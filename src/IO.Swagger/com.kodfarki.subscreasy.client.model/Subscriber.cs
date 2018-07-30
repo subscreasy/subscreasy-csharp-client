@@ -34,7 +34,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// Initializes a new instance of the <see cref="Subscriber" /> class.
         /// </summary>
         /// <param name="BillingAddress">BillingAddress.</param>
-        /// <param name="CompanyId">CompanyId.</param>
+        /// <param name="Company">Company.</param>
         /// <param name="CreateDate">CreateDate.</param>
         /// <param name="Email">Email.</param>
         /// <param name="Id">Id.</param>
@@ -46,10 +46,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Surname">Surname.</param>
         /// <param name="TaxNumber">TaxNumber.</param>
         /// <param name="WorksFor">WorksFor.</param>
-        public Subscriber(Address BillingAddress = default(Address), Company CompanyId = default(Company), DateTime? CreateDate = default(DateTime?), string Email = default(string), long? Id = default(long?), string IdentificationNo = default(string), string Name = default(string), string PhoneNumber = default(string), string SecureId = default(string), Address ShippingAddress = default(Address), string Surname = default(string), string TaxNumber = default(string), string WorksFor = default(string))
+        public Subscriber(Address BillingAddress = default(Address), Company Company = default(Company), DateTime? CreateDate = default(DateTime?), string Email = default(string), long? Id = default(long?), string IdentificationNo = default(string), string Name = default(string), string PhoneNumber = default(string), string SecureId = default(string), Address ShippingAddress = default(Address), string Surname = default(string), string TaxNumber = default(string), string WorksFor = default(string))
         {
             this.BillingAddress = BillingAddress;
-            this.CompanyId = CompanyId;
+            this.Company = Company;
             this.CreateDate = CreateDate;
             this.Email = Email;
             this.Id = Id;
@@ -70,10 +70,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public Address BillingAddress { get; set; }
 
         /// <summary>
-        /// Gets or Sets CompanyId
+        /// Gets or Sets Company
         /// </summary>
-        [DataMember(Name="companyId", EmitDefaultValue=false)]
-        public Company CompanyId { get; set; }
+        [DataMember(Name="company", EmitDefaultValue=false)]
+        public Company Company { get; set; }
 
         /// <summary>
         /// Gets or Sets CreateDate
@@ -150,7 +150,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             var sb = new StringBuilder();
             sb.Append("class Subscriber {\n");
             sb.Append("  BillingAddress: ").Append(BillingAddress).Append("\n");
-            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
+            sb.Append("  Company: ").Append(Company).Append("\n");
             sb.Append("  CreateDate: ").Append(CreateDate).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
@@ -202,9 +202,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.BillingAddress.Equals(input.BillingAddress))
                 ) && 
                 (
-                    this.CompanyId == input.CompanyId ||
-                    (this.CompanyId != null &&
-                    this.CompanyId.Equals(input.CompanyId))
+                    this.Company == input.Company ||
+                    (this.Company != null &&
+                    this.Company.Equals(input.Company))
                 ) && 
                 (
                     this.CreateDate == input.CreateDate ||
@@ -274,8 +274,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                 int hashCode = 41;
                 if (this.BillingAddress != null)
                     hashCode = hashCode * 59 + this.BillingAddress.GetHashCode();
-                if (this.CompanyId != null)
-                    hashCode = hashCode * 59 + this.CompanyId.GetHashCode();
+                if (this.Company != null)
+                    hashCode = hashCode * 59 + this.Company.GetHashCode();
                 if (this.CreateDate != null)
                     hashCode = hashCode * 59 + this.CreateDate.GetHashCode();
                 if (this.Email != null)

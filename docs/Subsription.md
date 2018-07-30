@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Id** | **long?** |  | [optional] 
 **NextChargingDate** | **DateTime?** |  | [optional] 
 **Offer** | [**Offer**](Offer.md) |  | 
+**PaymentMethod** | **string** |  | [optional] 
 **Services** | [**List&lt;ServiceInstance&gt;**](ServiceInstance.md) |  | [optional] 
 **StartDate** | **DateTime?** |  | [optional] 
 **Status** | **string** |  | [optional] 

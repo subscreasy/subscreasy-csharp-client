@@ -31,6 +31,31 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
     public partial class Subsription :  IEquatable<Subsription>, IValidatableObject
     {
         /// <summary>
+        /// Defines PaymentMethod
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PaymentMethodEnum
+        {
+            
+            /// <summary>
+            /// Enum OFFLINE for value: OFFLINE
+            /// </summary>
+            [EnumMember(Value = "OFFLINE")]
+            OFFLINE = 1,
+            
+            /// <summary>
+            /// Enum CC for value: CC
+            /// </summary>
+            [EnumMember(Value = "CC")]
+            CC = 2
+        }
+
+        /// <summary>
+        /// Gets or Sets PaymentMethod
+        /// </summary>
+        [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
+        public PaymentMethodEnum? PaymentMethod { get; set; }
+        /// <summary>
         /// Defines Status
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -89,12 +114,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Id">Id.</param>
         /// <param name="NextChargingDate">NextChargingDate.</param>
         /// <param name="Offer">Offer (required).</param>
+        /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="Services">Services.</param>
         /// <param name="StartDate">StartDate.</param>
         /// <param name="Status">Status.</param>
         /// <param name="Subscriber">Subscriber.</param>
         /// <param name="SubscriberSecureId">SubscriberSecureId.</param>
-        public Subsription(Coupon AppliedCoupon = default(Coupon), DateTime? CancelDate = default(DateTime?), SavedCard Card = default(SavedCard), Company Company = default(Company), DateTime? EndDate = default(DateTime?), long? Id = default(long?), DateTime? NextChargingDate = default(DateTime?), Offer Offer = default(Offer), List<ServiceInstance> Services = default(List<ServiceInstance>), DateTime? StartDate = default(DateTime?), StatusEnum? Status = default(StatusEnum?), Subscriber Subscriber = default(Subscriber), string SubscriberSecureId = default(string))
+        public Subsription(Coupon AppliedCoupon = default(Coupon), DateTime? CancelDate = default(DateTime?), SavedCard Card = default(SavedCard), Company Company = default(Company), DateTime? EndDate = default(DateTime?), long? Id = default(long?), DateTime? NextChargingDate = default(DateTime?), Offer Offer = default(Offer), PaymentMethodEnum? PaymentMethod = default(PaymentMethodEnum?), List<ServiceInstance> Services = default(List<ServiceInstance>), DateTime? StartDate = default(DateTime?), StatusEnum? Status = default(StatusEnum?), Subscriber Subscriber = default(Subscriber), string SubscriberSecureId = default(string))
         {
             // to ensure "Company" is required (not null)
             if (Company == null)
@@ -120,6 +146,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.EndDate = EndDate;
             this.Id = Id;
             this.NextChargingDate = NextChargingDate;
+            this.PaymentMethod = PaymentMethod;
             this.Services = Services;
             this.StartDate = StartDate;
             this.Status = Status;
@@ -175,6 +202,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         [DataMember(Name="offer", EmitDefaultValue=false)]
         public Offer Offer { get; set; }
 
+
         /// <summary>
         /// Gets or Sets Services
         /// </summary>
@@ -216,6 +244,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  NextChargingDate: ").Append(NextChargingDate).Append("\n");
             sb.Append("  Offer: ").Append(Offer).Append("\n");
+            sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  Services: ").Append(Services).Append("\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -296,6 +325,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Offer.Equals(input.Offer))
                 ) && 
                 (
+                    this.PaymentMethod == input.PaymentMethod ||
+                    (this.PaymentMethod != null &&
+                    this.PaymentMethod.Equals(input.PaymentMethod))
+                ) && 
+                (
                     this.Services == input.Services ||
                     this.Services != null &&
                     this.Services.SequenceEqual(input.Services)
@@ -347,6 +381,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.NextChargingDate.GetHashCode();
                 if (this.Offer != null)
                     hashCode = hashCode * 59 + this.Offer.GetHashCode();
+                if (this.PaymentMethod != null)
+                    hashCode = hashCode * 59 + this.PaymentMethod.GetHashCode();
                 if (this.Services != null)
                     hashCode = hashCode * 59 + this.Services.GetHashCode();
                 if (this.StartDate != null)

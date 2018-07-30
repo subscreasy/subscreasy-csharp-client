@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BillingAddress** | [**Address**](Address.md) |  | [optional] 
-**CompanyId** | [**Company**](Company.md) |  | [optional] 
+**Company** | [**Company**](Company.md) |  | [optional] 
 **CreateDate** | **DateTime?** |  | [optional] 
 **Email** | **string** |  | [optional] 
 **Id** | **long?** |  | [optional] 

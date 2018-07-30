@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Id** | **long?** |  | [optional] 
 **InvoiceId** | **long?** |  | [optional] 
 **JobId** | **long?** |  | [optional] 
+**ParentId** | **long?** |  | [optional] 
 **PaymentGateway** | **string** |  | [optional] 
 **PaymentId** | **string** |  | [optional] 
 **Price** | **decimal?** |  | [optional] 

@@ -148,6 +148,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Id">Id.</param>
         /// <param name="InvoiceId">InvoiceId.</param>
         /// <param name="JobId">JobId.</param>
+        /// <param name="ParentId">ParentId.</param>
         /// <param name="PaymentGateway">PaymentGateway.</param>
         /// <param name="PaymentId">PaymentId.</param>
         /// <param name="Price">Price.</param>
@@ -157,7 +158,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="SubscriberSecureId">SubscriberSecureId.</param>
         /// <param name="SubscriptionId">SubscriptionId.</param>
         /// <param name="TransactionId">TransactionId.</param>
-        public ChargingLog(long? AppliedCoupon = default(long?), string AuthCode = default(string), long? CompanyId = default(long?), DateTime? CreateDate = default(DateTime?), string Currency = default(string), string ErrorCode = default(string), string ErrorText = default(string), long? Id = default(long?), long? InvoiceId = default(long?), long? JobId = default(long?), PaymentGatewayEnum? PaymentGateway = default(PaymentGatewayEnum?), string PaymentId = default(string), decimal? Price = default(decimal?), ReasonEnum? Reason = default(ReasonEnum?), long? ServiceInstanceId = default(long?), StatusEnum? Status = default(StatusEnum?), string SubscriberSecureId = default(string), long? SubscriptionId = default(long?), string TransactionId = default(string))
+        public ChargingLog(long? AppliedCoupon = default(long?), string AuthCode = default(string), long? CompanyId = default(long?), DateTime? CreateDate = default(DateTime?), string Currency = default(string), string ErrorCode = default(string), string ErrorText = default(string), long? Id = default(long?), long? InvoiceId = default(long?), long? JobId = default(long?), long? ParentId = default(long?), PaymentGatewayEnum? PaymentGateway = default(PaymentGatewayEnum?), string PaymentId = default(string), decimal? Price = default(decimal?), ReasonEnum? Reason = default(ReasonEnum?), long? ServiceInstanceId = default(long?), StatusEnum? Status = default(StatusEnum?), string SubscriberSecureId = default(string), long? SubscriptionId = default(long?), string TransactionId = default(string))
         {
             this.AppliedCoupon = AppliedCoupon;
             this.AuthCode = AuthCode;
@@ -169,6 +170,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.Id = Id;
             this.InvoiceId = InvoiceId;
             this.JobId = JobId;
+            this.ParentId = ParentId;
             this.PaymentGateway = PaymentGateway;
             this.PaymentId = PaymentId;
             this.Price = Price;
@@ -240,6 +242,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         [DataMember(Name="jobId", EmitDefaultValue=false)]
         public long? JobId { get; set; }
 
+        /// <summary>
+        /// Gets or Sets ParentId
+        /// </summary>
+        [DataMember(Name="parentId", EmitDefaultValue=false)]
+        public long? ParentId { get; set; }
+
 
         /// <summary>
         /// Gets or Sets PaymentId
@@ -297,6 +305,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  InvoiceId: ").Append(InvoiceId).Append("\n");
             sb.Append("  JobId: ").Append(JobId).Append("\n");
+            sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  PaymentGateway: ").Append(PaymentGateway).Append("\n");
             sb.Append("  PaymentId: ").Append(PaymentId).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
@@ -391,6 +400,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.JobId.Equals(input.JobId))
                 ) && 
                 (
+                    this.ParentId == input.ParentId ||
+                    (this.ParentId != null &&
+                    this.ParentId.Equals(input.ParentId))
+                ) && 
+                (
                     this.PaymentGateway == input.PaymentGateway ||
                     (this.PaymentGateway != null &&
                     this.PaymentGateway.Equals(input.PaymentGateway))
@@ -466,6 +480,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.InvoiceId.GetHashCode();
                 if (this.JobId != null)
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ParentId != null)
+                    hashCode = hashCode * 59 + this.ParentId.GetHashCode();
                 if (this.PaymentGateway != null)
                     hashCode = hashCode * 59 + this.PaymentGateway.GetHashCode();
                 if (this.PaymentId != null)
