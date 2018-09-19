@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **AuthenticationKey** | **string** |  | [optional] 
 **Company** | [**Company**](Company.md) |  | [optional] 
 **Id** | **long?** |  | [optional] 
+**PaymentUpdated** | **bool?** |  | [optional] 
 **ServerUrl** | **string** |  | [optional] 
 **SubscriberCreated** | **bool?** |  | [optional] 
 **SubscriberUpdated** | **bool?** |  | [optional] 

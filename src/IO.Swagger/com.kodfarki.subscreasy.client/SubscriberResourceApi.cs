@@ -73,8 +73,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>List&lt;Subscriber&gt;</returns>
-        List<Subscriber> GetAllSubscribersUsingGET ();
+        List<Subscriber> GetAllSubscribersUsingGET (int? page = null, int? size = null, List<string> sort = null);
 
         /// <summary>
         /// getAllSubscribers
@@ -83,8 +86,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>ApiResponse of List&lt;Subscriber&gt;</returns>
-        ApiResponse<List<Subscriber>> GetAllSubscribersUsingGETWithHttpInfo ();
+        ApiResponse<List<Subscriber>> GetAllSubscribersUsingGETWithHttpInfo (int? page = null, int? size = null, List<string> sort = null);
         /// <summary>
         /// getSubscriberByEmail
         /// </summary>
@@ -241,8 +247,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>Task of List&lt;Subscriber&gt;</returns>
-        System.Threading.Tasks.Task<List<Subscriber>> GetAllSubscribersUsingGETAsync ();
+        System.Threading.Tasks.Task<List<Subscriber>> GetAllSubscribersUsingGETAsync (int? page = null, int? size = null, List<string> sort = null);
 
         /// <summary>
         /// getAllSubscribers
@@ -251,8 +260,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Subscriber&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Subscriber>>> GetAllSubscribersUsingGETAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<Subscriber>>> GetAllSubscribersUsingGETAsyncWithHttpInfo (int? page = null, int? size = null, List<string> sort = null);
         /// <summary>
         /// getSubscriberByEmail
         /// </summary>
@@ -762,10 +774,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// getAllSubscribers 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>List&lt;Subscriber&gt;</returns>
-        public List<Subscriber> GetAllSubscribersUsingGET ()
+        public List<Subscriber> GetAllSubscribersUsingGET (int? page = null, int? size = null, List<string> sort = null)
         {
-             ApiResponse<List<Subscriber>> localVarResponse = GetAllSubscribersUsingGETWithHttpInfo();
+             ApiResponse<List<Subscriber>> localVarResponse = GetAllSubscribersUsingGETWithHttpInfo(page, size, sort);
              return localVarResponse.Data;
         }
 
@@ -773,8 +788,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// getAllSubscribers 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>ApiResponse of List&lt;Subscriber&gt;</returns>
-        public ApiResponse< List<Subscriber> > GetAllSubscribersUsingGETWithHttpInfo ()
+        public ApiResponse< List<Subscriber> > GetAllSubscribersUsingGETWithHttpInfo (int? page = null, int? size = null, List<string> sort = null)
         {
 
             var localVarPath = "/api/subscribers";
@@ -798,6 +816,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
+            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
 
             // authentication (apiKey) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -827,10 +848,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// getAllSubscribers 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>Task of List&lt;Subscriber&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Subscriber>> GetAllSubscribersUsingGETAsync ()
+        public async System.Threading.Tasks.Task<List<Subscriber>> GetAllSubscribersUsingGETAsync (int? page = null, int? size = null, List<string> sort = null)
         {
-             ApiResponse<List<Subscriber>> localVarResponse = await GetAllSubscribersUsingGETAsyncWithHttpInfo();
+             ApiResponse<List<Subscriber>> localVarResponse = await GetAllSubscribersUsingGETAsyncWithHttpInfo(page, size, sort);
              return localVarResponse.Data;
 
         }
@@ -839,8 +863,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// getAllSubscribers 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Subscriber&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<Subscriber>>> GetAllSubscribersUsingGETAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<Subscriber>>> GetAllSubscribersUsingGETAsyncWithHttpInfo (int? page = null, int? size = null, List<string> sort = null)
         {
 
             var localVarPath = "/api/subscribers";
@@ -864,6 +891,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
+            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
 
             // authentication (apiKey) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))

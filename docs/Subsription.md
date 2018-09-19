@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Company** | [**Company**](Company.md) |  | 
 **EndDate** | **DateTime?** |  | [optional] 
 **Id** | **long?** |  | [optional] 
-**NextChargingDate** | **DateTime?** |  | [optional] 
+**LastEvent** | **string** |  | [optional] 
 **Offer** | [**Offer**](Offer.md) |  | 
 **PaymentMethod** | **string** |  | [optional] 
 **Services** | [**List&lt;ServiceInstance&gt;**](ServiceInstance.md) |  | [optional] 
@@ -17,6 +17,9 @@ Name | Type | Description | Notes
 **Status** | **string** |  | [optional] 
 **Subscriber** | [**Subscriber**](Subscriber.md) |  | [optional] 
 **SubscriberSecureId** | **string** |  | [optional] 
+**TermEndDate** | **DateTime?** |  | [optional] 
+**TermStartDate** | **DateTime?** |  | [optional] 
+**TrialEndDate** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

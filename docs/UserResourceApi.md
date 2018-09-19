@@ -4,13 +4,80 @@ All URIs are relative to *https://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CreateCompanyUserUsingPOST**](UserResourceApi.md#createcompanyuserusingpost) | **POST** /api/users/company | createCompanyUser
 [**CreateUserUsingPOST**](UserResourceApi.md#createuserusingpost) | **POST** /api/users | createUser
 [**DeleteUserUsingDELETE**](UserResourceApi.md#deleteuserusingdelete) | **DELETE** /api/users/{login} | deleteUser
+[**GetAllUsersByAuthenticatedCompanyUsingGET**](UserResourceApi.md#getallusersbyauthenticatedcompanyusingget) | **GET** /api/users/company | getAllUsersByAuthenticatedCompany
+[**GetAllUsersByCompanyIdUsingGET**](UserResourceApi.md#getallusersbycompanyidusingget) | **GET** /api/users/company/{companyId} | getAllUsersByCompanyId
 [**GetAllUsersUsingGET**](UserResourceApi.md#getallusersusingget) | **GET** /api/users | getAllUsers
 [**GetAuthoritiesUsingGET**](UserResourceApi.md#getauthoritiesusingget) | **GET** /api/users/authorities | getAuthorities
 [**GetUserUsingGET**](UserResourceApi.md#getuserusingget) | **GET** /api/users/{login} | getUser
 [**UpdateUserUsingPUT**](UserResourceApi.md#updateuserusingput) | **PUT** /api/users | updateUser
 
+
+<a name="createcompanyuserusingpost"></a>
+# **CreateCompanyUserUsingPOST**
+> ResponseEntity CreateCompanyUserUsingPOST (ManagedUserVM managedUserVM)
+
+createCompanyUser
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class CreateCompanyUserUsingPOSTExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new UserResourceApi();
+            var managedUserVM = new ManagedUserVM(); // ManagedUserVM | managedUserVM
+
+            try
+            {
+                // createCompanyUser
+                ResponseEntity result = apiInstance.CreateCompanyUserUsingPOST(managedUserVM);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UserResourceApi.CreateCompanyUserUsingPOST: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **managedUserVM** | [**ManagedUserVM**](ManagedUserVM.md)| managedUserVM | 
+
+### Return type
+
+[**ResponseEntity**](ResponseEntity.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="createuserusingpost"></a>
 # **CreateUserUsingPOST**
@@ -127,6 +194,130 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getallusersbyauthenticatedcompanyusingget"></a>
+# **GetAllUsersByAuthenticatedCompanyUsingGET**
+> List<User> GetAllUsersByAuthenticatedCompanyUsingGET ()
+
+getAllUsersByAuthenticatedCompany
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class GetAllUsersByAuthenticatedCompanyUsingGETExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new UserResourceApi();
+
+            try
+            {
+                // getAllUsersByAuthenticatedCompany
+                List&lt;User&gt; result = apiInstance.GetAllUsersByAuthenticatedCompanyUsingGET();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UserResourceApi.GetAllUsersByAuthenticatedCompanyUsingGET: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List<User>**](User.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getallusersbycompanyidusingget"></a>
+# **GetAllUsersByCompanyIdUsingGET**
+> List<User> GetAllUsersByCompanyIdUsingGET (long? companyId)
+
+getAllUsersByCompanyId
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class GetAllUsersByCompanyIdUsingGETExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new UserResourceApi();
+            var companyId = 789;  // long? | companyId
+
+            try
+            {
+                // getAllUsersByCompanyId
+                List&lt;User&gt; result = apiInstance.GetAllUsersByCompanyIdUsingGET(companyId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UserResourceApi.GetAllUsersByCompanyIdUsingGET: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **companyId** | **long?**| companyId | 
+
+### Return type
+
+[**List<User>**](User.md)
 
 ### Authorization
 

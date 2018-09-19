@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DeleteChargingLogUsingDELETE**](ChargingLogResourceApi.md#deletecharginglogusingdelete) | **DELETE** /api/charging-logs/{id} | deleteChargingLog
 [**GetAllChargingLogsUsingGET**](ChargingLogResourceApi.md#getallcharginglogsusingget) | **GET** /api/charging-logs | getAllChargingLogs
 [**GetChargingLogUsingGET**](ChargingLogResourceApi.md#getcharginglogusingget) | **GET** /api/charging-logs/{id} | getChargingLog
+[**GetUnpaidChargingLogsUsingGET**](ChargingLogResourceApi.md#getunpaidcharginglogsusingget) | **GET** /api/charging-logs/unpaid | getUnpaidChargingLogs
 [**RefundUsingPOST**](ChargingLogResourceApi.md#refundusingpost) | **POST** /api/charging-logs/refund/{chargingLogId} | refund
 [**UpdateChargingLogUsingPUT**](ChargingLogResourceApi.md#updatecharginglogusingput) | **PUT** /api/charging-logs | updateChargingLog
 
@@ -259,6 +260,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ChargingLog**](ChargingLog.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getunpaidcharginglogsusingget"></a>
+# **GetUnpaidChargingLogsUsingGET**
+> List<ChargingLog> GetUnpaidChargingLogsUsingGET (int? page = null, int? size = null, List<string> sort = null)
+
+getUnpaidChargingLogs
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class GetUnpaidChargingLogsUsingGETExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ChargingLogResourceApi();
+            var page = 56;  // int? | Page number of the requested page (optional) 
+            var size = 56;  // int? | Size of a page (optional) 
+            var sort = new List<string>(); // List<string> | Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional) 
+
+            try
+            {
+                // getUnpaidChargingLogs
+                List&lt;ChargingLog&gt; result = apiInstance.GetUnpaidChargingLogsUsingGET(page, size, sort);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ChargingLogResourceApi.GetUnpaidChargingLogsUsingGET: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int?**| Page number of the requested page | [optional] 
+ **size** | **int?**| Size of a page | [optional] 
+ **sort** | [**List&lt;string&gt;**](string.md)| Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. | [optional] 
+
+### Return type
+
+[**List<ChargingLog>**](ChargingLog.md)
 
 ### Authorization
 

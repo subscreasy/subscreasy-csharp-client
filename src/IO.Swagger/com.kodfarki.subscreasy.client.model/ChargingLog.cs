@@ -53,7 +53,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             /// Enum PAYU for value: PAYU
             /// </summary>
             [EnumMember(Value = "PAYU")]
-            PAYU = 3
+            PAYU = 3,
+            
+            /// <summary>
+            /// Enum PAYTR for value: PAYTR
+            /// </summary>
+            [EnumMember(Value = "PAYTR")]
+            PAYTR = 4
         }
 
         /// <summary>
@@ -90,7 +96,19 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             /// Enum REFUND for value: REFUND
             /// </summary>
             [EnumMember(Value = "REFUND")]
-            REFUND = 4
+            REFUND = 4,
+            
+            /// <summary>
+            /// Enum SAVECARD for value: SAVE_CARD
+            /// </summary>
+            [EnumMember(Value = "SAVE_CARD")]
+            SAVECARD = 5,
+            
+            /// <summary>
+            /// Enum TRIALPERIOD for value: TRIAL_PERIOD
+            /// </summary>
+            [EnumMember(Value = "TRIAL_PERIOD")]
+            TRIALPERIOD = 6
         }
 
         /// <summary>
@@ -112,10 +130,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             NOTPAID = 1,
             
             /// <summary>
-            /// Enum SUCCESS for value: SUCCESS
+            /// Enum PAID for value: PAID
             /// </summary>
-            [EnumMember(Value = "SUCCESS")]
-            SUCCESS = 2,
+            [EnumMember(Value = "PAID")]
+            PAID = 2,
             
             /// <summary>
             /// Enum FAIL for value: FAIL
@@ -148,17 +166,20 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Id">Id.</param>
         /// <param name="InvoiceId">InvoiceId.</param>
         /// <param name="JobId">JobId.</param>
+        /// <param name="OfferId">OfferId.</param>
         /// <param name="ParentId">ParentId.</param>
         /// <param name="PaymentGateway">PaymentGateway.</param>
         /// <param name="PaymentId">PaymentId.</param>
         /// <param name="Price">Price.</param>
         /// <param name="Reason">Reason.</param>
+        /// <param name="SavedCard">SavedCard.</param>
+        /// <param name="SavedCardId">SavedCardId.</param>
         /// <param name="ServiceInstanceId">ServiceInstanceId.</param>
         /// <param name="Status">Status.</param>
         /// <param name="SubscriberSecureId">SubscriberSecureId.</param>
         /// <param name="SubscriptionId">SubscriptionId.</param>
         /// <param name="TransactionId">TransactionId.</param>
-        public ChargingLog(long? AppliedCoupon = default(long?), string AuthCode = default(string), long? CompanyId = default(long?), DateTime? CreateDate = default(DateTime?), string Currency = default(string), string ErrorCode = default(string), string ErrorText = default(string), long? Id = default(long?), long? InvoiceId = default(long?), long? JobId = default(long?), long? ParentId = default(long?), PaymentGatewayEnum? PaymentGateway = default(PaymentGatewayEnum?), string PaymentId = default(string), decimal? Price = default(decimal?), ReasonEnum? Reason = default(ReasonEnum?), long? ServiceInstanceId = default(long?), StatusEnum? Status = default(StatusEnum?), string SubscriberSecureId = default(string), long? SubscriptionId = default(long?), string TransactionId = default(string))
+        public ChargingLog(long? AppliedCoupon = default(long?), string AuthCode = default(string), long? CompanyId = default(long?), DateTime? CreateDate = default(DateTime?), string Currency = default(string), string ErrorCode = default(string), string ErrorText = default(string), long? Id = default(long?), long? InvoiceId = default(long?), long? JobId = default(long?), long? OfferId = default(long?), long? ParentId = default(long?), PaymentGatewayEnum? PaymentGateway = default(PaymentGatewayEnum?), string PaymentId = default(string), decimal? Price = default(decimal?), ReasonEnum? Reason = default(ReasonEnum?), SavedCard SavedCard = default(SavedCard), long? SavedCardId = default(long?), long? ServiceInstanceId = default(long?), StatusEnum? Status = default(StatusEnum?), string SubscriberSecureId = default(string), long? SubscriptionId = default(long?), string TransactionId = default(string))
         {
             this.AppliedCoupon = AppliedCoupon;
             this.AuthCode = AuthCode;
@@ -170,11 +191,14 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.Id = Id;
             this.InvoiceId = InvoiceId;
             this.JobId = JobId;
+            this.OfferId = OfferId;
             this.ParentId = ParentId;
             this.PaymentGateway = PaymentGateway;
             this.PaymentId = PaymentId;
             this.Price = Price;
             this.Reason = Reason;
+            this.SavedCard = SavedCard;
+            this.SavedCardId = SavedCardId;
             this.ServiceInstanceId = ServiceInstanceId;
             this.Status = Status;
             this.SubscriberSecureId = SubscriberSecureId;
@@ -243,6 +267,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public long? JobId { get; set; }
 
         /// <summary>
+        /// Gets or Sets OfferId
+        /// </summary>
+        [DataMember(Name="offerId", EmitDefaultValue=false)]
+        public long? OfferId { get; set; }
+
+        /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
         [DataMember(Name="parentId", EmitDefaultValue=false)]
@@ -261,6 +291,18 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         [DataMember(Name="price", EmitDefaultValue=false)]
         public decimal? Price { get; set; }
 
+
+        /// <summary>
+        /// Gets or Sets SavedCard
+        /// </summary>
+        [DataMember(Name="savedCard", EmitDefaultValue=false)]
+        public SavedCard SavedCard { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SavedCardId
+        /// </summary>
+        [DataMember(Name="savedCardId", EmitDefaultValue=false)]
+        public long? SavedCardId { get; set; }
 
         /// <summary>
         /// Gets or Sets ServiceInstanceId
@@ -305,11 +347,14 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  InvoiceId: ").Append(InvoiceId).Append("\n");
             sb.Append("  JobId: ").Append(JobId).Append("\n");
+            sb.Append("  OfferId: ").Append(OfferId).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  PaymentGateway: ").Append(PaymentGateway).Append("\n");
             sb.Append("  PaymentId: ").Append(PaymentId).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("  Reason: ").Append(Reason).Append("\n");
+            sb.Append("  SavedCard: ").Append(SavedCard).Append("\n");
+            sb.Append("  SavedCardId: ").Append(SavedCardId).Append("\n");
             sb.Append("  ServiceInstanceId: ").Append(ServiceInstanceId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  SubscriberSecureId: ").Append(SubscriberSecureId).Append("\n");
@@ -400,6 +445,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.JobId.Equals(input.JobId))
                 ) && 
                 (
+                    this.OfferId == input.OfferId ||
+                    (this.OfferId != null &&
+                    this.OfferId.Equals(input.OfferId))
+                ) && 
+                (
                     this.ParentId == input.ParentId ||
                     (this.ParentId != null &&
                     this.ParentId.Equals(input.ParentId))
@@ -423,6 +473,16 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Reason == input.Reason ||
                     (this.Reason != null &&
                     this.Reason.Equals(input.Reason))
+                ) && 
+                (
+                    this.SavedCard == input.SavedCard ||
+                    (this.SavedCard != null &&
+                    this.SavedCard.Equals(input.SavedCard))
+                ) && 
+                (
+                    this.SavedCardId == input.SavedCardId ||
+                    (this.SavedCardId != null &&
+                    this.SavedCardId.Equals(input.SavedCardId))
                 ) && 
                 (
                     this.ServiceInstanceId == input.ServiceInstanceId ||
@@ -480,6 +540,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.InvoiceId.GetHashCode();
                 if (this.JobId != null)
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.OfferId != null)
+                    hashCode = hashCode * 59 + this.OfferId.GetHashCode();
                 if (this.ParentId != null)
                     hashCode = hashCode * 59 + this.ParentId.GetHashCode();
                 if (this.PaymentGateway != null)
@@ -490,6 +552,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 if (this.Reason != null)
                     hashCode = hashCode * 59 + this.Reason.GetHashCode();
+                if (this.SavedCard != null)
+                    hashCode = hashCode * 59 + this.SavedCard.GetHashCode();
+                if (this.SavedCardId != null)
+                    hashCode = hashCode * 59 + this.SavedCardId.GetHashCode();
                 if (this.ServiceInstanceId != null)
                     hashCode = hashCode * 59 + this.ServiceInstanceId.GetHashCode();
                 if (this.Status != null)

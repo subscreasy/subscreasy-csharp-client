@@ -21,336 +21,278 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IChargingLogResourceApi : IApiAccessor
+    public interface ISubscriptionResourceApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// createChargingLog
+        /// cancelSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>ChargingLog</returns>
-        ChargingLog CreateChargingLogUsingPOST (ChargingLog chargingLog);
+        /// <param name="cancellation">cancellation</param>
+        /// <returns>Subsription</returns>
+        Subsription CancelSubscriptionUsingPUT (Cancellation cancellation);
 
         /// <summary>
-        /// createChargingLog
+        /// cancelSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>ApiResponse of ChargingLog</returns>
-        ApiResponse<ChargingLog> CreateChargingLogUsingPOSTWithHttpInfo (ChargingLog chargingLog);
+        /// <param name="cancellation">cancellation</param>
+        /// <returns>ApiResponse of Subsription</returns>
+        ApiResponse<Subsription> CancelSubscriptionUsingPUTWithHttpInfo (Cancellation cancellation);
         /// <summary>
-        /// deleteChargingLog
+        /// getActiveSubscriptionsByEmail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">email</param>
+        /// <returns>List&lt;Subsription&gt;</returns>
+        List<Subsription> GetActiveSubscriptionsByEmailUsingGET (string email);
+
+        /// <summary>
+        /// getActiveSubscriptionsByEmail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">email</param>
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        ApiResponse<List<Subsription>> GetActiveSubscriptionsByEmailUsingGETWithHttpInfo (string email);
+        /// <summary>
+        /// getActiveSubscriptions
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>List&lt;Subsription&gt;</returns>
+        List<Subsription> GetActiveSubscriptionsUsingGET (string secureId);
+
+        /// <summary>
+        /// getActiveSubscriptions
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        ApiResponse<List<Subsription>> GetActiveSubscriptionsUsingGETWithHttpInfo (string secureId);
+        /// <summary>
+        /// getAllCompanySubscriptions
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns></returns>
-        void DeleteChargingLogUsingDELETE (long? id);
+        /// <returns>List&lt;Subsription&gt;</returns>
+        List<Subsription> GetAllCompanySubscriptionsUsingGET (string id);
 
         /// <summary>
-        /// deleteChargingLog
+        /// getAllCompanySubscriptions
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteChargingLogUsingDELETEWithHttpInfo (long? id);
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        ApiResponse<List<Subsription>> GetAllCompanySubscriptionsUsingGETWithHttpInfo (string id);
         /// <summary>
-        /// getAllChargingLogs
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>List&lt;ChargingLog&gt;</returns>
-        List<ChargingLog> GetAllChargingLogsUsingGET (int? page = null, int? size = null, List<string> sort = null);
-
-        /// <summary>
-        /// getAllChargingLogs
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>ApiResponse of List&lt;ChargingLog&gt;</returns>
-        ApiResponse<List<ChargingLog>> GetAllChargingLogsUsingGETWithHttpInfo (int? page = null, int? size = null, List<string> sort = null);
-        /// <summary>
-        /// getChargingLog
+        /// getSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>ChargingLog</returns>
-        ChargingLog GetChargingLogUsingGET (long? id);
+        /// <returns>Subsription</returns>
+        Subsription GetSubscriptionUsingGET (long? id);
 
         /// <summary>
-        /// getChargingLog
+        /// getSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>ApiResponse of ChargingLog</returns>
-        ApiResponse<ChargingLog> GetChargingLogUsingGETWithHttpInfo (long? id);
+        /// <returns>ApiResponse of Subsription</returns>
+        ApiResponse<Subsription> GetSubscriptionUsingGETWithHttpInfo (long? id);
         /// <summary>
-        /// getUnpaidChargingLogs
+        /// startSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>List&lt;ChargingLog&gt;</returns>
-        List<ChargingLog> GetUnpaidChargingLogsUsingGET (int? page = null, int? size = null, List<string> sort = null);
+        /// <param name="request">request</param>
+        /// <returns>StartSubscriptionResult</returns>
+        StartSubscriptionResult StartSubscriptionUsingPOST (StartSubscriptionRequest request);
 
         /// <summary>
-        /// getUnpaidChargingLogs
+        /// startSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>ApiResponse of List&lt;ChargingLog&gt;</returns>
-        ApiResponse<List<ChargingLog>> GetUnpaidChargingLogsUsingGETWithHttpInfo (int? page = null, int? size = null, List<string> sort = null);
-        /// <summary>
-        /// refund
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLogId">chargingLogId</param>
-        /// <returns>ChargingLog</returns>
-        ChargingLog RefundUsingPOST (long? chargingLogId);
-
-        /// <summary>
-        /// refund
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLogId">chargingLogId</param>
-        /// <returns>ApiResponse of ChargingLog</returns>
-        ApiResponse<ChargingLog> RefundUsingPOSTWithHttpInfo (long? chargingLogId);
-        /// <summary>
-        /// updateChargingLog
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>ChargingLog</returns>
-        ChargingLog UpdateChargingLogUsingPUT (ChargingLog chargingLog);
-
-        /// <summary>
-        /// updateChargingLog
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>ApiResponse of ChargingLog</returns>
-        ApiResponse<ChargingLog> UpdateChargingLogUsingPUTWithHttpInfo (ChargingLog chargingLog);
+        /// <param name="request">request</param>
+        /// <returns>ApiResponse of StartSubscriptionResult</returns>
+        ApiResponse<StartSubscriptionResult> StartSubscriptionUsingPOSTWithHttpInfo (StartSubscriptionRequest request);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// createChargingLog
+        /// cancelSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>Task of ChargingLog</returns>
-        System.Threading.Tasks.Task<ChargingLog> CreateChargingLogUsingPOSTAsync (ChargingLog chargingLog);
+        /// <param name="cancellation">cancellation</param>
+        /// <returns>Task of Subsription</returns>
+        System.Threading.Tasks.Task<Subsription> CancelSubscriptionUsingPUTAsync (Cancellation cancellation);
 
         /// <summary>
-        /// createChargingLog
+        /// cancelSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>Task of ApiResponse (ChargingLog)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ChargingLog>> CreateChargingLogUsingPOSTAsyncWithHttpInfo (ChargingLog chargingLog);
+        /// <param name="cancellation">cancellation</param>
+        /// <returns>Task of ApiResponse (Subsription)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Subsription>> CancelSubscriptionUsingPUTAsyncWithHttpInfo (Cancellation cancellation);
         /// <summary>
-        /// deleteChargingLog
+        /// getActiveSubscriptionsByEmail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">email</param>
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        System.Threading.Tasks.Task<List<Subsription>> GetActiveSubscriptionsByEmailUsingGETAsync (string email);
+
+        /// <summary>
+        /// getActiveSubscriptionsByEmail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">email</param>
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetActiveSubscriptionsByEmailUsingGETAsyncWithHttpInfo (string email);
+        /// <summary>
+        /// getActiveSubscriptions
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        System.Threading.Tasks.Task<List<Subsription>> GetActiveSubscriptionsUsingGETAsync (string secureId);
+
+        /// <summary>
+        /// getActiveSubscriptions
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetActiveSubscriptionsUsingGETAsyncWithHttpInfo (string secureId);
+        /// <summary>
+        /// getAllCompanySubscriptions
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteChargingLogUsingDELETEAsync (long? id);
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        System.Threading.Tasks.Task<List<Subsription>> GetAllCompanySubscriptionsUsingGETAsync (string id);
 
         /// <summary>
-        /// deleteChargingLog
+        /// getAllCompanySubscriptions
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteChargingLogUsingDELETEAsyncWithHttpInfo (long? id);
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetAllCompanySubscriptionsUsingGETAsyncWithHttpInfo (string id);
         /// <summary>
-        /// getAllChargingLogs
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>Task of List&lt;ChargingLog&gt;</returns>
-        System.Threading.Tasks.Task<List<ChargingLog>> GetAllChargingLogsUsingGETAsync (int? page = null, int? size = null, List<string> sort = null);
-
-        /// <summary>
-        /// getAllChargingLogs
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;ChargingLog&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ChargingLog>>> GetAllChargingLogsUsingGETAsyncWithHttpInfo (int? page = null, int? size = null, List<string> sort = null);
-        /// <summary>
-        /// getChargingLog
+        /// getSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>Task of ChargingLog</returns>
-        System.Threading.Tasks.Task<ChargingLog> GetChargingLogUsingGETAsync (long? id);
+        /// <returns>Task of Subsription</returns>
+        System.Threading.Tasks.Task<Subsription> GetSubscriptionUsingGETAsync (long? id);
 
         /// <summary>
-        /// getChargingLog
+        /// getSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>Task of ApiResponse (ChargingLog)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ChargingLog>> GetChargingLogUsingGETAsyncWithHttpInfo (long? id);
+        /// <returns>Task of ApiResponse (Subsription)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Subsription>> GetSubscriptionUsingGETAsyncWithHttpInfo (long? id);
         /// <summary>
-        /// getUnpaidChargingLogs
+        /// startSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>Task of List&lt;ChargingLog&gt;</returns>
-        System.Threading.Tasks.Task<List<ChargingLog>> GetUnpaidChargingLogsUsingGETAsync (int? page = null, int? size = null, List<string> sort = null);
+        /// <param name="request">request</param>
+        /// <returns>Task of StartSubscriptionResult</returns>
+        System.Threading.Tasks.Task<StartSubscriptionResult> StartSubscriptionUsingPOSTAsync (StartSubscriptionRequest request);
 
         /// <summary>
-        /// getUnpaidChargingLogs
+        /// startSubscription
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;ChargingLog&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ChargingLog>>> GetUnpaidChargingLogsUsingGETAsyncWithHttpInfo (int? page = null, int? size = null, List<string> sort = null);
-        /// <summary>
-        /// refund
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLogId">chargingLogId</param>
-        /// <returns>Task of ChargingLog</returns>
-        System.Threading.Tasks.Task<ChargingLog> RefundUsingPOSTAsync (long? chargingLogId);
-
-        /// <summary>
-        /// refund
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLogId">chargingLogId</param>
-        /// <returns>Task of ApiResponse (ChargingLog)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ChargingLog>> RefundUsingPOSTAsyncWithHttpInfo (long? chargingLogId);
-        /// <summary>
-        /// updateChargingLog
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>Task of ChargingLog</returns>
-        System.Threading.Tasks.Task<ChargingLog> UpdateChargingLogUsingPUTAsync (ChargingLog chargingLog);
-
-        /// <summary>
-        /// updateChargingLog
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>Task of ApiResponse (ChargingLog)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ChargingLog>> UpdateChargingLogUsingPUTAsyncWithHttpInfo (ChargingLog chargingLog);
+        /// <param name="request">request</param>
+        /// <returns>Task of ApiResponse (StartSubscriptionResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<StartSubscriptionResult>> StartSubscriptionUsingPOSTAsyncWithHttpInfo (StartSubscriptionRequest request);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ChargingLogResourceApi : IChargingLogResourceApi
+    public partial class SubscriptionResourceApi : ISubscriptionResourceApi
     {
         private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChargingLogResourceApi"/> class.
+        /// Initializes a new instance of the <see cref="SubscriptionResourceApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ChargingLogResourceApi(String basePath)
+        public SubscriptionResourceApi(String basePath)
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
@@ -358,12 +300,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChargingLogResourceApi"/> class
+        /// Initializes a new instance of the <see cref="SubscriptionResourceApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ChargingLogResourceApi(Configuration configuration = null)
+        public SubscriptionResourceApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -437,30 +379,30 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         }
 
         /// <summary>
-        /// createChargingLog 
+        /// cancelSubscription 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>ChargingLog</returns>
-        public ChargingLog CreateChargingLogUsingPOST (ChargingLog chargingLog)
+        /// <param name="cancellation">cancellation</param>
+        /// <returns>Subsription</returns>
+        public Subsription CancelSubscriptionUsingPUT (Cancellation cancellation)
         {
-             ApiResponse<ChargingLog> localVarResponse = CreateChargingLogUsingPOSTWithHttpInfo(chargingLog);
+             ApiResponse<Subsription> localVarResponse = CancelSubscriptionUsingPUTWithHttpInfo(cancellation);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// createChargingLog 
+        /// cancelSubscription 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>ApiResponse of ChargingLog</returns>
-        public ApiResponse< ChargingLog > CreateChargingLogUsingPOSTWithHttpInfo (ChargingLog chargingLog)
+        /// <param name="cancellation">cancellation</param>
+        /// <returns>ApiResponse of Subsription</returns>
+        public ApiResponse< Subsription > CancelSubscriptionUsingPUTWithHttpInfo (Cancellation cancellation)
         {
-            // verify the required parameter 'chargingLog' is set
-            if (chargingLog == null)
-                throw new ApiException(400, "Missing required parameter 'chargingLog' when calling ChargingLogResourceApi->CreateChargingLogUsingPOST");
+            // verify the required parameter 'cancellation' is set
+            if (cancellation == null)
+                throw new ApiException(400, "Missing required parameter 'cancellation' when calling SubscriptionResourceApi->CancelSubscriptionUsingPUT");
 
-            var localVarPath = "/api/charging-logs";
+            var localVarPath = "/api/subscriptions/cancel";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -482,899 +424,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (chargingLog != null && chargingLog.GetType() != typeof(byte[]))
+            if (cancellation != null && cancellation.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(chargingLog); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(cancellation); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = chargingLog; // byte array
-            }
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateChargingLogUsingPOST", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ChargingLog>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ChargingLog) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChargingLog)));
-        }
-
-        /// <summary>
-        /// createChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>Task of ChargingLog</returns>
-        public async System.Threading.Tasks.Task<ChargingLog> CreateChargingLogUsingPOSTAsync (ChargingLog chargingLog)
-        {
-             ApiResponse<ChargingLog> localVarResponse = await CreateChargingLogUsingPOSTAsyncWithHttpInfo(chargingLog);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// createChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>Task of ApiResponse (ChargingLog)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ChargingLog>> CreateChargingLogUsingPOSTAsyncWithHttpInfo (ChargingLog chargingLog)
-        {
-            // verify the required parameter 'chargingLog' is set
-            if (chargingLog == null)
-                throw new ApiException(400, "Missing required parameter 'chargingLog' when calling ChargingLogResourceApi->CreateChargingLogUsingPOST");
-
-            var localVarPath = "/api/charging-logs";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (chargingLog != null && chargingLog.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(chargingLog); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = chargingLog; // byte array
-            }
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateChargingLogUsingPOST", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ChargingLog>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ChargingLog) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChargingLog)));
-        }
-
-        /// <summary>
-        /// deleteChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns></returns>
-        public void DeleteChargingLogUsingDELETE (long? id)
-        {
-             DeleteChargingLogUsingDELETEWithHttpInfo(id);
-        }
-
-        /// <summary>
-        /// deleteChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteChargingLogUsingDELETEWithHttpInfo (long? id)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ChargingLogResourceApi->DeleteChargingLogUsingDELETE");
-
-            var localVarPath = "/api/charging-logs/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteChargingLogUsingDELETE", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// deleteChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteChargingLogUsingDELETEAsync (long? id)
-        {
-             await DeleteChargingLogUsingDELETEAsyncWithHttpInfo(id);
-
-        }
-
-        /// <summary>
-        /// deleteChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteChargingLogUsingDELETEAsyncWithHttpInfo (long? id)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ChargingLogResourceApi->DeleteChargingLogUsingDELETE");
-
-            var localVarPath = "/api/charging-logs/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteChargingLogUsingDELETE", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// getAllChargingLogs 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>List&lt;ChargingLog&gt;</returns>
-        public List<ChargingLog> GetAllChargingLogsUsingGET (int? page = null, int? size = null, List<string> sort = null)
-        {
-             ApiResponse<List<ChargingLog>> localVarResponse = GetAllChargingLogsUsingGETWithHttpInfo(page, size, sort);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// getAllChargingLogs 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>ApiResponse of List&lt;ChargingLog&gt;</returns>
-        public ApiResponse< List<ChargingLog> > GetAllChargingLogsUsingGETWithHttpInfo (int? page = null, int? size = null, List<string> sort = null)
-        {
-
-            var localVarPath = "/api/charging-logs";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
-            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetAllChargingLogsUsingGET", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<ChargingLog>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<ChargingLog>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ChargingLog>)));
-        }
-
-        /// <summary>
-        /// getAllChargingLogs 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>Task of List&lt;ChargingLog&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ChargingLog>> GetAllChargingLogsUsingGETAsync (int? page = null, int? size = null, List<string> sort = null)
-        {
-             ApiResponse<List<ChargingLog>> localVarResponse = await GetAllChargingLogsUsingGETAsyncWithHttpInfo(page, size, sort);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// getAllChargingLogs 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;ChargingLog&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<ChargingLog>>> GetAllChargingLogsUsingGETAsyncWithHttpInfo (int? page = null, int? size = null, List<string> sort = null)
-        {
-
-            var localVarPath = "/api/charging-logs";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
-            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetAllChargingLogsUsingGET", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<ChargingLog>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<ChargingLog>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ChargingLog>)));
-        }
-
-        /// <summary>
-        /// getChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>ChargingLog</returns>
-        public ChargingLog GetChargingLogUsingGET (long? id)
-        {
-             ApiResponse<ChargingLog> localVarResponse = GetChargingLogUsingGETWithHttpInfo(id);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// getChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>ApiResponse of ChargingLog</returns>
-        public ApiResponse< ChargingLog > GetChargingLogUsingGETWithHttpInfo (long? id)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ChargingLogResourceApi->GetChargingLogUsingGET");
-
-            var localVarPath = "/api/charging-logs/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetChargingLogUsingGET", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ChargingLog>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ChargingLog) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChargingLog)));
-        }
-
-        /// <summary>
-        /// getChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of ChargingLog</returns>
-        public async System.Threading.Tasks.Task<ChargingLog> GetChargingLogUsingGETAsync (long? id)
-        {
-             ApiResponse<ChargingLog> localVarResponse = await GetChargingLogUsingGETAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// getChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of ApiResponse (ChargingLog)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ChargingLog>> GetChargingLogUsingGETAsyncWithHttpInfo (long? id)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ChargingLogResourceApi->GetChargingLogUsingGET");
-
-            var localVarPath = "/api/charging-logs/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetChargingLogUsingGET", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ChargingLog>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ChargingLog) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChargingLog)));
-        }
-
-        /// <summary>
-        /// getUnpaidChargingLogs 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>List&lt;ChargingLog&gt;</returns>
-        public List<ChargingLog> GetUnpaidChargingLogsUsingGET (int? page = null, int? size = null, List<string> sort = null)
-        {
-             ApiResponse<List<ChargingLog>> localVarResponse = GetUnpaidChargingLogsUsingGETWithHttpInfo(page, size, sort);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// getUnpaidChargingLogs 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>ApiResponse of List&lt;ChargingLog&gt;</returns>
-        public ApiResponse< List<ChargingLog> > GetUnpaidChargingLogsUsingGETWithHttpInfo (int? page = null, int? size = null, List<string> sort = null)
-        {
-
-            var localVarPath = "/api/charging-logs/unpaid";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
-            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetUnpaidChargingLogsUsingGET", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<ChargingLog>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<ChargingLog>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ChargingLog>)));
-        }
-
-        /// <summary>
-        /// getUnpaidChargingLogs 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>Task of List&lt;ChargingLog&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ChargingLog>> GetUnpaidChargingLogsUsingGETAsync (int? page = null, int? size = null, List<string> sort = null)
-        {
-             ApiResponse<List<ChargingLog>> localVarResponse = await GetUnpaidChargingLogsUsingGETAsyncWithHttpInfo(page, size, sort);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// getUnpaidChargingLogs 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number of the requested page (optional)</param>
-        /// <param name="size">Size of a page (optional)</param>
-        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;ChargingLog&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<ChargingLog>>> GetUnpaidChargingLogsUsingGETAsyncWithHttpInfo (int? page = null, int? size = null, List<string> sort = null)
-        {
-
-            var localVarPath = "/api/charging-logs/unpaid";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
-            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetUnpaidChargingLogsUsingGET", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<ChargingLog>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<ChargingLog>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ChargingLog>)));
-        }
-
-        /// <summary>
-        /// refund 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLogId">chargingLogId</param>
-        /// <returns>ChargingLog</returns>
-        public ChargingLog RefundUsingPOST (long? chargingLogId)
-        {
-             ApiResponse<ChargingLog> localVarResponse = RefundUsingPOSTWithHttpInfo(chargingLogId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// refund 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLogId">chargingLogId</param>
-        /// <returns>ApiResponse of ChargingLog</returns>
-        public ApiResponse< ChargingLog > RefundUsingPOSTWithHttpInfo (long? chargingLogId)
-        {
-            // verify the required parameter 'chargingLogId' is set
-            if (chargingLogId == null)
-                throw new ApiException(400, "Missing required parameter 'chargingLogId' when calling ChargingLogResourceApi->RefundUsingPOST");
-
-            var localVarPath = "/api/charging-logs/refund/{chargingLogId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (chargingLogId != null) localVarPathParams.Add("chargingLogId", Configuration.ApiClient.ParameterToString(chargingLogId)); // path parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("RefundUsingPOST", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ChargingLog>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ChargingLog) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChargingLog)));
-        }
-
-        /// <summary>
-        /// refund 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLogId">chargingLogId</param>
-        /// <returns>Task of ChargingLog</returns>
-        public async System.Threading.Tasks.Task<ChargingLog> RefundUsingPOSTAsync (long? chargingLogId)
-        {
-             ApiResponse<ChargingLog> localVarResponse = await RefundUsingPOSTAsyncWithHttpInfo(chargingLogId);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// refund 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLogId">chargingLogId</param>
-        /// <returns>Task of ApiResponse (ChargingLog)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ChargingLog>> RefundUsingPOSTAsyncWithHttpInfo (long? chargingLogId)
-        {
-            // verify the required parameter 'chargingLogId' is set
-            if (chargingLogId == null)
-                throw new ApiException(400, "Missing required parameter 'chargingLogId' when calling ChargingLogResourceApi->RefundUsingPOST");
-
-            var localVarPath = "/api/charging-logs/refund/{chargingLogId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (chargingLogId != null) localVarPathParams.Add("chargingLogId", Configuration.ApiClient.ParameterToString(chargingLogId)); // path parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("RefundUsingPOST", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ChargingLog>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ChargingLog) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChargingLog)));
-        }
-
-        /// <summary>
-        /// updateChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>ChargingLog</returns>
-        public ChargingLog UpdateChargingLogUsingPUT (ChargingLog chargingLog)
-        {
-             ApiResponse<ChargingLog> localVarResponse = UpdateChargingLogUsingPUTWithHttpInfo(chargingLog);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// updateChargingLog 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>ApiResponse of ChargingLog</returns>
-        public ApiResponse< ChargingLog > UpdateChargingLogUsingPUTWithHttpInfo (ChargingLog chargingLog)
-        {
-            // verify the required parameter 'chargingLog' is set
-            if (chargingLog == null)
-                throw new ApiException(400, "Missing required parameter 'chargingLog' when calling ChargingLogResourceApi->UpdateChargingLogUsingPUT");
-
-            var localVarPath = "/api/charging-logs";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (chargingLog != null && chargingLog.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(chargingLog); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = chargingLog; // byte array
+                localVarPostBody = cancellation; // byte array
             }
 
             // authentication (apiKey) required
@@ -1392,41 +448,41 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("UpdateChargingLogUsingPUT", localVarResponse);
+                Exception exception = ExceptionFactory("CancelSubscriptionUsingPUT", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ChargingLog>(localVarStatusCode,
+            return new ApiResponse<Subsription>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ChargingLog) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChargingLog)));
+                (Subsription) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Subsription)));
         }
 
         /// <summary>
-        /// updateChargingLog 
+        /// cancelSubscription 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>Task of ChargingLog</returns>
-        public async System.Threading.Tasks.Task<ChargingLog> UpdateChargingLogUsingPUTAsync (ChargingLog chargingLog)
+        /// <param name="cancellation">cancellation</param>
+        /// <returns>Task of Subsription</returns>
+        public async System.Threading.Tasks.Task<Subsription> CancelSubscriptionUsingPUTAsync (Cancellation cancellation)
         {
-             ApiResponse<ChargingLog> localVarResponse = await UpdateChargingLogUsingPUTAsyncWithHttpInfo(chargingLog);
+             ApiResponse<Subsription> localVarResponse = await CancelSubscriptionUsingPUTAsyncWithHttpInfo(cancellation);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// updateChargingLog 
+        /// cancelSubscription 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chargingLog">chargingLog</param>
-        /// <returns>Task of ApiResponse (ChargingLog)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ChargingLog>> UpdateChargingLogUsingPUTAsyncWithHttpInfo (ChargingLog chargingLog)
+        /// <param name="cancellation">cancellation</param>
+        /// <returns>Task of ApiResponse (Subsription)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Subsription>> CancelSubscriptionUsingPUTAsyncWithHttpInfo (Cancellation cancellation)
         {
-            // verify the required parameter 'chargingLog' is set
-            if (chargingLog == null)
-                throw new ApiException(400, "Missing required parameter 'chargingLog' when calling ChargingLogResourceApi->UpdateChargingLogUsingPUT");
+            // verify the required parameter 'cancellation' is set
+            if (cancellation == null)
+                throw new ApiException(400, "Missing required parameter 'cancellation' when calling SubscriptionResourceApi->CancelSubscriptionUsingPUT");
 
-            var localVarPath = "/api/charging-logs";
+            var localVarPath = "/api/subscriptions/cancel";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1448,13 +504,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (chargingLog != null && chargingLog.GetType() != typeof(byte[]))
+            if (cancellation != null && cancellation.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(chargingLog); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(cancellation); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = chargingLog; // byte array
+                localVarPostBody = cancellation; // byte array
             }
 
             // authentication (apiKey) required
@@ -1472,13 +528,744 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("UpdateChargingLogUsingPUT", localVarResponse);
+                Exception exception = ExceptionFactory("CancelSubscriptionUsingPUT", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ChargingLog>(localVarStatusCode,
+            return new ApiResponse<Subsription>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ChargingLog) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChargingLog)));
+                (Subsription) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Subsription)));
+        }
+
+        /// <summary>
+        /// getActiveSubscriptionsByEmail 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">email</param>
+        /// <returns>List&lt;Subsription&gt;</returns>
+        public List<Subsription> GetActiveSubscriptionsByEmailUsingGET (string email)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = GetActiveSubscriptionsByEmailUsingGETWithHttpInfo(email);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// getActiveSubscriptionsByEmail 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">email</param>
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        public ApiResponse< List<Subsription> > GetActiveSubscriptionsByEmailUsingGETWithHttpInfo (string email)
+        {
+            // verify the required parameter 'email' is set
+            if (email == null)
+                throw new ApiException(400, "Missing required parameter 'email' when calling SubscriptionResourceApi->GetActiveSubscriptionsByEmailUsingGET");
+
+            var localVarPath = "/api/subscriptions/subscriber/email/{email}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (email != null) localVarPathParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetActiveSubscriptionsByEmailUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
+        }
+
+        /// <summary>
+        /// getActiveSubscriptionsByEmail 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">email</param>
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Subsription>> GetActiveSubscriptionsByEmailUsingGETAsync (string email)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = await GetActiveSubscriptionsByEmailUsingGETAsyncWithHttpInfo(email);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// getActiveSubscriptionsByEmail 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">email</param>
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetActiveSubscriptionsByEmailUsingGETAsyncWithHttpInfo (string email)
+        {
+            // verify the required parameter 'email' is set
+            if (email == null)
+                throw new ApiException(400, "Missing required parameter 'email' when calling SubscriptionResourceApi->GetActiveSubscriptionsByEmailUsingGET");
+
+            var localVarPath = "/api/subscriptions/subscriber/email/{email}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (email != null) localVarPathParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetActiveSubscriptionsByEmailUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
+        }
+
+        /// <summary>
+        /// getActiveSubscriptions 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>List&lt;Subsription&gt;</returns>
+        public List<Subsription> GetActiveSubscriptionsUsingGET (string secureId)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = GetActiveSubscriptionsUsingGETWithHttpInfo(secureId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// getActiveSubscriptions 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        public ApiResponse< List<Subsription> > GetActiveSubscriptionsUsingGETWithHttpInfo (string secureId)
+        {
+            // verify the required parameter 'secureId' is set
+            if (secureId == null)
+                throw new ApiException(400, "Missing required parameter 'secureId' when calling SubscriptionResourceApi->GetActiveSubscriptionsUsingGET");
+
+            var localVarPath = "/api/subscriptions/subscriber/{secureId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (secureId != null) localVarPathParams.Add("secureId", Configuration.ApiClient.ParameterToString(secureId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetActiveSubscriptionsUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
+        }
+
+        /// <summary>
+        /// getActiveSubscriptions 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Subsription>> GetActiveSubscriptionsUsingGETAsync (string secureId)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = await GetActiveSubscriptionsUsingGETAsyncWithHttpInfo(secureId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// getActiveSubscriptions 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secureId">secureId</param>
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetActiveSubscriptionsUsingGETAsyncWithHttpInfo (string secureId)
+        {
+            // verify the required parameter 'secureId' is set
+            if (secureId == null)
+                throw new ApiException(400, "Missing required parameter 'secureId' when calling SubscriptionResourceApi->GetActiveSubscriptionsUsingGET");
+
+            var localVarPath = "/api/subscriptions/subscriber/{secureId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (secureId != null) localVarPathParams.Add("secureId", Configuration.ApiClient.ParameterToString(secureId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetActiveSubscriptionsUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
+        }
+
+        /// <summary>
+        /// getAllCompanySubscriptions 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>List&lt;Subsription&gt;</returns>
+        public List<Subsription> GetAllCompanySubscriptionsUsingGET (string id)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = GetAllCompanySubscriptionsUsingGETWithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// getAllCompanySubscriptions 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        public ApiResponse< List<Subsription> > GetAllCompanySubscriptionsUsingGETWithHttpInfo (string id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling SubscriptionResourceApi->GetAllCompanySubscriptionsUsingGET");
+
+            var localVarPath = "/api/subscriptions/company/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAllCompanySubscriptionsUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
+        }
+
+        /// <summary>
+        /// getAllCompanySubscriptions 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Subsription>> GetAllCompanySubscriptionsUsingGETAsync (string id)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = await GetAllCompanySubscriptionsUsingGETAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// getAllCompanySubscriptions 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetAllCompanySubscriptionsUsingGETAsyncWithHttpInfo (string id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling SubscriptionResourceApi->GetAllCompanySubscriptionsUsingGET");
+
+            var localVarPath = "/api/subscriptions/company/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAllCompanySubscriptionsUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
+        }
+
+        /// <summary>
+        /// getSubscription 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Subsription</returns>
+        public Subsription GetSubscriptionUsingGET (long? id)
+        {
+             ApiResponse<Subsription> localVarResponse = GetSubscriptionUsingGETWithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// getSubscription 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>ApiResponse of Subsription</returns>
+        public ApiResponse< Subsription > GetSubscriptionUsingGETWithHttpInfo (long? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling SubscriptionResourceApi->GetSubscriptionUsingGET");
+
+            var localVarPath = "/api/subscriptions/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubscriptionUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Subsription>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Subsription) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Subsription)));
+        }
+
+        /// <summary>
+        /// getSubscription 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of Subsription</returns>
+        public async System.Threading.Tasks.Task<Subsription> GetSubscriptionUsingGETAsync (long? id)
+        {
+             ApiResponse<Subsription> localVarResponse = await GetSubscriptionUsingGETAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// getSubscription 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of ApiResponse (Subsription)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Subsription>> GetSubscriptionUsingGETAsyncWithHttpInfo (long? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling SubscriptionResourceApi->GetSubscriptionUsingGET");
+
+            var localVarPath = "/api/subscriptions/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubscriptionUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Subsription>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Subsription) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Subsription)));
+        }
+
+        /// <summary>
+        /// startSubscription 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">request</param>
+        /// <returns>StartSubscriptionResult</returns>
+        public StartSubscriptionResult StartSubscriptionUsingPOST (StartSubscriptionRequest request)
+        {
+             ApiResponse<StartSubscriptionResult> localVarResponse = StartSubscriptionUsingPOSTWithHttpInfo(request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// startSubscription 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">request</param>
+        /// <returns>ApiResponse of StartSubscriptionResult</returns>
+        public ApiResponse< StartSubscriptionResult > StartSubscriptionUsingPOSTWithHttpInfo (StartSubscriptionRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling SubscriptionResourceApi->StartSubscriptionUsingPOST");
+
+            var localVarPath = "/api/subscriptions/start";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("StartSubscriptionUsingPOST", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<StartSubscriptionResult>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (StartSubscriptionResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(StartSubscriptionResult)));
+        }
+
+        /// <summary>
+        /// startSubscription 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">request</param>
+        /// <returns>Task of StartSubscriptionResult</returns>
+        public async System.Threading.Tasks.Task<StartSubscriptionResult> StartSubscriptionUsingPOSTAsync (StartSubscriptionRequest request)
+        {
+             ApiResponse<StartSubscriptionResult> localVarResponse = await StartSubscriptionUsingPOSTAsyncWithHttpInfo(request);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// startSubscription 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">request</param>
+        /// <returns>Task of ApiResponse (StartSubscriptionResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<StartSubscriptionResult>> StartSubscriptionUsingPOSTAsyncWithHttpInfo (StartSubscriptionRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling SubscriptionResourceApi->StartSubscriptionUsingPOST");
+
+            var localVarPath = "/api/subscriptions/start";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("StartSubscriptionUsingPOST", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<StartSubscriptionResult>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (StartSubscriptionResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(StartSubscriptionResult)));
         }
 
     }

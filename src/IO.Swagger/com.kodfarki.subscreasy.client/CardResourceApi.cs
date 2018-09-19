@@ -25,213 +25,49 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
     {
         #region Synchronous Operations
         /// <summary>
-        /// createCard
+        /// saveCard
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>SavedCard</returns>
-        SavedCard CreateCardUsingPOST (SavedCard card);
+        /// <param name="request">request</param>
+        /// <returns>Object</returns>
+        Object SaveCardUsingPOST (SaveCardRequest request);
 
         /// <summary>
-        /// createCard
+        /// saveCard
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>ApiResponse of SavedCard</returns>
-        ApiResponse<SavedCard> CreateCardUsingPOSTWithHttpInfo (SavedCard card);
-        /// <summary>
-        /// deleteCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns></returns>
-        void DeleteCardUsingDELETE (long? id);
-
-        /// <summary>
-        /// deleteCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteCardUsingDELETEWithHttpInfo (long? id);
-        /// <summary>
-        /// getAllCards
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;SavedCard&gt;</returns>
-        List<SavedCard> GetAllCardsUsingGET ();
-
-        /// <summary>
-        /// getAllCards
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;SavedCard&gt;</returns>
-        ApiResponse<List<SavedCard>> GetAllCardsUsingGETWithHttpInfo ();
-        /// <summary>
-        /// getCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>SavedCard</returns>
-        SavedCard GetCardUsingGET (long? id);
-
-        /// <summary>
-        /// getCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>ApiResponse of SavedCard</returns>
-        ApiResponse<SavedCard> GetCardUsingGETWithHttpInfo (long? id);
-        /// <summary>
-        /// updateCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>SavedCard</returns>
-        SavedCard UpdateCardUsingPUT (SavedCard card);
-
-        /// <summary>
-        /// updateCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>ApiResponse of SavedCard</returns>
-        ApiResponse<SavedCard> UpdateCardUsingPUTWithHttpInfo (SavedCard card);
+        /// <param name="request">request</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> SaveCardUsingPOSTWithHttpInfo (SaveCardRequest request);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// createCard
+        /// saveCard
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>Task of SavedCard</returns>
-        System.Threading.Tasks.Task<SavedCard> CreateCardUsingPOSTAsync (SavedCard card);
+        /// <param name="request">request</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> SaveCardUsingPOSTAsync (SaveCardRequest request);
 
         /// <summary>
-        /// createCard
+        /// saveCard
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>Task of ApiResponse (SavedCard)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SavedCard>> CreateCardUsingPOSTAsyncWithHttpInfo (SavedCard card);
-        /// <summary>
-        /// deleteCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteCardUsingDELETEAsync (long? id);
-
-        /// <summary>
-        /// deleteCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteCardUsingDELETEAsyncWithHttpInfo (long? id);
-        /// <summary>
-        /// getAllCards
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;SavedCard&gt;</returns>
-        System.Threading.Tasks.Task<List<SavedCard>> GetAllCardsUsingGETAsync ();
-
-        /// <summary>
-        /// getAllCards
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;SavedCard&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<SavedCard>>> GetAllCardsUsingGETAsyncWithHttpInfo ();
-        /// <summary>
-        /// getCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of SavedCard</returns>
-        System.Threading.Tasks.Task<SavedCard> GetCardUsingGETAsync (long? id);
-
-        /// <summary>
-        /// getCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of ApiResponse (SavedCard)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SavedCard>> GetCardUsingGETAsyncWithHttpInfo (long? id);
-        /// <summary>
-        /// updateCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>Task of SavedCard</returns>
-        System.Threading.Tasks.Task<SavedCard> UpdateCardUsingPUTAsync (SavedCard card);
-
-        /// <summary>
-        /// updateCard
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>Task of ApiResponse (SavedCard)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SavedCard>> UpdateCardUsingPUTAsyncWithHttpInfo (SavedCard card);
+        /// <param name="request">request</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SaveCardUsingPOSTAsyncWithHttpInfo (SaveCardRequest request);
         #endregion Asynchronous Operations
     }
 
@@ -333,30 +169,30 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         }
 
         /// <summary>
-        /// createCard 
+        /// saveCard 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>SavedCard</returns>
-        public SavedCard CreateCardUsingPOST (SavedCard card)
+        /// <param name="request">request</param>
+        /// <returns>Object</returns>
+        public Object SaveCardUsingPOST (SaveCardRequest request)
         {
-             ApiResponse<SavedCard> localVarResponse = CreateCardUsingPOSTWithHttpInfo(card);
+             ApiResponse<Object> localVarResponse = SaveCardUsingPOSTWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// createCard 
+        /// saveCard 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>ApiResponse of SavedCard</returns>
-        public ApiResponse< SavedCard > CreateCardUsingPOSTWithHttpInfo (SavedCard card)
+        /// <param name="request">request</param>
+        /// <returns>ApiResponse of Object</returns>
+        public ApiResponse< Object > SaveCardUsingPOSTWithHttpInfo (SaveCardRequest request)
         {
-            // verify the required parameter 'card' is set
-            if (card == null)
-                throw new ApiException(400, "Missing required parameter 'card' when calling CardResourceApi->CreateCardUsingPOST");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling CardResourceApi->SaveCardUsingPOST");
 
-            var localVarPath = "/api/cards";
+            var localVarPath = "/api/card";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -378,13 +214,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (card != null && card.GetType() != typeof(byte[]))
+            if (request != null && request.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(card); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = card; // byte array
+                localVarPostBody = request; // byte array
             }
 
             // authentication (apiKey) required
@@ -402,41 +238,41 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("CreateCardUsingPOST", localVarResponse);
+                Exception exception = ExceptionFactory("SaveCardUsingPOST", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SavedCard>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SavedCard) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SavedCard)));
+                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
-        /// createCard 
+        /// saveCard 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>Task of SavedCard</returns>
-        public async System.Threading.Tasks.Task<SavedCard> CreateCardUsingPOSTAsync (SavedCard card)
+        /// <param name="request">request</param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> SaveCardUsingPOSTAsync (SaveCardRequest request)
         {
-             ApiResponse<SavedCard> localVarResponse = await CreateCardUsingPOSTAsyncWithHttpInfo(card);
+             ApiResponse<Object> localVarResponse = await SaveCardUsingPOSTAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// createCard 
+        /// saveCard 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>Task of ApiResponse (SavedCard)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SavedCard>> CreateCardUsingPOSTAsyncWithHttpInfo (SavedCard card)
+        /// <param name="request">request</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> SaveCardUsingPOSTAsyncWithHttpInfo (SaveCardRequest request)
         {
-            // verify the required parameter 'card' is set
-            if (card == null)
-                throw new ApiException(400, "Missing required parameter 'card' when calling CardResourceApi->CreateCardUsingPOST");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling CardResourceApi->SaveCardUsingPOST");
 
-            var localVarPath = "/api/cards";
+            var localVarPath = "/api/card";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -458,13 +294,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (card != null && card.GetType() != typeof(byte[]))
+            if (request != null && request.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(card); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = card; // byte array
+                localVarPostBody = request; // byte array
             }
 
             // authentication (apiKey) required
@@ -482,587 +318,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("CreateCardUsingPOST", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<SavedCard>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SavedCard) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SavedCard)));
-        }
-
-        /// <summary>
-        /// deleteCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns></returns>
-        public void DeleteCardUsingDELETE (long? id)
-        {
-             DeleteCardUsingDELETEWithHttpInfo(id);
-        }
-
-        /// <summary>
-        /// deleteCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteCardUsingDELETEWithHttpInfo (long? id)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling CardResourceApi->DeleteCardUsingDELETE");
-
-            var localVarPath = "/api/cards/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteCardUsingDELETE", localVarResponse);
+                Exception exception = ExceptionFactory("SaveCardUsingPOST", localVarResponse);
                 if (exception != null) throw exception;
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// deleteCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteCardUsingDELETEAsync (long? id)
-        {
-             await DeleteCardUsingDELETEAsyncWithHttpInfo(id);
-
-        }
-
-        /// <summary>
-        /// deleteCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteCardUsingDELETEAsyncWithHttpInfo (long? id)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling CardResourceApi->DeleteCardUsingDELETE");
-
-            var localVarPath = "/api/cards/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteCardUsingDELETE", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// getAllCards 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;SavedCard&gt;</returns>
-        public List<SavedCard> GetAllCardsUsingGET ()
-        {
-             ApiResponse<List<SavedCard>> localVarResponse = GetAllCardsUsingGETWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// getAllCards 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;SavedCard&gt;</returns>
-        public ApiResponse< List<SavedCard> > GetAllCardsUsingGETWithHttpInfo ()
-        {
-
-            var localVarPath = "/api/cards";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetAllCardsUsingGET", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<SavedCard>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<SavedCard>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SavedCard>)));
-        }
-
-        /// <summary>
-        /// getAllCards 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;SavedCard&gt;</returns>
-        public async System.Threading.Tasks.Task<List<SavedCard>> GetAllCardsUsingGETAsync ()
-        {
-             ApiResponse<List<SavedCard>> localVarResponse = await GetAllCardsUsingGETAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// getAllCards 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;SavedCard&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<SavedCard>>> GetAllCardsUsingGETAsyncWithHttpInfo ()
-        {
-
-            var localVarPath = "/api/cards";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetAllCardsUsingGET", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<SavedCard>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<SavedCard>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SavedCard>)));
-        }
-
-        /// <summary>
-        /// getCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>SavedCard</returns>
-        public SavedCard GetCardUsingGET (long? id)
-        {
-             ApiResponse<SavedCard> localVarResponse = GetCardUsingGETWithHttpInfo(id);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// getCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>ApiResponse of SavedCard</returns>
-        public ApiResponse< SavedCard > GetCardUsingGETWithHttpInfo (long? id)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling CardResourceApi->GetCardUsingGET");
-
-            var localVarPath = "/api/cards/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetCardUsingGET", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<SavedCard>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SavedCard) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SavedCard)));
-        }
-
-        /// <summary>
-        /// getCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of SavedCard</returns>
-        public async System.Threading.Tasks.Task<SavedCard> GetCardUsingGETAsync (long? id)
-        {
-             ApiResponse<SavedCard> localVarResponse = await GetCardUsingGETAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// getCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id</param>
-        /// <returns>Task of ApiResponse (SavedCard)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SavedCard>> GetCardUsingGETAsyncWithHttpInfo (long? id)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling CardResourceApi->GetCardUsingGET");
-
-            var localVarPath = "/api/cards/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetCardUsingGET", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<SavedCard>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SavedCard) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SavedCard)));
-        }
-
-        /// <summary>
-        /// updateCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>SavedCard</returns>
-        public SavedCard UpdateCardUsingPUT (SavedCard card)
-        {
-             ApiResponse<SavedCard> localVarResponse = UpdateCardUsingPUTWithHttpInfo(card);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// updateCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>ApiResponse of SavedCard</returns>
-        public ApiResponse< SavedCard > UpdateCardUsingPUTWithHttpInfo (SavedCard card)
-        {
-            // verify the required parameter 'card' is set
-            if (card == null)
-                throw new ApiException(400, "Missing required parameter 'card' when calling CardResourceApi->UpdateCardUsingPUT");
-
-            var localVarPath = "/api/cards";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (card != null && card.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(card); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = card; // byte array
-            }
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateCardUsingPUT", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<SavedCard>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SavedCard) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SavedCard)));
-        }
-
-        /// <summary>
-        /// updateCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>Task of SavedCard</returns>
-        public async System.Threading.Tasks.Task<SavedCard> UpdateCardUsingPUTAsync (SavedCard card)
-        {
-             ApiResponse<SavedCard> localVarResponse = await UpdateCardUsingPUTAsyncWithHttpInfo(card);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// updateCard 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="card">card</param>
-        /// <returns>Task of ApiResponse (SavedCard)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SavedCard>> UpdateCardUsingPUTAsyncWithHttpInfo (SavedCard card)
-        {
-            // verify the required parameter 'card' is set
-            if (card == null)
-                throw new ApiException(400, "Missing required parameter 'card' when calling CardResourceApi->UpdateCardUsingPUT");
-
-            var localVarPath = "/api/cards";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "*/*"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (card != null && card.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(card); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = card; // byte array
-            }
-
-            // authentication (apiKey) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateCardUsingPUT", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<SavedCard>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SavedCard) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SavedCard)));
+                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
     }

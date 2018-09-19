@@ -31,23 +31,54 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
     public partial class StartSubscriptionRequest :  IEquatable<StartSubscriptionRequest>, IValidatableObject
     {
         /// <summary>
+        /// Defines PaymentType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PaymentTypeEnum
+        {
+            
+            /// <summary>
+            /// Enum OFFLINE for value: OFFLINE
+            /// </summary>
+            [EnumMember(Value = "OFFLINE")]
+            OFFLINE = 1,
+            
+            /// <summary>
+            /// Enum CC for value: CC
+            /// </summary>
+            [EnumMember(Value = "CC")]
+            CC = 2
+        }
+
+        /// <summary>
+        /// Gets or Sets PaymentType
+        /// </summary>
+        [DataMember(Name="paymentType", EmitDefaultValue=false)]
+        public PaymentTypeEnum? PaymentType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="StartSubscriptionRequest" /> class.
         /// </summary>
         /// <param name="CallbackUrl">CallbackUrl.</param>
         /// <param name="CompanySiteName">CompanySiteName.</param>
         /// <param name="CouponCode">CouponCode.</param>
+        /// <param name="Editable">Editable.</param>
         /// <param name="Offer">Offer.</param>
         /// <param name="PaymentCard">PaymentCard.</param>
+        /// <param name="PaymentType">PaymentType.</param>
         /// <param name="Price">Price.</param>
+        /// <param name="PrivacyPolicyUrl">PrivacyPolicyUrl.</param>
         /// <param name="Subscriber">Subscriber.</param>
-        public StartSubscriptionRequest(string CallbackUrl = default(string), string CompanySiteName = default(string), string CouponCode = default(string), Offer Offer = default(Offer), PaymentCard PaymentCard = default(PaymentCard), decimal? Price = default(decimal?), Subscriber Subscriber = default(Subscriber))
+        public StartSubscriptionRequest(string CallbackUrl = default(string), string CompanySiteName = default(string), string CouponCode = default(string), bool? Editable = default(bool?), Offer Offer = default(Offer), PaymentCard PaymentCard = default(PaymentCard), PaymentTypeEnum? PaymentType = default(PaymentTypeEnum?), decimal? Price = default(decimal?), bool? PrivacyPolicyUrl = default(bool?), Subscriber Subscriber = default(Subscriber))
         {
             this.CallbackUrl = CallbackUrl;
             this.CompanySiteName = CompanySiteName;
             this.CouponCode = CouponCode;
+            this.Editable = Editable;
             this.Offer = Offer;
             this.PaymentCard = PaymentCard;
+            this.PaymentType = PaymentType;
             this.Price = Price;
+            this.PrivacyPolicyUrl = PrivacyPolicyUrl;
             this.Subscriber = Subscriber;
         }
         
@@ -70,6 +101,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string CouponCode { get; set; }
 
         /// <summary>
+        /// Gets or Sets Editable
+        /// </summary>
+        [DataMember(Name="editable", EmitDefaultValue=false)]
+        public bool? Editable { get; set; }
+
+        /// <summary>
         /// Gets or Sets Offer
         /// </summary>
         [DataMember(Name="offer", EmitDefaultValue=false)]
@@ -81,11 +118,18 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         [DataMember(Name="paymentCard", EmitDefaultValue=false)]
         public PaymentCard PaymentCard { get; set; }
 
+
         /// <summary>
         /// Gets or Sets Price
         /// </summary>
         [DataMember(Name="price", EmitDefaultValue=false)]
         public decimal? Price { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PrivacyPolicyUrl
+        /// </summary>
+        [DataMember(Name="privacyPolicyUrl", EmitDefaultValue=false)]
+        public bool? PrivacyPolicyUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Subscriber
@@ -104,9 +148,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  CallbackUrl: ").Append(CallbackUrl).Append("\n");
             sb.Append("  CompanySiteName: ").Append(CompanySiteName).Append("\n");
             sb.Append("  CouponCode: ").Append(CouponCode).Append("\n");
+            sb.Append("  Editable: ").Append(Editable).Append("\n");
             sb.Append("  Offer: ").Append(Offer).Append("\n");
             sb.Append("  PaymentCard: ").Append(PaymentCard).Append("\n");
+            sb.Append("  PaymentType: ").Append(PaymentType).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
+            sb.Append("  PrivacyPolicyUrl: ").Append(PrivacyPolicyUrl).Append("\n");
             sb.Append("  Subscriber: ").Append(Subscriber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -158,6 +205,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.CouponCode.Equals(input.CouponCode))
                 ) && 
                 (
+                    this.Editable == input.Editable ||
+                    (this.Editable != null &&
+                    this.Editable.Equals(input.Editable))
+                ) && 
+                (
                     this.Offer == input.Offer ||
                     (this.Offer != null &&
                     this.Offer.Equals(input.Offer))
@@ -168,9 +220,19 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.PaymentCard.Equals(input.PaymentCard))
                 ) && 
                 (
+                    this.PaymentType == input.PaymentType ||
+                    (this.PaymentType != null &&
+                    this.PaymentType.Equals(input.PaymentType))
+                ) && 
+                (
                     this.Price == input.Price ||
                     (this.Price != null &&
                     this.Price.Equals(input.Price))
+                ) && 
+                (
+                    this.PrivacyPolicyUrl == input.PrivacyPolicyUrl ||
+                    (this.PrivacyPolicyUrl != null &&
+                    this.PrivacyPolicyUrl.Equals(input.PrivacyPolicyUrl))
                 ) && 
                 (
                     this.Subscriber == input.Subscriber ||
@@ -194,12 +256,18 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.CompanySiteName.GetHashCode();
                 if (this.CouponCode != null)
                     hashCode = hashCode * 59 + this.CouponCode.GetHashCode();
+                if (this.Editable != null)
+                    hashCode = hashCode * 59 + this.Editable.GetHashCode();
                 if (this.Offer != null)
                     hashCode = hashCode * 59 + this.Offer.GetHashCode();
                 if (this.PaymentCard != null)
                     hashCode = hashCode * 59 + this.PaymentCard.GetHashCode();
+                if (this.PaymentType != null)
+                    hashCode = hashCode * 59 + this.PaymentType.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
+                if (this.PrivacyPolicyUrl != null)
+                    hashCode = hashCode * 59 + this.PrivacyPolicyUrl.GetHashCode();
                 if (this.Subscriber != null)
                     hashCode = hashCode * 59 + this.Subscriber.GetHashCode();
                 return hashCode;

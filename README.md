@@ -103,10 +103,17 @@ Class | Method | HTTP request | Description
 *AccountResourceApi* | [**IsAuthenticatedUsingGET**](docs/AccountResourceApi.md#isauthenticatedusingget) | **GET** /api/authenticate | isAuthenticated
 *AccountResourceApi* | [**RegisterAccountUsingPOST**](docs/AccountResourceApi.md#registeraccountusingpost) | **POST** /api/register | registerAccount
 *AnalyticsResourceApi* | [**GetDashboardAnalyticsUsingGET**](docs/AnalyticsResourceApi.md#getdashboardanalyticsusingget) | **GET** /api/analytics/dashboard | getDashboardAnalytics
+*BankAccountResourceApi* | [**CreateBankAccountUsingPOST**](docs/BankAccountResourceApi.md#createbankaccountusingpost) | **POST** /api/bank-accounts | createBankAccount
+*BankAccountResourceApi* | [**DeleteBankAccountUsingDELETE**](docs/BankAccountResourceApi.md#deletebankaccountusingdelete) | **DELETE** /api/bank-accounts/{id} | deleteBankAccount
+*BankAccountResourceApi* | [**GetAllBankAccountsUsingGET**](docs/BankAccountResourceApi.md#getallbankaccountsusingget) | **GET** /api/bank-accounts | getAllBankAccounts
+*BankAccountResourceApi* | [**GetBankAccountUsingGET**](docs/BankAccountResourceApi.md#getbankaccountusingget) | **GET** /api/bank-accounts/{id} | getBankAccount
+*BankAccountResourceApi* | [**UpdateBankAccountUsingPUT**](docs/BankAccountResourceApi.md#updatebankaccountusingput) | **PUT** /api/bank-accounts | updateBankAccount
+*CardResourceApi* | [**SaveCardUsingPOST**](docs/CardResourceApi.md#savecardusingpost) | **POST** /api/card | saveCard
 *ChargingLogResourceApi* | [**CreateChargingLogUsingPOST**](docs/ChargingLogResourceApi.md#createcharginglogusingpost) | **POST** /api/charging-logs | createChargingLog
 *ChargingLogResourceApi* | [**DeleteChargingLogUsingDELETE**](docs/ChargingLogResourceApi.md#deletecharginglogusingdelete) | **DELETE** /api/charging-logs/{id} | deleteChargingLog
 *ChargingLogResourceApi* | [**GetAllChargingLogsUsingGET**](docs/ChargingLogResourceApi.md#getallcharginglogsusingget) | **GET** /api/charging-logs | getAllChargingLogs
 *ChargingLogResourceApi* | [**GetChargingLogUsingGET**](docs/ChargingLogResourceApi.md#getcharginglogusingget) | **GET** /api/charging-logs/{id} | getChargingLog
+*ChargingLogResourceApi* | [**GetUnpaidChargingLogsUsingGET**](docs/ChargingLogResourceApi.md#getunpaidcharginglogsusingget) | **GET** /api/charging-logs/unpaid | getUnpaidChargingLogs
 *ChargingLogResourceApi* | [**RefundUsingPOST**](docs/ChargingLogResourceApi.md#refundusingpost) | **POST** /api/charging-logs/refund/{chargingLogId} | refund
 *ChargingLogResourceApi* | [**UpdateChargingLogUsingPUT**](docs/ChargingLogResourceApi.md#updatecharginglogusingput) | **PUT** /api/charging-logs | updateChargingLog
 *CompanyPropsResourceApi* | [**CreateCompanyPropsUsingPOST**](docs/CompanyPropsResourceApi.md#createcompanypropsusingpost) | **POST** /api/company-props | createCompanyProps
@@ -184,19 +191,23 @@ Class | Method | HTTP request | Description
 *SubscriberResourceApi* | [**GetSubscriberBySecureIdUsingGET**](docs/SubscriberResourceApi.md#getsubscriberbysecureidusingget) | **GET** /api/subscribers/secureId/{secureId} | getSubscriberBySecureId
 *SubscriberResourceApi* | [**GetSubscriberUsingGET**](docs/SubscriberResourceApi.md#getsubscriberusingget) | **GET** /api/subscribers/{id} | getSubscriber
 *SubscriberResourceApi* | [**UpdateSubscriberUsingPUT**](docs/SubscriberResourceApi.md#updatesubscriberusingput) | **PUT** /api/subscribers | updateSubscriber
-*SubsriptionResourceApi* | [**CancelSubscriptionUsingPUT**](docs/SubsriptionResourceApi.md#cancelsubscriptionusingput) | **PUT** /api/subscriptions/cancel | cancelSubscription
-*SubsriptionResourceApi* | [**GetActiveSubscriptionsUsingGET**](docs/SubsriptionResourceApi.md#getactivesubscriptionsusingget) | **GET** /api/subsriptions/subscriber/{secureId} | getActiveSubscriptions
-*SubsriptionResourceApi* | [**GetAllCompanySubscriptionsUsingGET**](docs/SubsriptionResourceApi.md#getallcompanysubscriptionsusingget) | **GET** /api/subscriptions/company/{id} | getAllCompanySubscriptions
-*SubsriptionResourceApi* | [**GetSubsriptionUsingGET**](docs/SubsriptionResourceApi.md#getsubsriptionusingget) | **GET** /api/subsriptions/{id} | getSubsription
-*SubsriptionResourceApi* | [**StartSubscriptionUsingPOST**](docs/SubsriptionResourceApi.md#startsubscriptionusingpost) | **POST** /api/subscriptions/start | startSubscription
+*SubscriptionResourceApi* | [**CancelSubscriptionUsingPUT**](docs/SubscriptionResourceApi.md#cancelsubscriptionusingput) | **PUT** /api/subscriptions/cancel | cancelSubscription
+*SubscriptionResourceApi* | [**GetActiveSubscriptionsByEmailUsingGET**](docs/SubscriptionResourceApi.md#getactivesubscriptionsbyemailusingget) | **GET** /api/subscriptions/subscriber/email/{email} | getActiveSubscriptionsByEmail
+*SubscriptionResourceApi* | [**GetActiveSubscriptionsUsingGET**](docs/SubscriptionResourceApi.md#getactivesubscriptionsusingget) | **GET** /api/subscriptions/subscriber/{secureId} | getActiveSubscriptions
+*SubscriptionResourceApi* | [**GetAllCompanySubscriptionsUsingGET**](docs/SubscriptionResourceApi.md#getallcompanysubscriptionsusingget) | **GET** /api/subscriptions/company/{id} | getAllCompanySubscriptions
+*SubscriptionResourceApi* | [**GetSubscriptionUsingGET**](docs/SubscriptionResourceApi.md#getsubscriptionusingget) | **GET** /api/subscriptions/{id} | getSubscription
+*SubscriptionResourceApi* | [**StartSubscriptionUsingPOST**](docs/SubscriptionResourceApi.md#startsubscriptionusingpost) | **POST** /api/subscriptions/start | startSubscription
 *UsageNotificationResourceApi* | [**CreateUsageNotificationUsingPOST**](docs/UsageNotificationResourceApi.md#createusagenotificationusingpost) | **POST** /api/usage-notifications | createUsageNotification
 *UsageNotificationResourceApi* | [**DeleteUsageNotificationUsingDELETE**](docs/UsageNotificationResourceApi.md#deleteusagenotificationusingdelete) | **DELETE** /api/usage-notifications/{id} | deleteUsageNotification
 *UsageNotificationResourceApi* | [**GetAllUsageNotificationsUsingGET**](docs/UsageNotificationResourceApi.md#getallusagenotificationsusingget) | **GET** /api/usage-notifications | getAllUsageNotifications
 *UsageNotificationResourceApi* | [**GetUsageNotificationUsingGET**](docs/UsageNotificationResourceApi.md#getusagenotificationusingget) | **GET** /api/usage-notifications/{id} | getUsageNotification
 *UsageNotificationResourceApi* | [**UpdateUsageNotificationUsingPUT**](docs/UsageNotificationResourceApi.md#updateusagenotificationusingput) | **PUT** /api/usage-notifications | updateUsageNotification
 *UserJwtControllerApi* | [**AuthorizeUsingPOST**](docs/UserJwtControllerApi.md#authorizeusingpost) | **POST** /api/authenticate | authorize
+*UserResourceApi* | [**CreateCompanyUserUsingPOST**](docs/UserResourceApi.md#createcompanyuserusingpost) | **POST** /api/users/company | createCompanyUser
 *UserResourceApi* | [**CreateUserUsingPOST**](docs/UserResourceApi.md#createuserusingpost) | **POST** /api/users | createUser
 *UserResourceApi* | [**DeleteUserUsingDELETE**](docs/UserResourceApi.md#deleteuserusingdelete) | **DELETE** /api/users/{login} | deleteUser
+*UserResourceApi* | [**GetAllUsersByAuthenticatedCompanyUsingGET**](docs/UserResourceApi.md#getallusersbyauthenticatedcompanyusingget) | **GET** /api/users/company | getAllUsersByAuthenticatedCompany
+*UserResourceApi* | [**GetAllUsersByCompanyIdUsingGET**](docs/UserResourceApi.md#getallusersbycompanyidusingget) | **GET** /api/users/company/{companyId} | getAllUsersByCompanyId
 *UserResourceApi* | [**GetAllUsersUsingGET**](docs/UserResourceApi.md#getallusersusingget) | **GET** /api/users | getAllUsers
 *UserResourceApi* | [**GetAuthoritiesUsingGET**](docs/UserResourceApi.md#getauthoritiesusingget) | **GET** /api/users/authorities | getAuthorities
 *UserResourceApi* | [**GetUserUsingGET**](docs/UserResourceApi.md#getuserusingget) | **GET** /api/users/{login} | getUser
@@ -206,6 +217,7 @@ Class | Method | HTTP request | Description
 *WebHookResourceApi* | [**GetAllWebHooksUsingGET**](docs/WebHookResourceApi.md#getallwebhooksusingget) | **GET** /api/web-hooks | getAllWebHooks
 *WebHookResourceApi* | [**GetWebHookUsingGET**](docs/WebHookResourceApi.md#getwebhookusingget) | **GET** /api/web-hooks/{id} | getWebHook
 *WebHookResourceApi* | [**UpdateWebHookUsingPUT**](docs/WebHookResourceApi.md#updatewebhookusingput) | **PUT** /api/web-hooks | updateWebHook
+*WebHookServerApi* | [**PaymentUpdatedUsingPOST**](docs/WebHookServerApi.md#paymentupdatedusingpost) | **POST** /subscreasy/webhook/payment-updated | paymentUpdated
 *WebHookServerApi* | [**SubscriberCreatedUsingPOST**](docs/WebHookServerApi.md#subscribercreatedusingpost) | **POST** /subscreasy/webhook/subscriber-created | subscriberCreated
 *WebHookServerApi* | [**SubscriberUpdatedUsingPOST**](docs/WebHookServerApi.md#subscriberupdatedusingpost) | **POST** /subscreasy/webhook/subscriber-updated | subscriberUpdated
 *WebHookServerApi* | [**SubscriptionEndedUsingPOST**](docs/WebHookServerApi.md#subscriptionendedusingpost) | **POST** /subscreasy/webhook/subscription-ended | subscriptionEnded
@@ -221,6 +233,7 @@ Class | Method | HTTP request | Description
  - [com.kodfarki.subscreasy.client.model.Authority](docs/Authority.md)
  - [com.kodfarki.subscreasy.client.model.Authorization](docs/Authorization.md)
  - [com.kodfarki.subscreasy.client.model.AuthorizedServicesResponse](docs/AuthorizedServicesResponse.md)
+ - [com.kodfarki.subscreasy.client.model.BankAccount](docs/BankAccount.md)
  - [com.kodfarki.subscreasy.client.model.Cancellation](docs/Cancellation.md)
  - [com.kodfarki.subscreasy.client.model.ChargingLog](docs/ChargingLog.md)
  - [com.kodfarki.subscreasy.client.model.Company](docs/Company.md)
@@ -239,6 +252,7 @@ Class | Method | HTTP request | Description
  - [com.kodfarki.subscreasy.client.model.ProfileInfoVM](docs/ProfileInfoVM.md)
  - [com.kodfarki.subscreasy.client.model.RecurrencePeriod](docs/RecurrencePeriod.md)
  - [com.kodfarki.subscreasy.client.model.ResponseEntity](docs/ResponseEntity.md)
+ - [com.kodfarki.subscreasy.client.model.SaveCardRequest](docs/SaveCardRequest.md)
  - [com.kodfarki.subscreasy.client.model.SavedCard](docs/SavedCard.md)
  - [com.kodfarki.subscreasy.client.model.Service](docs/Service.md)
  - [com.kodfarki.subscreasy.client.model.ServiceInstance](docs/ServiceInstance.md)

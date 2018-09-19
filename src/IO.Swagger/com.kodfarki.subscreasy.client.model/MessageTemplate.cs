@@ -77,7 +77,31 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             /// Enum SUBSCRIBERUPDATED for value: SUBSCRIBER_UPDATED
             /// </summary>
             [EnumMember(Value = "SUBSCRIBER_UPDATED")]
-            SUBSCRIBERUPDATED = 7
+            SUBSCRIBERUPDATED = 7,
+            
+            /// <summary>
+            /// Enum TRIALENDING for value: TRIAL_ENDING
+            /// </summary>
+            [EnumMember(Value = "TRIAL_ENDING")]
+            TRIALENDING = 8,
+            
+            /// <summary>
+            /// Enum PAYMENTUPDATED for value: PAYMENT_UPDATED
+            /// </summary>
+            [EnumMember(Value = "PAYMENT_UPDATED")]
+            PAYMENTUPDATED = 9,
+            
+            /// <summary>
+            /// Enum IMMEDIATECANCELLATIONREQUESTED for value: IMMEDIATE_CANCELLATION_REQUESTED
+            /// </summary>
+            [EnumMember(Value = "IMMEDIATE_CANCELLATION_REQUESTED")]
+            IMMEDIATECANCELLATIONREQUESTED = 10,
+            
+            /// <summary>
+            /// Enum ENDOFPERIODCANCELLATIONREQUESTED for value: ENDOFPERIOD_CANCELLATION_REQUESTED
+            /// </summary>
+            [EnumMember(Value = "ENDOFPERIOD_CANCELLATION_REQUESTED")]
+            ENDOFPERIODCANCELLATIONREQUESTED = 11
         }
 
         /// <summary>

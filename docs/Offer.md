@@ -5,10 +5,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Company** | [**Company**](Company.md) |  | 
 **Id** | **long?** |  | [optional] 
+**MultiplePurchase** | **bool?** |  | 
 **Name** | **string** |  | 
 **OpenEnded** | **bool?** |  | 
 **Price** | **decimal?** |  | 
-**Recurrence** | [**RecurrencePeriod**](RecurrencePeriod.md) |  | 
+**Recurrence** | [**RecurrencePeriod**](RecurrencePeriod.md) |  | [optional] 
 **RecurrenceCount** | **int?** |  | [optional] 
 **SecureId** | **string** |  | [optional] 
 **TrialPeriod** | **int?** |  | [optional] 

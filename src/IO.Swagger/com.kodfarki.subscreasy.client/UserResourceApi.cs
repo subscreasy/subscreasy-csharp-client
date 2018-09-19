@@ -25,6 +25,27 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
     {
         #region Synchronous Operations
         /// <summary>
+        /// createCompanyUser
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="managedUserVM">managedUserVM</param>
+        /// <returns>ResponseEntity</returns>
+        ResponseEntity CreateCompanyUserUsingPOST (ManagedUserVM managedUserVM);
+
+        /// <summary>
+        /// createCompanyUser
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="managedUserVM">managedUserVM</param>
+        /// <returns>ApiResponse of ResponseEntity</returns>
+        ApiResponse<ResponseEntity> CreateCompanyUserUsingPOSTWithHttpInfo (ManagedUserVM managedUserVM);
+        /// <summary>
         /// createUser
         /// </summary>
         /// <remarks>
@@ -66,6 +87,46 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <param name="login">login</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteUserUsingDELETEWithHttpInfo (string login);
+        /// <summary>
+        /// getAllUsersByAuthenticatedCompany
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;User&gt;</returns>
+        List<User> GetAllUsersByAuthenticatedCompanyUsingGET ();
+
+        /// <summary>
+        /// getAllUsersByAuthenticatedCompany
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;User&gt;</returns>
+        ApiResponse<List<User>> GetAllUsersByAuthenticatedCompanyUsingGETWithHttpInfo ();
+        /// <summary>
+        /// getAllUsersByCompanyId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">companyId</param>
+        /// <returns>List&lt;User&gt;</returns>
+        List<User> GetAllUsersByCompanyIdUsingGET (long? companyId);
+
+        /// <summary>
+        /// getAllUsersByCompanyId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">companyId</param>
+        /// <returns>ApiResponse of List&lt;User&gt;</returns>
+        ApiResponse<List<User>> GetAllUsersByCompanyIdUsingGETWithHttpInfo (long? companyId);
         /// <summary>
         /// getAllUsers
         /// </summary>
@@ -155,6 +216,27 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
+        /// createCompanyUser
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="managedUserVM">managedUserVM</param>
+        /// <returns>Task of ResponseEntity</returns>
+        System.Threading.Tasks.Task<ResponseEntity> CreateCompanyUserUsingPOSTAsync (ManagedUserVM managedUserVM);
+
+        /// <summary>
+        /// createCompanyUser
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="managedUserVM">managedUserVM</param>
+        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> CreateCompanyUserUsingPOSTAsyncWithHttpInfo (ManagedUserVM managedUserVM);
+        /// <summary>
         /// createUser
         /// </summary>
         /// <remarks>
@@ -196,6 +278,46 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <param name="login">login</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserUsingDELETEAsyncWithHttpInfo (string login);
+        /// <summary>
+        /// getAllUsersByAuthenticatedCompany
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;User&gt;</returns>
+        System.Threading.Tasks.Task<List<User>> GetAllUsersByAuthenticatedCompanyUsingGETAsync ();
+
+        /// <summary>
+        /// getAllUsersByAuthenticatedCompany
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;User&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<User>>> GetAllUsersByAuthenticatedCompanyUsingGETAsyncWithHttpInfo ();
+        /// <summary>
+        /// getAllUsersByCompanyId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">companyId</param>
+        /// <returns>Task of List&lt;User&gt;</returns>
+        System.Threading.Tasks.Task<List<User>> GetAllUsersByCompanyIdUsingGETAsync (long? companyId);
+
+        /// <summary>
+        /// getAllUsersByCompanyId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">companyId</param>
+        /// <returns>Task of ApiResponse (List&lt;User&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<User>>> GetAllUsersByCompanyIdUsingGETAsyncWithHttpInfo (long? companyId);
         /// <summary>
         /// getAllUsers
         /// </summary>
@@ -380,6 +502,165 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
+        }
+
+        /// <summary>
+        /// createCompanyUser 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="managedUserVM">managedUserVM</param>
+        /// <returns>ResponseEntity</returns>
+        public ResponseEntity CreateCompanyUserUsingPOST (ManagedUserVM managedUserVM)
+        {
+             ApiResponse<ResponseEntity> localVarResponse = CreateCompanyUserUsingPOSTWithHttpInfo(managedUserVM);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// createCompanyUser 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="managedUserVM">managedUserVM</param>
+        /// <returns>ApiResponse of ResponseEntity</returns>
+        public ApiResponse< ResponseEntity > CreateCompanyUserUsingPOSTWithHttpInfo (ManagedUserVM managedUserVM)
+        {
+            // verify the required parameter 'managedUserVM' is set
+            if (managedUserVM == null)
+                throw new ApiException(400, "Missing required parameter 'managedUserVM' when calling UserResourceApi->CreateCompanyUserUsingPOST");
+
+            var localVarPath = "/api/users/company";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (managedUserVM != null && managedUserVM.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(managedUserVM); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = managedUserVM; // byte array
+            }
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateCompanyUserUsingPOST", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+        }
+
+        /// <summary>
+        /// createCompanyUser 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="managedUserVM">managedUserVM</param>
+        /// <returns>Task of ResponseEntity</returns>
+        public async System.Threading.Tasks.Task<ResponseEntity> CreateCompanyUserUsingPOSTAsync (ManagedUserVM managedUserVM)
+        {
+             ApiResponse<ResponseEntity> localVarResponse = await CreateCompanyUserUsingPOSTAsyncWithHttpInfo(managedUserVM);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// createCompanyUser 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="managedUserVM">managedUserVM</param>
+        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> CreateCompanyUserUsingPOSTAsyncWithHttpInfo (ManagedUserVM managedUserVM)
+        {
+            // verify the required parameter 'managedUserVM' is set
+            if (managedUserVM == null)
+                throw new ApiException(400, "Missing required parameter 'managedUserVM' when calling UserResourceApi->CreateCompanyUserUsingPOST");
+
+            var localVarPath = "/api/users/company";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (managedUserVM != null && managedUserVM.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(managedUserVM); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = managedUserVM; // byte array
+            }
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateCompanyUserUsingPOST", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
         }
 
         /// <summary>
@@ -680,6 +961,280 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
+        }
+
+        /// <summary>
+        /// getAllUsersByAuthenticatedCompany 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;User&gt;</returns>
+        public List<User> GetAllUsersByAuthenticatedCompanyUsingGET ()
+        {
+             ApiResponse<List<User>> localVarResponse = GetAllUsersByAuthenticatedCompanyUsingGETWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// getAllUsersByAuthenticatedCompany 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;User&gt;</returns>
+        public ApiResponse< List<User> > GetAllUsersByAuthenticatedCompanyUsingGETWithHttpInfo ()
+        {
+
+            var localVarPath = "/api/users/company";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAllUsersByAuthenticatedCompanyUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<User>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<User>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<User>)));
+        }
+
+        /// <summary>
+        /// getAllUsersByAuthenticatedCompany 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;User&gt;</returns>
+        public async System.Threading.Tasks.Task<List<User>> GetAllUsersByAuthenticatedCompanyUsingGETAsync ()
+        {
+             ApiResponse<List<User>> localVarResponse = await GetAllUsersByAuthenticatedCompanyUsingGETAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// getAllUsersByAuthenticatedCompany 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;User&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<User>>> GetAllUsersByAuthenticatedCompanyUsingGETAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/api/users/company";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAllUsersByAuthenticatedCompanyUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<User>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<User>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<User>)));
+        }
+
+        /// <summary>
+        /// getAllUsersByCompanyId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">companyId</param>
+        /// <returns>List&lt;User&gt;</returns>
+        public List<User> GetAllUsersByCompanyIdUsingGET (long? companyId)
+        {
+             ApiResponse<List<User>> localVarResponse = GetAllUsersByCompanyIdUsingGETWithHttpInfo(companyId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// getAllUsersByCompanyId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">companyId</param>
+        /// <returns>ApiResponse of List&lt;User&gt;</returns>
+        public ApiResponse< List<User> > GetAllUsersByCompanyIdUsingGETWithHttpInfo (long? companyId)
+        {
+            // verify the required parameter 'companyId' is set
+            if (companyId == null)
+                throw new ApiException(400, "Missing required parameter 'companyId' when calling UserResourceApi->GetAllUsersByCompanyIdUsingGET");
+
+            var localVarPath = "/api/users/company/{companyId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (companyId != null) localVarPathParams.Add("companyId", Configuration.ApiClient.ParameterToString(companyId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAllUsersByCompanyIdUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<User>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<User>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<User>)));
+        }
+
+        /// <summary>
+        /// getAllUsersByCompanyId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">companyId</param>
+        /// <returns>Task of List&lt;User&gt;</returns>
+        public async System.Threading.Tasks.Task<List<User>> GetAllUsersByCompanyIdUsingGETAsync (long? companyId)
+        {
+             ApiResponse<List<User>> localVarResponse = await GetAllUsersByCompanyIdUsingGETAsyncWithHttpInfo(companyId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// getAllUsersByCompanyId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="companyId">companyId</param>
+        /// <returns>Task of ApiResponse (List&lt;User&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<User>>> GetAllUsersByCompanyIdUsingGETAsyncWithHttpInfo (long? companyId)
+        {
+            // verify the required parameter 'companyId' is set
+            if (companyId == null)
+                throw new ApiException(400, "Missing required parameter 'companyId' when calling UserResourceApi->GetAllUsersByCompanyIdUsingGET");
+
+            var localVarPath = "/api/users/company/{companyId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (companyId != null) localVarPathParams.Add("companyId", Configuration.ApiClient.ParameterToString(companyId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAllUsersByCompanyIdUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<User>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<User>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<User>)));
         }
 
         /// <summary>

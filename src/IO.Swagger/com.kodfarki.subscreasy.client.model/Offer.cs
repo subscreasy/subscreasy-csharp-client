@@ -40,14 +40,15 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// </summary>
         /// <param name="Company">Company (required).</param>
         /// <param name="Id">Id.</param>
+        /// <param name="MultiplePurchase">MultiplePurchase (required).</param>
         /// <param name="Name">Name (required).</param>
         /// <param name="OpenEnded">OpenEnded (required).</param>
         /// <param name="Price">Price (required).</param>
-        /// <param name="Recurrence">Recurrence (required).</param>
+        /// <param name="Recurrence">Recurrence.</param>
         /// <param name="RecurrenceCount">RecurrenceCount.</param>
         /// <param name="SecureId">SecureId.</param>
         /// <param name="TrialPeriod">TrialPeriod.</param>
-        public Offer(Company Company = default(Company), long? Id = default(long?), string Name = default(string), bool? OpenEnded = default(bool?), decimal? Price = default(decimal?), RecurrencePeriod Recurrence = default(RecurrencePeriod), int? RecurrenceCount = default(int?), string SecureId = default(string), int? TrialPeriod = default(int?))
+        public Offer(Company Company = default(Company), long? Id = default(long?), bool? MultiplePurchase = default(bool?), string Name = default(string), bool? OpenEnded = default(bool?), decimal? Price = default(decimal?), RecurrencePeriod Recurrence = default(RecurrencePeriod), int? RecurrenceCount = default(int?), string SecureId = default(string), int? TrialPeriod = default(int?))
         {
             // to ensure "Company" is required (not null)
             if (Company == null)
@@ -57,6 +58,15 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             else
             {
                 this.Company = Company;
+            }
+            // to ensure "MultiplePurchase" is required (not null)
+            if (MultiplePurchase == null)
+            {
+                throw new InvalidDataException("MultiplePurchase is a required property for Offer and cannot be null");
+            }
+            else
+            {
+                this.MultiplePurchase = MultiplePurchase;
             }
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -85,16 +95,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             {
                 this.Price = Price;
             }
-            // to ensure "Recurrence" is required (not null)
-            if (Recurrence == null)
-            {
-                throw new InvalidDataException("Recurrence is a required property for Offer and cannot be null");
-            }
-            else
-            {
-                this.Recurrence = Recurrence;
-            }
             this.Id = Id;
+            this.Recurrence = Recurrence;
             this.RecurrenceCount = RecurrenceCount;
             this.SecureId = SecureId;
             this.TrialPeriod = TrialPeriod;
@@ -111,6 +113,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public long? Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MultiplePurchase
+        /// </summary>
+        [DataMember(Name="multiplePurchase", EmitDefaultValue=false)]
+        public bool? MultiplePurchase { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -164,6 +172,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("class Offer {\n");
             sb.Append("  Company: ").Append(Company).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  MultiplePurchase: ").Append(MultiplePurchase).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  OpenEnded: ").Append(OpenEnded).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
@@ -216,6 +225,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.MultiplePurchase == input.MultiplePurchase ||
+                    (this.MultiplePurchase != null &&
+                    this.MultiplePurchase.Equals(input.MultiplePurchase))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -265,6 +279,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Company.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.MultiplePurchase != null)
+                    hashCode = hashCode * 59 + this.MultiplePurchase.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.OpenEnded != null)

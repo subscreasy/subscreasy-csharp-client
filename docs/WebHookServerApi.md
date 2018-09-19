@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**PaymentUpdatedUsingPOST**](WebHookServerApi.md#paymentupdatedusingpost) | **POST** /subscreasy/webhook/payment-updated | paymentUpdated
 [**SubscriberCreatedUsingPOST**](WebHookServerApi.md#subscribercreatedusingpost) | **POST** /subscreasy/webhook/subscriber-created | subscriberCreated
 [**SubscriberUpdatedUsingPOST**](WebHookServerApi.md#subscriberupdatedusingpost) | **POST** /subscreasy/webhook/subscriber-updated | subscriberUpdated
 [**SubscriptionEndedUsingPOST**](WebHookServerApi.md#subscriptionendedusingpost) | **POST** /subscreasy/webhook/subscription-ended | subscriptionEnded
@@ -11,6 +12,65 @@ Method | HTTP request | Description
 [**SubscriptionRenewedUsingPOST**](WebHookServerApi.md#subscriptionrenewedusingpost) | **POST** /subscreasy/webhook/subscription-renewed | subscriptionRenewed
 [**SubscriptionStartedUsingPOST**](WebHookServerApi.md#subscriptionstartedusingpost) | **POST** /subscreasy/webhook/subscription-started | subscriptionStarted
 
+
+<a name="paymentupdatedusingpost"></a>
+# **PaymentUpdatedUsingPOST**
+> Object PaymentUpdatedUsingPOST (WebHookRequest r)
+
+paymentUpdated
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class PaymentUpdatedUsingPOSTExample
+    {
+        public void main()
+        {
+            var apiInstance = new WebHookServerApi();
+            var r = new WebHookRequest(); // WebHookRequest | r
+
+            try
+            {
+                // paymentUpdated
+                Object result = apiInstance.PaymentUpdatedUsingPOST(r);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WebHookServerApi.PaymentUpdatedUsingPOST: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **r** | [**WebHookRequest**](WebHookRequest.md)| r | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="subscribercreatedusingpost"></a>
 # **SubscriberCreatedUsingPOST**

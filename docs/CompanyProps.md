@@ -10,6 +10,10 @@ Name | Type | Description | Notes
 **PaymentGateway** | **string** |  | [optional] 
 **PaymentGatewayApiKey** | **string** |  | [optional] 
 **PaymentGatewaySecurityKey** | **string** |  | [optional] 
+**PaytrMerchantId** | **int?** |  | [optional] 
+**PayuMerchantKeyRenewals** | **string** |  | [optional] 
+**PayuSecretKeyRenewals** | **string** |  | [optional] 
+**PrivacyPolicyUrl** | **string** |  | [optional] 
 **SecureKey** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

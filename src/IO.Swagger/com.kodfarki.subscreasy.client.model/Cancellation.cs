@@ -59,13 +59,21 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// Initializes a new instance of the <see cref="Cancellation" /> class.
         /// </summary>
         /// <param name="CancellationType">CancellationType.</param>
+        /// <param name="SubscriberId">SubscriberId.</param>
         /// <param name="SubscriptionId">SubscriptionId.</param>
-        public Cancellation(CancellationTypeEnum? CancellationType = default(CancellationTypeEnum?), long? SubscriptionId = default(long?))
+        public Cancellation(CancellationTypeEnum? CancellationType = default(CancellationTypeEnum?), long? SubscriberId = default(long?), long? SubscriptionId = default(long?))
         {
             this.CancellationType = CancellationType;
+            this.SubscriberId = SubscriberId;
             this.SubscriptionId = SubscriptionId;
         }
         
+
+        /// <summary>
+        /// Gets or Sets SubscriberId
+        /// </summary>
+        [DataMember(Name="subscriberId", EmitDefaultValue=false)]
+        public long? SubscriberId { get; set; }
 
         /// <summary>
         /// Gets or Sets SubscriptionId
@@ -82,6 +90,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             var sb = new StringBuilder();
             sb.Append("class Cancellation {\n");
             sb.Append("  CancellationType: ").Append(CancellationType).Append("\n");
+            sb.Append("  SubscriberId: ").Append(SubscriberId).Append("\n");
             sb.Append("  SubscriptionId: ").Append(SubscriptionId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -123,6 +132,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.CancellationType.Equals(input.CancellationType))
                 ) && 
                 (
+                    this.SubscriberId == input.SubscriberId ||
+                    (this.SubscriberId != null &&
+                    this.SubscriberId.Equals(input.SubscriberId))
+                ) && 
+                (
                     this.SubscriptionId == input.SubscriptionId ||
                     (this.SubscriptionId != null &&
                     this.SubscriptionId.Equals(input.SubscriptionId))
@@ -140,6 +154,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                 int hashCode = 41;
                 if (this.CancellationType != null)
                     hashCode = hashCode * 59 + this.CancellationType.GetHashCode();
+                if (this.SubscriberId != null)
+                    hashCode = hashCode * 59 + this.SubscriberId.GetHashCode();
                 if (this.SubscriptionId != null)
                     hashCode = hashCode * 59 + this.SubscriptionId.GetHashCode();
                 return hashCode;

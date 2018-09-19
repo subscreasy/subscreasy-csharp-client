@@ -143,7 +143,7 @@ void (empty response body)
 
 <a name="getallsubscribersusingget"></a>
 # **GetAllSubscribersUsingGET**
-> List<Subscriber> GetAllSubscribersUsingGET ()
+> List<Subscriber> GetAllSubscribersUsingGET (int? page = null, int? size = null, List<string> sort = null)
 
 getAllSubscribers
 
@@ -167,11 +167,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new SubscriberResourceApi();
+            var page = 56;  // int? | Page number of the requested page (optional) 
+            var size = 56;  // int? | Size of a page (optional) 
+            var sort = new List<string>(); // List<string> | Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional) 
 
             try
             {
                 // getAllSubscribers
-                List&lt;Subscriber&gt; result = apiInstance.GetAllSubscribersUsingGET();
+                List&lt;Subscriber&gt; result = apiInstance.GetAllSubscribersUsingGET(page, size, sort);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -184,7 +187,12 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int?**| Page number of the requested page | [optional] 
+ **size** | **int?**| Size of a page | [optional] 
+ **sort** | [**List&lt;string&gt;**](string.md)| Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. | [optional] 
 
 ### Return type
 

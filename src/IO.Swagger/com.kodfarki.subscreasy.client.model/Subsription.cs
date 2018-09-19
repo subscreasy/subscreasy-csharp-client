@@ -31,6 +31,85 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
     public partial class Subsription :  IEquatable<Subsription>, IValidatableObject
     {
         /// <summary>
+        /// Defines LastEvent
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LastEventEnum
+        {
+            
+            /// <summary>
+            /// Enum STARTED for value: STARTED
+            /// </summary>
+            [EnumMember(Value = "STARTED")]
+            STARTED = 1,
+            
+            /// <summary>
+            /// Enum RENEWED for value: RENEWED
+            /// </summary>
+            [EnumMember(Value = "RENEWED")]
+            RENEWED = 2,
+            
+            /// <summary>
+            /// Enum RENEWALFAILED for value: RENEWAL_FAILED
+            /// </summary>
+            [EnumMember(Value = "RENEWAL_FAILED")]
+            RENEWALFAILED = 3,
+            
+            /// <summary>
+            /// Enum FINISHED for value: FINISHED
+            /// </summary>
+            [EnumMember(Value = "FINISHED")]
+            FINISHED = 4,
+            
+            /// <summary>
+            /// Enum CANCELLED for value: CANCELLED
+            /// </summary>
+            [EnumMember(Value = "CANCELLED")]
+            CANCELLED = 5,
+            
+            /// <summary>
+            /// Enum SUBSCRIBERCREATED for value: SUBSCRIBER_CREATED
+            /// </summary>
+            [EnumMember(Value = "SUBSCRIBER_CREATED")]
+            SUBSCRIBERCREATED = 6,
+            
+            /// <summary>
+            /// Enum SUBSCRIBERUPDATED for value: SUBSCRIBER_UPDATED
+            /// </summary>
+            [EnumMember(Value = "SUBSCRIBER_UPDATED")]
+            SUBSCRIBERUPDATED = 7,
+            
+            /// <summary>
+            /// Enum TRIALENDING for value: TRIAL_ENDING
+            /// </summary>
+            [EnumMember(Value = "TRIAL_ENDING")]
+            TRIALENDING = 8,
+            
+            /// <summary>
+            /// Enum PAYMENTUPDATED for value: PAYMENT_UPDATED
+            /// </summary>
+            [EnumMember(Value = "PAYMENT_UPDATED")]
+            PAYMENTUPDATED = 9,
+            
+            /// <summary>
+            /// Enum IMMEDIATECANCELLATIONREQUESTED for value: IMMEDIATE_CANCELLATION_REQUESTED
+            /// </summary>
+            [EnumMember(Value = "IMMEDIATE_CANCELLATION_REQUESTED")]
+            IMMEDIATECANCELLATIONREQUESTED = 10,
+            
+            /// <summary>
+            /// Enum ENDOFPERIODCANCELLATIONREQUESTED for value: ENDOFPERIOD_CANCELLATION_REQUESTED
+            /// </summary>
+            [EnumMember(Value = "ENDOFPERIOD_CANCELLATION_REQUESTED")]
+            ENDOFPERIODCANCELLATIONREQUESTED = 11
+        }
+
+        /// <summary>
+        /// Gets or Sets LastEvent
+        /// </summary>
+        [DataMember(Name="lastEvent", EmitDefaultValue=false)]
+        public LastEventEnum? LastEvent { get; set; }
+        /// <summary>
         /// Defines PaymentMethod
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -112,7 +191,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Company">Company (required).</param>
         /// <param name="EndDate">EndDate.</param>
         /// <param name="Id">Id.</param>
-        /// <param name="NextChargingDate">NextChargingDate.</param>
+        /// <param name="LastEvent">LastEvent.</param>
         /// <param name="Offer">Offer (required).</param>
         /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="Services">Services.</param>
@@ -120,7 +199,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Status">Status.</param>
         /// <param name="Subscriber">Subscriber.</param>
         /// <param name="SubscriberSecureId">SubscriberSecureId.</param>
-        public Subsription(Coupon AppliedCoupon = default(Coupon), DateTime? CancelDate = default(DateTime?), SavedCard Card = default(SavedCard), Company Company = default(Company), DateTime? EndDate = default(DateTime?), long? Id = default(long?), DateTime? NextChargingDate = default(DateTime?), Offer Offer = default(Offer), PaymentMethodEnum? PaymentMethod = default(PaymentMethodEnum?), List<ServiceInstance> Services = default(List<ServiceInstance>), DateTime? StartDate = default(DateTime?), StatusEnum? Status = default(StatusEnum?), Subscriber Subscriber = default(Subscriber), string SubscriberSecureId = default(string))
+        /// <param name="TermEndDate">TermEndDate.</param>
+        /// <param name="TermStartDate">TermStartDate.</param>
+        /// <param name="TrialEndDate">TrialEndDate.</param>
+        public Subsription(Coupon AppliedCoupon = default(Coupon), DateTime? CancelDate = default(DateTime?), SavedCard Card = default(SavedCard), Company Company = default(Company), DateTime? EndDate = default(DateTime?), long? Id = default(long?), LastEventEnum? LastEvent = default(LastEventEnum?), Offer Offer = default(Offer), PaymentMethodEnum? PaymentMethod = default(PaymentMethodEnum?), List<ServiceInstance> Services = default(List<ServiceInstance>), DateTime? StartDate = default(DateTime?), StatusEnum? Status = default(StatusEnum?), Subscriber Subscriber = default(Subscriber), string SubscriberSecureId = default(string), DateTime? TermEndDate = default(DateTime?), DateTime? TermStartDate = default(DateTime?), DateTime? TrialEndDate = default(DateTime?))
         {
             // to ensure "Company" is required (not null)
             if (Company == null)
@@ -145,13 +227,16 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.Card = Card;
             this.EndDate = EndDate;
             this.Id = Id;
-            this.NextChargingDate = NextChargingDate;
+            this.LastEvent = LastEvent;
             this.PaymentMethod = PaymentMethod;
             this.Services = Services;
             this.StartDate = StartDate;
             this.Status = Status;
             this.Subscriber = Subscriber;
             this.SubscriberSecureId = SubscriberSecureId;
+            this.TermEndDate = TermEndDate;
+            this.TermStartDate = TermStartDate;
+            this.TrialEndDate = TrialEndDate;
         }
         
         /// <summary>
@@ -190,11 +275,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         [DataMember(Name="id", EmitDefaultValue=false)]
         public long? Id { get; set; }
 
-        /// <summary>
-        /// Gets or Sets NextChargingDate
-        /// </summary>
-        [DataMember(Name="nextChargingDate", EmitDefaultValue=false)]
-        public DateTime? NextChargingDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Offer
@@ -229,6 +309,24 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string SubscriberSecureId { get; set; }
 
         /// <summary>
+        /// Gets or Sets TermEndDate
+        /// </summary>
+        [DataMember(Name="termEndDate", EmitDefaultValue=false)]
+        public DateTime? TermEndDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TermStartDate
+        /// </summary>
+        [DataMember(Name="termStartDate", EmitDefaultValue=false)]
+        public DateTime? TermStartDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TrialEndDate
+        /// </summary>
+        [DataMember(Name="trialEndDate", EmitDefaultValue=false)]
+        public DateTime? TrialEndDate { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -242,7 +340,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  Company: ").Append(Company).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  NextChargingDate: ").Append(NextChargingDate).Append("\n");
+            sb.Append("  LastEvent: ").Append(LastEvent).Append("\n");
             sb.Append("  Offer: ").Append(Offer).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  Services: ").Append(Services).Append("\n");
@@ -250,6 +348,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Subscriber: ").Append(Subscriber).Append("\n");
             sb.Append("  SubscriberSecureId: ").Append(SubscriberSecureId).Append("\n");
+            sb.Append("  TermEndDate: ").Append(TermEndDate).Append("\n");
+            sb.Append("  TermStartDate: ").Append(TermStartDate).Append("\n");
+            sb.Append("  TrialEndDate: ").Append(TrialEndDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -315,9 +416,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.NextChargingDate == input.NextChargingDate ||
-                    (this.NextChargingDate != null &&
-                    this.NextChargingDate.Equals(input.NextChargingDate))
+                    this.LastEvent == input.LastEvent ||
+                    (this.LastEvent != null &&
+                    this.LastEvent.Equals(input.LastEvent))
                 ) && 
                 (
                     this.Offer == input.Offer ||
@@ -353,6 +454,21 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.SubscriberSecureId == input.SubscriberSecureId ||
                     (this.SubscriberSecureId != null &&
                     this.SubscriberSecureId.Equals(input.SubscriberSecureId))
+                ) && 
+                (
+                    this.TermEndDate == input.TermEndDate ||
+                    (this.TermEndDate != null &&
+                    this.TermEndDate.Equals(input.TermEndDate))
+                ) && 
+                (
+                    this.TermStartDate == input.TermStartDate ||
+                    (this.TermStartDate != null &&
+                    this.TermStartDate.Equals(input.TermStartDate))
+                ) && 
+                (
+                    this.TrialEndDate == input.TrialEndDate ||
+                    (this.TrialEndDate != null &&
+                    this.TrialEndDate.Equals(input.TrialEndDate))
                 );
         }
 
@@ -377,8 +493,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.EndDate.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.NextChargingDate != null)
-                    hashCode = hashCode * 59 + this.NextChargingDate.GetHashCode();
+                if (this.LastEvent != null)
+                    hashCode = hashCode * 59 + this.LastEvent.GetHashCode();
                 if (this.Offer != null)
                     hashCode = hashCode * 59 + this.Offer.GetHashCode();
                 if (this.PaymentMethod != null)
@@ -393,6 +509,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Subscriber.GetHashCode();
                 if (this.SubscriberSecureId != null)
                     hashCode = hashCode * 59 + this.SubscriberSecureId.GetHashCode();
+                if (this.TermEndDate != null)
+                    hashCode = hashCode * 59 + this.TermEndDate.GetHashCode();
+                if (this.TermStartDate != null)
+                    hashCode = hashCode * 59 + this.TermStartDate.GetHashCode();
+                if (this.TrialEndDate != null)
+                    hashCode = hashCode * 59 + this.TrialEndDate.GetHashCode();
                 return hashCode;
             }
         }

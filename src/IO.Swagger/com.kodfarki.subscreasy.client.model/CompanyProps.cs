@@ -53,7 +53,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             /// Enum PAYU for value: PAYU
             /// </summary>
             [EnumMember(Value = "PAYU")]
-            PAYU = 3
+            PAYU = 3,
+            
+            /// <summary>
+            /// Enum PAYTR for value: PAYTR
+            /// </summary>
+            [EnumMember(Value = "PAYTR")]
+            PAYTR = 4
         }
 
         /// <summary>
@@ -71,8 +77,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="PaymentGateway">PaymentGateway.</param>
         /// <param name="PaymentGatewayApiKey">PaymentGatewayApiKey.</param>
         /// <param name="PaymentGatewaySecurityKey">PaymentGatewaySecurityKey.</param>
+        /// <param name="PaytrMerchantId">PaytrMerchantId.</param>
+        /// <param name="PayuMerchantKeyRenewals">PayuMerchantKeyRenewals.</param>
+        /// <param name="PayuSecretKeyRenewals">PayuSecretKeyRenewals.</param>
+        /// <param name="PrivacyPolicyUrl">PrivacyPolicyUrl.</param>
         /// <param name="SecureKey">SecureKey.</param>
-        public CompanyProps(string ApiKey = default(string), string CallbackUrl = default(string), Company Company = default(Company), long? Id = default(long?), PaymentGatewayEnum? PaymentGateway = default(PaymentGatewayEnum?), string PaymentGatewayApiKey = default(string), string PaymentGatewaySecurityKey = default(string), string SecureKey = default(string))
+        public CompanyProps(string ApiKey = default(string), string CallbackUrl = default(string), Company Company = default(Company), long? Id = default(long?), PaymentGatewayEnum? PaymentGateway = default(PaymentGatewayEnum?), string PaymentGatewayApiKey = default(string), string PaymentGatewaySecurityKey = default(string), int? PaytrMerchantId = default(int?), string PayuMerchantKeyRenewals = default(string), string PayuSecretKeyRenewals = default(string), string PrivacyPolicyUrl = default(string), string SecureKey = default(string))
         {
             this.ApiKey = ApiKey;
             this.CallbackUrl = CallbackUrl;
@@ -81,6 +91,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.PaymentGateway = PaymentGateway;
             this.PaymentGatewayApiKey = PaymentGatewayApiKey;
             this.PaymentGatewaySecurityKey = PaymentGatewaySecurityKey;
+            this.PaytrMerchantId = PaytrMerchantId;
+            this.PayuMerchantKeyRenewals = PayuMerchantKeyRenewals;
+            this.PayuSecretKeyRenewals = PayuSecretKeyRenewals;
+            this.PrivacyPolicyUrl = PrivacyPolicyUrl;
             this.SecureKey = SecureKey;
         }
         
@@ -122,6 +136,30 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string PaymentGatewaySecurityKey { get; set; }
 
         /// <summary>
+        /// Gets or Sets PaytrMerchantId
+        /// </summary>
+        [DataMember(Name="paytrMerchantId", EmitDefaultValue=false)]
+        public int? PaytrMerchantId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PayuMerchantKeyRenewals
+        /// </summary>
+        [DataMember(Name="payuMerchantKeyRenewals", EmitDefaultValue=false)]
+        public string PayuMerchantKeyRenewals { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PayuSecretKeyRenewals
+        /// </summary>
+        [DataMember(Name="payuSecretKeyRenewals", EmitDefaultValue=false)]
+        public string PayuSecretKeyRenewals { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PrivacyPolicyUrl
+        /// </summary>
+        [DataMember(Name="privacyPolicyUrl", EmitDefaultValue=false)]
+        public string PrivacyPolicyUrl { get; set; }
+
+        /// <summary>
         /// Gets or Sets SecureKey
         /// </summary>
         [DataMember(Name="secureKey", EmitDefaultValue=false)]
@@ -142,6 +180,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  PaymentGateway: ").Append(PaymentGateway).Append("\n");
             sb.Append("  PaymentGatewayApiKey: ").Append(PaymentGatewayApiKey).Append("\n");
             sb.Append("  PaymentGatewaySecurityKey: ").Append(PaymentGatewaySecurityKey).Append("\n");
+            sb.Append("  PaytrMerchantId: ").Append(PaytrMerchantId).Append("\n");
+            sb.Append("  PayuMerchantKeyRenewals: ").Append(PayuMerchantKeyRenewals).Append("\n");
+            sb.Append("  PayuSecretKeyRenewals: ").Append(PayuSecretKeyRenewals).Append("\n");
+            sb.Append("  PrivacyPolicyUrl: ").Append(PrivacyPolicyUrl).Append("\n");
             sb.Append("  SecureKey: ").Append(SecureKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -213,6 +255,26 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.PaymentGatewaySecurityKey.Equals(input.PaymentGatewaySecurityKey))
                 ) && 
                 (
+                    this.PaytrMerchantId == input.PaytrMerchantId ||
+                    (this.PaytrMerchantId != null &&
+                    this.PaytrMerchantId.Equals(input.PaytrMerchantId))
+                ) && 
+                (
+                    this.PayuMerchantKeyRenewals == input.PayuMerchantKeyRenewals ||
+                    (this.PayuMerchantKeyRenewals != null &&
+                    this.PayuMerchantKeyRenewals.Equals(input.PayuMerchantKeyRenewals))
+                ) && 
+                (
+                    this.PayuSecretKeyRenewals == input.PayuSecretKeyRenewals ||
+                    (this.PayuSecretKeyRenewals != null &&
+                    this.PayuSecretKeyRenewals.Equals(input.PayuSecretKeyRenewals))
+                ) && 
+                (
+                    this.PrivacyPolicyUrl == input.PrivacyPolicyUrl ||
+                    (this.PrivacyPolicyUrl != null &&
+                    this.PrivacyPolicyUrl.Equals(input.PrivacyPolicyUrl))
+                ) && 
+                (
                     this.SecureKey == input.SecureKey ||
                     (this.SecureKey != null &&
                     this.SecureKey.Equals(input.SecureKey))
@@ -242,6 +304,14 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.PaymentGatewayApiKey.GetHashCode();
                 if (this.PaymentGatewaySecurityKey != null)
                     hashCode = hashCode * 59 + this.PaymentGatewaySecurityKey.GetHashCode();
+                if (this.PaytrMerchantId != null)
+                    hashCode = hashCode * 59 + this.PaytrMerchantId.GetHashCode();
+                if (this.PayuMerchantKeyRenewals != null)
+                    hashCode = hashCode * 59 + this.PayuMerchantKeyRenewals.GetHashCode();
+                if (this.PayuSecretKeyRenewals != null)
+                    hashCode = hashCode * 59 + this.PayuSecretKeyRenewals.GetHashCode();
+                if (this.PrivacyPolicyUrl != null)
+                    hashCode = hashCode * 59 + this.PrivacyPolicyUrl.GetHashCode();
                 if (this.SecureKey != null)
                     hashCode = hashCode * 59 + this.SecureKey.GetHashCode();
                 return hashCode;

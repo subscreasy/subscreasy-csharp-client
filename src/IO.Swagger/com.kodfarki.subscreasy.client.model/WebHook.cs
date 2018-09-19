@@ -36,6 +36,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="AuthenticationKey">AuthenticationKey.</param>
         /// <param name="Company">Company.</param>
         /// <param name="Id">Id.</param>
+        /// <param name="PaymentUpdated">PaymentUpdated.</param>
         /// <param name="ServerUrl">ServerUrl.</param>
         /// <param name="SubscriberCreated">SubscriberCreated.</param>
         /// <param name="SubscriberUpdated">SubscriberUpdated.</param>
@@ -44,11 +45,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="SubscriptionReactivated">SubscriptionReactivated.</param>
         /// <param name="SubscriptionRenewalFailed">SubscriptionRenewalFailed.</param>
         /// <param name="SubscriptionRenewed">SubscriptionRenewed.</param>
-        public WebHook(string AuthenticationKey = default(string), Company Company = default(Company), long? Id = default(long?), string ServerUrl = default(string), bool? SubscriberCreated = default(bool?), bool? SubscriberUpdated = default(bool?), bool? SubscriptionCreated = default(bool?), bool? SubscriptionEnded = default(bool?), bool? SubscriptionReactivated = default(bool?), bool? SubscriptionRenewalFailed = default(bool?), bool? SubscriptionRenewed = default(bool?))
+        public WebHook(string AuthenticationKey = default(string), Company Company = default(Company), long? Id = default(long?), bool? PaymentUpdated = default(bool?), string ServerUrl = default(string), bool? SubscriberCreated = default(bool?), bool? SubscriberUpdated = default(bool?), bool? SubscriptionCreated = default(bool?), bool? SubscriptionEnded = default(bool?), bool? SubscriptionReactivated = default(bool?), bool? SubscriptionRenewalFailed = default(bool?), bool? SubscriptionRenewed = default(bool?))
         {
             this.AuthenticationKey = AuthenticationKey;
             this.Company = Company;
             this.Id = Id;
+            this.PaymentUpdated = PaymentUpdated;
             this.ServerUrl = ServerUrl;
             this.SubscriberCreated = SubscriberCreated;
             this.SubscriberUpdated = SubscriberUpdated;
@@ -76,6 +78,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public long? Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PaymentUpdated
+        /// </summary>
+        [DataMember(Name="paymentUpdated", EmitDefaultValue=false)]
+        public bool? PaymentUpdated { get; set; }
 
         /// <summary>
         /// Gets or Sets ServerUrl
@@ -136,6 +144,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  AuthenticationKey: ").Append(AuthenticationKey).Append("\n");
             sb.Append("  Company: ").Append(Company).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  PaymentUpdated: ").Append(PaymentUpdated).Append("\n");
             sb.Append("  ServerUrl: ").Append(ServerUrl).Append("\n");
             sb.Append("  SubscriberCreated: ").Append(SubscriberCreated).Append("\n");
             sb.Append("  SubscriberUpdated: ").Append(SubscriberUpdated).Append("\n");
@@ -194,6 +203,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.PaymentUpdated == input.PaymentUpdated ||
+                    (this.PaymentUpdated != null &&
+                    this.PaymentUpdated.Equals(input.PaymentUpdated))
+                ) && 
+                (
                     this.ServerUrl == input.ServerUrl ||
                     (this.ServerUrl != null &&
                     this.ServerUrl.Equals(input.ServerUrl))
@@ -250,6 +264,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Company.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.PaymentUpdated != null)
+                    hashCode = hashCode * 59 + this.PaymentUpdated.GetHashCode();
                 if (this.ServerUrl != null)
                     hashCode = hashCode * 59 + this.ServerUrl.GetHashCode();
                 if (this.SubscriberCreated != null)
