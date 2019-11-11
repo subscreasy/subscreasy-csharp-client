@@ -1,10 +1,11 @@
 # IO.Swagger.com.kodfarki.subscreasy.client.OrderResourceApi
 
-All URIs are relative to *https://localhost:8080*
+All URIs are relative to *https://app.subscreasy.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrderUsingPOST**](OrderResourceApi.md#createorderusingpost) | **POST** /api/orders | createOrder
+[**DeleteOrderUsingDELETE**](OrderResourceApi.md#deleteorderusingdelete) | **DELETE** /api/orders/{id} | deleteOrder
 [**GetAllOrdersUsingGET**](OrderResourceApi.md#getallordersusingget) | **GET** /api/orders | getAllOrders
 [**GetOrderUsingGET**](OrderResourceApi.md#getorderusingget) | **GET** /api/orders/{id} | getOrder
 [**UpdateOrderUsingPUT**](OrderResourceApi.md#updateorderusingput) | **PUT** /api/orders | updateOrder
@@ -12,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createorderusingpost"></a>
 # **CreateOrderUsingPOST**
-> Order CreateOrderUsingPOST (CreateOrderRequest orderRequest)
+> Order CreateOrderUsingPOST (Order order)
 
 createOrder
 
@@ -36,12 +37,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrderResourceApi();
-            var orderRequest = new CreateOrderRequest(); // CreateOrderRequest | orderRequest
+            var order = new Order(); // Order | order
 
             try
             {
                 // createOrder
-                Order result = apiInstance.CreateOrderUsingPOST(orderRequest);
+                Order result = apiInstance.CreateOrderUsingPOST(order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,7 +58,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderRequest** | [**CreateOrderRequest**](CreateOrderRequest.md)| orderRequest | 
+ **order** | [**Order**](Order.md)| order | 
 
 ### Return type
 
@@ -69,8 +70,71 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded;charset=UTF-8
- - **Accept**: text/html;charset=UTF-8
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deleteorderusingdelete"></a>
+# **DeleteOrderUsingDELETE**
+> void DeleteOrderUsingDELETE (long? id)
+
+deleteOrder
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class DeleteOrderUsingDELETEExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new OrderResourceApi();
+            var id = 789;  // long? | id
+
+            try
+            {
+                // deleteOrder
+                apiInstance.DeleteOrderUsingDELETE(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrderResourceApi.DeleteOrderUsingDELETE: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **long?**| id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -9,11 +9,13 @@ Name | Type | Description | Notes
 **Email** | **string** |  | [optional] 
 **Id** | **long?** |  | [optional] 
 **IdentificationNo** | **string** |  | [optional] 
+**MerchantSubscriberId** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **PhoneNumber** | **string** |  | [optional] 
 **SecureId** | **string** |  | [optional] 
 **ShippingAddress** | [**Address**](Address.md) |  | [optional] 
 **Surname** | **string** |  | [optional] 
+**TaxAdministration** | **string** |  | [optional] 
 **TaxNumber** | **string** |  | [optional] 
 **WorksFor** | **string** |  | [optional] 
 

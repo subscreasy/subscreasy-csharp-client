@@ -35,10 +35,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// </summary>
         /// <param name="ActiveProfiles">ActiveProfiles.</param>
         /// <param name="RibbonEnv">RibbonEnv.</param>
-        public ProfileInfoVM(List<string> ActiveProfiles = default(List<string>), string RibbonEnv = default(string))
+        /// <param name="Version">Version.</param>
+        public ProfileInfoVM(List<string> ActiveProfiles = default(List<string>), string RibbonEnv = default(string), string Version = default(string))
         {
             this.ActiveProfiles = ActiveProfiles;
             this.RibbonEnv = RibbonEnv;
+            this.Version = Version;
         }
         
         /// <summary>
@@ -54,6 +56,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string RibbonEnv { get; set; }
 
         /// <summary>
+        /// Gets or Sets Version
+        /// </summary>
+        [DataMember(Name="version", EmitDefaultValue=false)]
+        public string Version { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -63,6 +71,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("class ProfileInfoVM {\n");
             sb.Append("  ActiveProfiles: ").Append(ActiveProfiles).Append("\n");
             sb.Append("  RibbonEnv: ").Append(RibbonEnv).Append("\n");
+            sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +115,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.RibbonEnv == input.RibbonEnv ||
                     (this.RibbonEnv != null &&
                     this.RibbonEnv.Equals(input.RibbonEnv))
+                ) && 
+                (
+                    this.Version == input.Version ||
+                    (this.Version != null &&
+                    this.Version.Equals(input.Version))
                 );
         }
 
@@ -122,6 +136,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.ActiveProfiles.GetHashCode();
                 if (this.RibbonEnv != null)
                     hashCode = hashCode * 59 + this.RibbonEnv.GetHashCode();
+                if (this.Version != null)
+                    hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

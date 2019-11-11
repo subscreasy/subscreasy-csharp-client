@@ -1,6 +1,6 @@
 # IO.Swagger.com.kodfarki.subscreasy.client.CompanyPropsResourceApi
 
-All URIs are relative to *https://localhost:8080*
+All URIs are relative to *https://app.subscreasy.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**GetAllCompanyPropsUsingGET**](CompanyPropsResourceApi.md#getallcompanypropsusingget) | **GET** /api/company-props | getAllCompanyProps
 [**GetCompanyPropsByCompanyIdUsingGET**](CompanyPropsResourceApi.md#getcompanypropsbycompanyidusingget) | **GET** /api/company-props/company/{companyId} | getCompanyPropsByCompanyId
 [**UpdateCompanyPropsUsingPUT**](CompanyPropsResourceApi.md#updatecompanypropsusingput) | **PUT** /api/company-props | updateCompanyProps
+[**UploadCSSUsingPOST**](CompanyPropsResourceApi.md#uploadcssusingpost) | **POST** /api/company-props/uploadCSS | uploadCSS
+[**UploadFileUsingPOST**](CompanyPropsResourceApi.md#uploadfileusingpost) | **POST** /api/company-props/uploadFile | uploadFile
 
 
 <a name="createcompanypropsusingpost"></a>
@@ -322,6 +324,134 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="uploadcssusingpost"></a>
+# **UploadCSSUsingPOST**
+> Object UploadCSSUsingPOST (System.IO.Stream file)
+
+uploadCSS
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class UploadCSSUsingPOSTExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new CompanyPropsResourceApi();
+            var file = new System.IO.Stream(); // System.IO.Stream | file
+
+            try
+            {
+                // uploadCSS
+                Object result = apiInstance.UploadCSSUsingPOST(file);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CompanyPropsResourceApi.UploadCSSUsingPOST: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **System.IO.Stream**| file | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="uploadfileusingpost"></a>
+# **UploadFileUsingPOST**
+> Object UploadFileUsingPOST (System.IO.Stream file)
+
+uploadFile
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class UploadFileUsingPOSTExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new CompanyPropsResourceApi();
+            var file = new System.IO.Stream(); // System.IO.Stream | file
+
+            try
+            {
+                // uploadFile
+                Object result = apiInstance.UploadFileUsingPOST(file);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CompanyPropsResourceApi.UploadFileUsingPOST: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **System.IO.Stream**| file | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

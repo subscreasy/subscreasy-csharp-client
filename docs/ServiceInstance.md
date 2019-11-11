@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Capacity** | **decimal?** |  | [optional] 
 **CurrentUsage** | **decimal?** |  | [optional] 
 **EndDate** | **DateTime?** |  | [optional] 
 **Id** | **long?** |  | [optional] 
@@ -13,6 +14,7 @@ Name | Type | Description | Notes
 **OverUsageQuota** | **decimal?** |  | [optional] 
 **QuotaOrigin** | **string** |  | [optional] 
 **ServiceOffering** | [**ServiceOffering**](ServiceOffering.md) |  | [optional] 
+**ServiceType** | **string** |  | [optional] 
 **StartDate** | **DateTime?** |  | [optional] 
 **Status** | **string** |  | [optional] 
 **SubscriberId** | **string** |  | [optional] 

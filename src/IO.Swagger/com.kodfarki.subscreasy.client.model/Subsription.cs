@@ -101,7 +101,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             /// Enum ENDOFPERIODCANCELLATIONREQUESTED for value: ENDOFPERIOD_CANCELLATION_REQUESTED
             /// </summary>
             [EnumMember(Value = "ENDOFPERIOD_CANCELLATION_REQUESTED")]
-            ENDOFPERIODCANCELLATIONREQUESTED = 11
+            ENDOFPERIODCANCELLATIONREQUESTED = 11,
+            
+            /// <summary>
+            /// Enum PRICEUPDATED for value: PRICE_UPDATED
+            /// </summary>
+            [EnumMember(Value = "PRICE_UPDATED")]
+            PRICEUPDATED = 12
         }
 
         /// <summary>
@@ -126,7 +132,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             /// Enum CC for value: CC
             /// </summary>
             [EnumMember(Value = "CC")]
-            CC = 2
+            CC = 2,
+            
+            /// <summary>
+            /// Enum MOBILE for value: MOBILE
+            /// </summary>
+            [EnumMember(Value = "MOBILE")]
+            MOBILE = 3
         }
 
         /// <summary>
@@ -169,7 +181,19 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             /// Enum CANCELLED for value: CANCELLED
             /// </summary>
             [EnumMember(Value = "CANCELLED")]
-            CANCELLED = 5
+            CANCELLED = 5,
+            
+            /// <summary>
+            /// Enum INTRIAL for value: IN_TRIAL
+            /// </summary>
+            [EnumMember(Value = "IN_TRIAL")]
+            INTRIAL = 6,
+            
+            /// <summary>
+            /// Enum PAYMENTDUE for value: PAYMENT_DUE
+            /// </summary>
+            [EnumMember(Value = "PAYMENT_DUE")]
+            PAYMENTDUE = 7
         }
 
         /// <summary>

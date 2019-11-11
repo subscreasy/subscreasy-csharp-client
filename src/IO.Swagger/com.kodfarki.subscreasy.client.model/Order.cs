@@ -31,6 +31,74 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
     public partial class Order :  IEquatable<Order>, IValidatableObject
     {
         /// <summary>
+        /// Defines ShippingCompany
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ShippingCompanyEnum
+        {
+            
+            /// <summary>
+            /// Enum MNG for value: MNG
+            /// </summary>
+            [EnumMember(Value = "MNG")]
+            MNG = 1,
+            
+            /// <summary>
+            /// Enum SURAT for value: SURAT
+            /// </summary>
+            [EnumMember(Value = "SURAT")]
+            SURAT = 2,
+            
+            /// <summary>
+            /// Enum YURTICI for value: YURTICI
+            /// </summary>
+            [EnumMember(Value = "YURTICI")]
+            YURTICI = 3
+        }
+
+        /// <summary>
+        /// Gets or Sets ShippingCompany
+        /// </summary>
+        [DataMember(Name="shippingCompany", EmitDefaultValue=false)]
+        public ShippingCompanyEnum? ShippingCompany { get; set; }
+        /// <summary>
+        /// Defines Status
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StatusEnum
+        {
+            
+            /// <summary>
+            /// Enum PREPARING for value: PREPARING
+            /// </summary>
+            [EnumMember(Value = "PREPARING")]
+            PREPARING = 1,
+            
+            /// <summary>
+            /// Enum SHIPPED for value: SHIPPED
+            /// </summary>
+            [EnumMember(Value = "SHIPPED")]
+            SHIPPED = 2,
+            
+            /// <summary>
+            /// Enum DELIVERED for value: DELIVERED
+            /// </summary>
+            [EnumMember(Value = "DELIVERED")]
+            DELIVERED = 3,
+            
+            /// <summary>
+            /// Enum CANCELLED for value: CANCELLED
+            /// </summary>
+            [EnumMember(Value = "CANCELLED")]
+            CANCELLED = 4
+        }
+
+        /// <summary>
+        /// Gets or Sets Status
+        /// </summary>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public StatusEnum Status { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -38,49 +106,83 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
-        /// <param name="Address">Address (required).</param>
-        /// <param name="CreateDate">CreateDate (required).</param>
+        /// <param name="Buyer">Buyer (required).</param>
+        /// <param name="Company">Company (required).</param>
+        /// <param name="CreateDate">CreateDate.</param>
         /// <param name="Id">Id.</param>
-        /// <param name="OrderItems">OrderItems.</param>
-        /// <param name="User">User (required).</param>
-        public Order(Address Address = default(Address), DateTime? CreateDate = default(DateTime?), long? Id = default(long?), List<OrderItem> OrderItems = default(List<OrderItem>), User User = default(User))
+        /// <param name="Offer">Offer (required).</param>
+        /// <param name="Payment">Payment.</param>
+        /// <param name="ShippingAddress">ShippingAddress.</param>
+        /// <param name="ShippingCode">ShippingCode.</param>
+        /// <param name="ShippingCompany">ShippingCompany.</param>
+        /// <param name="Status">Status (required).</param>
+        /// <param name="Subscription">Subscription (required).</param>
+        public Order(Subscriber Buyer = default(Subscriber), Company Company = default(Company), DateTime? CreateDate = default(DateTime?), long? Id = default(long?), Offer Offer = default(Offer), ChargingLog Payment = default(ChargingLog), long? ShippingAddress = default(long?), string ShippingCode = default(string), ShippingCompanyEnum? ShippingCompany = default(ShippingCompanyEnum?), StatusEnum Status = default(StatusEnum), long? Subscription = default(long?))
         {
-            // to ensure "Address" is required (not null)
-            if (Address == null)
+            // to ensure "Buyer" is required (not null)
+            if (Buyer == null)
             {
-                throw new InvalidDataException("Address is a required property for Order and cannot be null");
+                throw new InvalidDataException("Buyer is a required property for Order and cannot be null");
             }
             else
             {
-                this.Address = Address;
+                this.Buyer = Buyer;
             }
-            // to ensure "CreateDate" is required (not null)
-            if (CreateDate == null)
+            // to ensure "Company" is required (not null)
+            if (Company == null)
             {
-                throw new InvalidDataException("CreateDate is a required property for Order and cannot be null");
+                throw new InvalidDataException("Company is a required property for Order and cannot be null");
             }
             else
             {
-                this.CreateDate = CreateDate;
+                this.Company = Company;
             }
-            // to ensure "User" is required (not null)
-            if (User == null)
+            // to ensure "Offer" is required (not null)
+            if (Offer == null)
             {
-                throw new InvalidDataException("User is a required property for Order and cannot be null");
+                throw new InvalidDataException("Offer is a required property for Order and cannot be null");
             }
             else
             {
-                this.User = User;
+                this.Offer = Offer;
             }
+            // to ensure "Status" is required (not null)
+            if (Status == null)
+            {
+                throw new InvalidDataException("Status is a required property for Order and cannot be null");
+            }
+            else
+            {
+                this.Status = Status;
+            }
+            // to ensure "Subscription" is required (not null)
+            if (Subscription == null)
+            {
+                throw new InvalidDataException("Subscription is a required property for Order and cannot be null");
+            }
+            else
+            {
+                this.Subscription = Subscription;
+            }
+            this.CreateDate = CreateDate;
             this.Id = Id;
-            this.OrderItems = OrderItems;
+            this.Payment = Payment;
+            this.ShippingAddress = ShippingAddress;
+            this.ShippingCode = ShippingCode;
+            this.ShippingCompany = ShippingCompany;
         }
         
         /// <summary>
-        /// Gets or Sets Address
+        /// Gets or Sets Buyer
         /// </summary>
-        [DataMember(Name="address", EmitDefaultValue=false)]
-        public Address Address { get; set; }
+        [DataMember(Name="buyer", EmitDefaultValue=false)]
+        public Subscriber Buyer { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Company
+        /// </summary>
+        [DataMember(Name="company", EmitDefaultValue=false)]
+        public Company Company { get; set; }
 
         /// <summary>
         /// Gets or Sets CreateDate
@@ -95,16 +197,36 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public long? Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderItems
+        /// Gets or Sets Offer
         /// </summary>
-        [DataMember(Name="orderItems", EmitDefaultValue=false)]
-        public List<OrderItem> OrderItems { get; set; }
+        [DataMember(Name="offer", EmitDefaultValue=false)]
+        public Offer Offer { get; set; }
 
         /// <summary>
-        /// Gets or Sets User
+        /// Gets or Sets Payment
         /// </summary>
-        [DataMember(Name="user", EmitDefaultValue=false)]
-        public User User { get; set; }
+        [DataMember(Name="payment", EmitDefaultValue=false)]
+        public ChargingLog Payment { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ShippingAddress
+        /// </summary>
+        [DataMember(Name="shippingAddress", EmitDefaultValue=false)]
+        public long? ShippingAddress { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ShippingCode
+        /// </summary>
+        [DataMember(Name="shippingCode", EmitDefaultValue=false)]
+        public string ShippingCode { get; set; }
+
+
+
+        /// <summary>
+        /// Gets or Sets Subscription
+        /// </summary>
+        [DataMember(Name="subscription", EmitDefaultValue=false)]
+        public long? Subscription { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -114,11 +236,17 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         {
             var sb = new StringBuilder();
             sb.Append("class Order {\n");
-            sb.Append("  Address: ").Append(Address).Append("\n");
+            sb.Append("  Buyer: ").Append(Buyer).Append("\n");
+            sb.Append("  Company: ").Append(Company).Append("\n");
             sb.Append("  CreateDate: ").Append(CreateDate).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  OrderItems: ").Append(OrderItems).Append("\n");
-            sb.Append("  User: ").Append(User).Append("\n");
+            sb.Append("  Offer: ").Append(Offer).Append("\n");
+            sb.Append("  Payment: ").Append(Payment).Append("\n");
+            sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
+            sb.Append("  ShippingCode: ").Append(ShippingCode).Append("\n");
+            sb.Append("  ShippingCompany: ").Append(ShippingCompany).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  Subscription: ").Append(Subscription).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -154,9 +282,14 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
 
             return 
                 (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
+                    this.Buyer == input.Buyer ||
+                    (this.Buyer != null &&
+                    this.Buyer.Equals(input.Buyer))
+                ) && 
+                (
+                    this.Company == input.Company ||
+                    (this.Company != null &&
+                    this.Company.Equals(input.Company))
                 ) && 
                 (
                     this.CreateDate == input.CreateDate ||
@@ -169,14 +302,39 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.OrderItems == input.OrderItems ||
-                    this.OrderItems != null &&
-                    this.OrderItems.SequenceEqual(input.OrderItems)
+                    this.Offer == input.Offer ||
+                    (this.Offer != null &&
+                    this.Offer.Equals(input.Offer))
                 ) && 
                 (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
+                    this.Payment == input.Payment ||
+                    (this.Payment != null &&
+                    this.Payment.Equals(input.Payment))
+                ) && 
+                (
+                    this.ShippingAddress == input.ShippingAddress ||
+                    (this.ShippingAddress != null &&
+                    this.ShippingAddress.Equals(input.ShippingAddress))
+                ) && 
+                (
+                    this.ShippingCode == input.ShippingCode ||
+                    (this.ShippingCode != null &&
+                    this.ShippingCode.Equals(input.ShippingCode))
+                ) && 
+                (
+                    this.ShippingCompany == input.ShippingCompany ||
+                    (this.ShippingCompany != null &&
+                    this.ShippingCompany.Equals(input.ShippingCompany))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.Subscription == input.Subscription ||
+                    (this.Subscription != null &&
+                    this.Subscription.Equals(input.Subscription))
                 );
         }
 
@@ -189,16 +347,28 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.Buyer != null)
+                    hashCode = hashCode * 59 + this.Buyer.GetHashCode();
+                if (this.Company != null)
+                    hashCode = hashCode * 59 + this.Company.GetHashCode();
                 if (this.CreateDate != null)
                     hashCode = hashCode * 59 + this.CreateDate.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.OrderItems != null)
-                    hashCode = hashCode * 59 + this.OrderItems.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.Offer != null)
+                    hashCode = hashCode * 59 + this.Offer.GetHashCode();
+                if (this.Payment != null)
+                    hashCode = hashCode * 59 + this.Payment.GetHashCode();
+                if (this.ShippingAddress != null)
+                    hashCode = hashCode * 59 + this.ShippingAddress.GetHashCode();
+                if (this.ShippingCode != null)
+                    hashCode = hashCode * 59 + this.ShippingCode.GetHashCode();
+                if (this.ShippingCompany != null)
+                    hashCode = hashCode * 59 + this.ShippingCompany.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Subscription != null)
+                    hashCode = hashCode * 59 + this.Subscription.GetHashCode();
                 return hashCode;
             }
         }

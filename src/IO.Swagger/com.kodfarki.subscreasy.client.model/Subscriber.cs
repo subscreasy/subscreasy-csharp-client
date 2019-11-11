@@ -39,14 +39,16 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Email">Email.</param>
         /// <param name="Id">Id.</param>
         /// <param name="IdentificationNo">IdentificationNo.</param>
+        /// <param name="MerchantSubscriberId">MerchantSubscriberId.</param>
         /// <param name="Name">Name.</param>
         /// <param name="PhoneNumber">PhoneNumber.</param>
         /// <param name="SecureId">SecureId.</param>
         /// <param name="ShippingAddress">ShippingAddress.</param>
         /// <param name="Surname">Surname.</param>
+        /// <param name="TaxAdministration">TaxAdministration.</param>
         /// <param name="TaxNumber">TaxNumber.</param>
         /// <param name="WorksFor">WorksFor.</param>
-        public Subscriber(Address BillingAddress = default(Address), Company Company = default(Company), DateTime? CreateDate = default(DateTime?), string Email = default(string), long? Id = default(long?), string IdentificationNo = default(string), string Name = default(string), string PhoneNumber = default(string), string SecureId = default(string), Address ShippingAddress = default(Address), string Surname = default(string), string TaxNumber = default(string), string WorksFor = default(string))
+        public Subscriber(Address BillingAddress = default(Address), Company Company = default(Company), DateTime? CreateDate = default(DateTime?), string Email = default(string), long? Id = default(long?), string IdentificationNo = default(string), string MerchantSubscriberId = default(string), string Name = default(string), string PhoneNumber = default(string), string SecureId = default(string), Address ShippingAddress = default(Address), string Surname = default(string), string TaxAdministration = default(string), string TaxNumber = default(string), string WorksFor = default(string))
         {
             this.BillingAddress = BillingAddress;
             this.Company = Company;
@@ -54,11 +56,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.Email = Email;
             this.Id = Id;
             this.IdentificationNo = IdentificationNo;
+            this.MerchantSubscriberId = MerchantSubscriberId;
             this.Name = Name;
             this.PhoneNumber = PhoneNumber;
             this.SecureId = SecureId;
             this.ShippingAddress = ShippingAddress;
             this.Surname = Surname;
+            this.TaxAdministration = TaxAdministration;
             this.TaxNumber = TaxNumber;
             this.WorksFor = WorksFor;
         }
@@ -100,6 +104,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string IdentificationNo { get; set; }
 
         /// <summary>
+        /// Gets or Sets MerchantSubscriberId
+        /// </summary>
+        [DataMember(Name="merchantSubscriberId", EmitDefaultValue=false)]
+        public string MerchantSubscriberId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name="name", EmitDefaultValue=false)]
@@ -130,6 +140,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string Surname { get; set; }
 
         /// <summary>
+        /// Gets or Sets TaxAdministration
+        /// </summary>
+        [DataMember(Name="taxAdministration", EmitDefaultValue=false)]
+        public string TaxAdministration { get; set; }
+
+        /// <summary>
         /// Gets or Sets TaxNumber
         /// </summary>
         [DataMember(Name="taxNumber", EmitDefaultValue=false)]
@@ -155,11 +171,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  IdentificationNo: ").Append(IdentificationNo).Append("\n");
+            sb.Append("  MerchantSubscriberId: ").Append(MerchantSubscriberId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  SecureId: ").Append(SecureId).Append("\n");
             sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
             sb.Append("  Surname: ").Append(Surname).Append("\n");
+            sb.Append("  TaxAdministration: ").Append(TaxAdministration).Append("\n");
             sb.Append("  TaxNumber: ").Append(TaxNumber).Append("\n");
             sb.Append("  WorksFor: ").Append(WorksFor).Append("\n");
             sb.Append("}\n");
@@ -227,6 +245,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.IdentificationNo.Equals(input.IdentificationNo))
                 ) && 
                 (
+                    this.MerchantSubscriberId == input.MerchantSubscriberId ||
+                    (this.MerchantSubscriberId != null &&
+                    this.MerchantSubscriberId.Equals(input.MerchantSubscriberId))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -250,6 +273,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Surname == input.Surname ||
                     (this.Surname != null &&
                     this.Surname.Equals(input.Surname))
+                ) && 
+                (
+                    this.TaxAdministration == input.TaxAdministration ||
+                    (this.TaxAdministration != null &&
+                    this.TaxAdministration.Equals(input.TaxAdministration))
                 ) && 
                 (
                     this.TaxNumber == input.TaxNumber ||
@@ -284,6 +312,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.IdentificationNo != null)
                     hashCode = hashCode * 59 + this.IdentificationNo.GetHashCode();
+                if (this.MerchantSubscriberId != null)
+                    hashCode = hashCode * 59 + this.MerchantSubscriberId.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.PhoneNumber != null)
@@ -294,6 +324,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.ShippingAddress.GetHashCode();
                 if (this.Surname != null)
                     hashCode = hashCode * 59 + this.Surname.GetHashCode();
+                if (this.TaxAdministration != null)
+                    hashCode = hashCode * 59 + this.TaxAdministration.GetHashCode();
                 if (this.TaxNumber != null)
                     hashCode = hashCode * 59 + this.TaxNumber.GetHashCode();
                 if (this.WorksFor != null)

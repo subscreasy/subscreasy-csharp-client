@@ -59,7 +59,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             /// Enum PAYTR for value: PAYTR
             /// </summary>
             [EnumMember(Value = "PAYTR")]
-            PAYTR = 4
+            PAYTR = 4,
+            
+            /// <summary>
+            /// Enum MOBILEXPRESS for value: MOBILEXPRESS
+            /// </summary>
+            [EnumMember(Value = "MOBILEXPRESS")]
+            MOBILEXPRESS = 5
         }
 
         /// <summary>
@@ -172,14 +178,17 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="PaymentId">PaymentId.</param>
         /// <param name="Price">Price.</param>
         /// <param name="Reason">Reason.</param>
+        /// <param name="RefundDate">RefundDate.</param>
         /// <param name="SavedCard">SavedCard.</param>
         /// <param name="SavedCardId">SavedCardId.</param>
         /// <param name="ServiceInstanceId">ServiceInstanceId.</param>
         /// <param name="Status">Status.</param>
+        /// <param name="SubscriberId">SubscriberId.</param>
         /// <param name="SubscriberSecureId">SubscriberSecureId.</param>
         /// <param name="SubscriptionId">SubscriptionId.</param>
+        /// <param name="Threeds">Threeds.</param>
         /// <param name="TransactionId">TransactionId.</param>
-        public ChargingLog(long? AppliedCoupon = default(long?), string AuthCode = default(string), long? CompanyId = default(long?), DateTime? CreateDate = default(DateTime?), string Currency = default(string), string ErrorCode = default(string), string ErrorText = default(string), long? Id = default(long?), long? InvoiceId = default(long?), long? JobId = default(long?), long? OfferId = default(long?), long? ParentId = default(long?), PaymentGatewayEnum? PaymentGateway = default(PaymentGatewayEnum?), string PaymentId = default(string), decimal? Price = default(decimal?), ReasonEnum? Reason = default(ReasonEnum?), SavedCard SavedCard = default(SavedCard), long? SavedCardId = default(long?), long? ServiceInstanceId = default(long?), StatusEnum? Status = default(StatusEnum?), string SubscriberSecureId = default(string), long? SubscriptionId = default(long?), string TransactionId = default(string))
+        public ChargingLog(long? AppliedCoupon = default(long?), string AuthCode = default(string), long? CompanyId = default(long?), DateTime? CreateDate = default(DateTime?), string Currency = default(string), string ErrorCode = default(string), string ErrorText = default(string), long? Id = default(long?), long? InvoiceId = default(long?), long? JobId = default(long?), long? OfferId = default(long?), long? ParentId = default(long?), PaymentGatewayEnum? PaymentGateway = default(PaymentGatewayEnum?), string PaymentId = default(string), decimal? Price = default(decimal?), ReasonEnum? Reason = default(ReasonEnum?), DateTime? RefundDate = default(DateTime?), SavedCard SavedCard = default(SavedCard), long? SavedCardId = default(long?), long? ServiceInstanceId = default(long?), StatusEnum? Status = default(StatusEnum?), long? SubscriberId = default(long?), string SubscriberSecureId = default(string), long? SubscriptionId = default(long?), bool? Threeds = default(bool?), string TransactionId = default(string))
         {
             this.AppliedCoupon = AppliedCoupon;
             this.AuthCode = AuthCode;
@@ -197,12 +206,15 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.PaymentId = PaymentId;
             this.Price = Price;
             this.Reason = Reason;
+            this.RefundDate = RefundDate;
             this.SavedCard = SavedCard;
             this.SavedCardId = SavedCardId;
             this.ServiceInstanceId = ServiceInstanceId;
             this.Status = Status;
+            this.SubscriberId = SubscriberId;
             this.SubscriberSecureId = SubscriberSecureId;
             this.SubscriptionId = SubscriptionId;
+            this.Threeds = Threeds;
             this.TransactionId = TransactionId;
         }
         
@@ -293,6 +305,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
 
 
         /// <summary>
+        /// Gets or Sets RefundDate
+        /// </summary>
+        [DataMember(Name="refundDate", EmitDefaultValue=false)]
+        public DateTime? RefundDate { get; set; }
+
+        /// <summary>
         /// Gets or Sets SavedCard
         /// </summary>
         [DataMember(Name="savedCard", EmitDefaultValue=false)]
@@ -312,6 +330,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
 
 
         /// <summary>
+        /// Gets or Sets SubscriberId
+        /// </summary>
+        [DataMember(Name="subscriberId", EmitDefaultValue=false)]
+        public long? SubscriberId { get; set; }
+
+        /// <summary>
         /// Gets or Sets SubscriberSecureId
         /// </summary>
         [DataMember(Name="subscriberSecureId", EmitDefaultValue=false)]
@@ -322,6 +346,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// </summary>
         [DataMember(Name="subscriptionId", EmitDefaultValue=false)]
         public long? SubscriptionId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Threeds
+        /// </summary>
+        [DataMember(Name="threeds", EmitDefaultValue=false)]
+        public bool? Threeds { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionId
@@ -353,12 +383,15 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  PaymentId: ").Append(PaymentId).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("  Reason: ").Append(Reason).Append("\n");
+            sb.Append("  RefundDate: ").Append(RefundDate).Append("\n");
             sb.Append("  SavedCard: ").Append(SavedCard).Append("\n");
             sb.Append("  SavedCardId: ").Append(SavedCardId).Append("\n");
             sb.Append("  ServiceInstanceId: ").Append(ServiceInstanceId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  SubscriberId: ").Append(SubscriberId).Append("\n");
             sb.Append("  SubscriberSecureId: ").Append(SubscriberSecureId).Append("\n");
             sb.Append("  SubscriptionId: ").Append(SubscriptionId).Append("\n");
+            sb.Append("  Threeds: ").Append(Threeds).Append("\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -475,6 +508,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Reason.Equals(input.Reason))
                 ) && 
                 (
+                    this.RefundDate == input.RefundDate ||
+                    (this.RefundDate != null &&
+                    this.RefundDate.Equals(input.RefundDate))
+                ) && 
+                (
                     this.SavedCard == input.SavedCard ||
                     (this.SavedCard != null &&
                     this.SavedCard.Equals(input.SavedCard))
@@ -495,6 +533,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.SubscriberId == input.SubscriberId ||
+                    (this.SubscriberId != null &&
+                    this.SubscriberId.Equals(input.SubscriberId))
+                ) && 
+                (
                     this.SubscriberSecureId == input.SubscriberSecureId ||
                     (this.SubscriberSecureId != null &&
                     this.SubscriberSecureId.Equals(input.SubscriberSecureId))
@@ -503,6 +546,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.SubscriptionId == input.SubscriptionId ||
                     (this.SubscriptionId != null &&
                     this.SubscriptionId.Equals(input.SubscriptionId))
+                ) && 
+                (
+                    this.Threeds == input.Threeds ||
+                    (this.Threeds != null &&
+                    this.Threeds.Equals(input.Threeds))
                 ) && 
                 (
                     this.TransactionId == input.TransactionId ||
@@ -552,6 +600,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 if (this.Reason != null)
                     hashCode = hashCode * 59 + this.Reason.GetHashCode();
+                if (this.RefundDate != null)
+                    hashCode = hashCode * 59 + this.RefundDate.GetHashCode();
                 if (this.SavedCard != null)
                     hashCode = hashCode * 59 + this.SavedCard.GetHashCode();
                 if (this.SavedCardId != null)
@@ -560,10 +610,14 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.ServiceInstanceId.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.SubscriberId != null)
+                    hashCode = hashCode * 59 + this.SubscriberId.GetHashCode();
                 if (this.SubscriberSecureId != null)
                     hashCode = hashCode * 59 + this.SubscriberSecureId.GetHashCode();
                 if (this.SubscriptionId != null)
                     hashCode = hashCode * 59 + this.SubscriptionId.GetHashCode();
+                if (this.Threeds != null)
+                    hashCode = hashCode * 59 + this.Threeds.GetHashCode();
                 if (this.TransactionId != null)
                     hashCode = hashCode * 59 + this.TransactionId.GetHashCode();
                 return hashCode;

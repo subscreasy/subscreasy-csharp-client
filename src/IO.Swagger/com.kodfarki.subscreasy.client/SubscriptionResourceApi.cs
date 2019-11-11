@@ -46,6 +46,48 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <returns>ApiResponse of Subsription</returns>
         ApiResponse<Subsription> CancelSubscriptionUsingPUTWithHttpInfo (Cancellation cancellation);
         /// <summary>
+        /// changePaymentMethod
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Subsription</returns>
+        Subsription ChangePaymentMethodUsingPUT (long? subscriptionId);
+
+        /// <summary>
+        /// changePaymentMethod
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>ApiResponse of Subsription</returns>
+        ApiResponse<Subsription> ChangePaymentMethodUsingPUTWithHttpInfo (long? subscriptionId);
+        /// <summary>
+        /// chargeEarly
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Job</returns>
+        Job ChargeEarlyUsingPUT (long? subscriptionId);
+
+        /// <summary>
+        /// chargeEarly
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>ApiResponse of Job</returns>
+        ApiResponse<Job> ChargeEarlyUsingPUTWithHttpInfo (long? subscriptionId);
+        /// <summary>
         /// getActiveSubscriptionsByEmail
         /// </summary>
         /// <remarks>
@@ -109,6 +151,33 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
         ApiResponse<List<Subsription>> GetAllCompanySubscriptionsUsingGETWithHttpInfo (string id);
         /// <summary>
+        /// getAllSubscriptionsByOffer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>List&lt;Subsription&gt;</returns>
+        List<Subsription> GetAllSubscriptionsByOfferUsingGET (long? id, int? page = null, int? size = null, List<string> sort = null);
+
+        /// <summary>
+        /// getAllSubscriptionsByOffer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        ApiResponse<List<Subsription>> GetAllSubscriptionsByOfferUsingGETWithHttpInfo (long? id, int? page = null, int? size = null, List<string> sort = null);
+        /// <summary>
         /// getSubscription
         /// </summary>
         /// <remarks>
@@ -129,6 +198,60 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <param name="id">id</param>
         /// <returns>ApiResponse of Subsription</returns>
         ApiResponse<Subsription> GetSubscriptionUsingGETWithHttpInfo (long? id);
+        /// <summary>
+        /// getSubscriptionsByMerchantSubscriberId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>List&lt;Subsription&gt;</returns>
+        List<Subsription> GetSubscriptionsByMerchantSubscriberIdUsingGET (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null);
+
+        /// <summary>
+        /// getSubscriptionsByMerchantSubscriberId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        ApiResponse<List<Subsription>> GetSubscriptionsByMerchantSubscriberIdUsingGETWithHttpInfo (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null);
+        /// <summary>
+        /// getSubscriptionsByStatus
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>List&lt;Subsription&gt;</returns>
+        List<Subsription> GetSubscriptionsByStatusUsingGET (string status, int? page = null, int? size = null, List<string> sort = null);
+
+        /// <summary>
+        /// getSubscriptionsByStatus
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        ApiResponse<List<Subsription>> GetSubscriptionsByStatusUsingGETWithHttpInfo (string status, int? page = null, int? size = null, List<string> sort = null);
         /// <summary>
         /// startSubscription
         /// </summary>
@@ -173,6 +296,48 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <param name="cancellation">cancellation</param>
         /// <returns>Task of ApiResponse (Subsription)</returns>
         System.Threading.Tasks.Task<ApiResponse<Subsription>> CancelSubscriptionUsingPUTAsyncWithHttpInfo (Cancellation cancellation);
+        /// <summary>
+        /// changePaymentMethod
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Task of Subsription</returns>
+        System.Threading.Tasks.Task<Subsription> ChangePaymentMethodUsingPUTAsync (long? subscriptionId);
+
+        /// <summary>
+        /// changePaymentMethod
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Task of ApiResponse (Subsription)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Subsription>> ChangePaymentMethodUsingPUTAsyncWithHttpInfo (long? subscriptionId);
+        /// <summary>
+        /// chargeEarly
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Task of Job</returns>
+        System.Threading.Tasks.Task<Job> ChargeEarlyUsingPUTAsync (long? subscriptionId);
+
+        /// <summary>
+        /// chargeEarly
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Task of ApiResponse (Job)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Job>> ChargeEarlyUsingPUTAsyncWithHttpInfo (long? subscriptionId);
         /// <summary>
         /// getActiveSubscriptionsByEmail
         /// </summary>
@@ -237,6 +402,33 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetAllCompanySubscriptionsUsingGETAsyncWithHttpInfo (string id);
         /// <summary>
+        /// getAllSubscriptionsByOffer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        System.Threading.Tasks.Task<List<Subsription>> GetAllSubscriptionsByOfferUsingGETAsync (long? id, int? page = null, int? size = null, List<string> sort = null);
+
+        /// <summary>
+        /// getAllSubscriptionsByOffer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetAllSubscriptionsByOfferUsingGETAsyncWithHttpInfo (long? id, int? page = null, int? size = null, List<string> sort = null);
+        /// <summary>
         /// getSubscription
         /// </summary>
         /// <remarks>
@@ -257,6 +449,60 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (Subsription)</returns>
         System.Threading.Tasks.Task<ApiResponse<Subsription>> GetSubscriptionUsingGETAsyncWithHttpInfo (long? id);
+        /// <summary>
+        /// getSubscriptionsByMerchantSubscriberId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        System.Threading.Tasks.Task<List<Subsription>> GetSubscriptionsByMerchantSubscriberIdUsingGETAsync (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null);
+
+        /// <summary>
+        /// getSubscriptionsByMerchantSubscriberId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetSubscriptionsByMerchantSubscriberIdUsingGETAsyncWithHttpInfo (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null);
+        /// <summary>
+        /// getSubscriptionsByStatus
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        System.Threading.Tasks.Task<List<Subsription>> GetSubscriptionsByStatusUsingGETAsync (string status, int? page = null, int? size = null, List<string> sort = null);
+
+        /// <summary>
+        /// getSubscriptionsByStatus
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetSubscriptionsByStatusUsingGETAsyncWithHttpInfo (string status, int? page = null, int? size = null, List<string> sort = null);
         /// <summary>
         /// startSubscription
         /// </summary>
@@ -535,6 +781,296 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             return new ApiResponse<Subsription>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Subsription) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Subsription)));
+        }
+
+        /// <summary>
+        /// changePaymentMethod 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Subsription</returns>
+        public Subsription ChangePaymentMethodUsingPUT (long? subscriptionId)
+        {
+             ApiResponse<Subsription> localVarResponse = ChangePaymentMethodUsingPUTWithHttpInfo(subscriptionId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// changePaymentMethod 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>ApiResponse of Subsription</returns>
+        public ApiResponse< Subsription > ChangePaymentMethodUsingPUTWithHttpInfo (long? subscriptionId)
+        {
+            // verify the required parameter 'subscriptionId' is set
+            if (subscriptionId == null)
+                throw new ApiException(400, "Missing required parameter 'subscriptionId' when calling SubscriptionResourceApi->ChangePaymentMethodUsingPUT");
+
+            var localVarPath = "/api/subscriptions/change-payment-method/{subscriptionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (subscriptionId != null) localVarPathParams.Add("subscriptionId", Configuration.ApiClient.ParameterToString(subscriptionId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ChangePaymentMethodUsingPUT", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Subsription>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Subsription) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Subsription)));
+        }
+
+        /// <summary>
+        /// changePaymentMethod 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Task of Subsription</returns>
+        public async System.Threading.Tasks.Task<Subsription> ChangePaymentMethodUsingPUTAsync (long? subscriptionId)
+        {
+             ApiResponse<Subsription> localVarResponse = await ChangePaymentMethodUsingPUTAsyncWithHttpInfo(subscriptionId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// changePaymentMethod 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Task of ApiResponse (Subsription)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Subsription>> ChangePaymentMethodUsingPUTAsyncWithHttpInfo (long? subscriptionId)
+        {
+            // verify the required parameter 'subscriptionId' is set
+            if (subscriptionId == null)
+                throw new ApiException(400, "Missing required parameter 'subscriptionId' when calling SubscriptionResourceApi->ChangePaymentMethodUsingPUT");
+
+            var localVarPath = "/api/subscriptions/change-payment-method/{subscriptionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (subscriptionId != null) localVarPathParams.Add("subscriptionId", Configuration.ApiClient.ParameterToString(subscriptionId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ChangePaymentMethodUsingPUT", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Subsription>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Subsription) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Subsription)));
+        }
+
+        /// <summary>
+        /// chargeEarly 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Job</returns>
+        public Job ChargeEarlyUsingPUT (long? subscriptionId)
+        {
+             ApiResponse<Job> localVarResponse = ChargeEarlyUsingPUTWithHttpInfo(subscriptionId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// chargeEarly 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>ApiResponse of Job</returns>
+        public ApiResponse< Job > ChargeEarlyUsingPUTWithHttpInfo (long? subscriptionId)
+        {
+            // verify the required parameter 'subscriptionId' is set
+            if (subscriptionId == null)
+                throw new ApiException(400, "Missing required parameter 'subscriptionId' when calling SubscriptionResourceApi->ChargeEarlyUsingPUT");
+
+            var localVarPath = "/api/subscriptions/charge/{subscriptionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (subscriptionId != null) localVarPathParams.Add("subscriptionId", Configuration.ApiClient.ParameterToString(subscriptionId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ChargeEarlyUsingPUT", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Job>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Job) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Job)));
+        }
+
+        /// <summary>
+        /// chargeEarly 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Task of Job</returns>
+        public async System.Threading.Tasks.Task<Job> ChargeEarlyUsingPUTAsync (long? subscriptionId)
+        {
+             ApiResponse<Job> localVarResponse = await ChargeEarlyUsingPUTAsyncWithHttpInfo(subscriptionId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// chargeEarly 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionId">subscriptionId</param>
+        /// <returns>Task of ApiResponse (Job)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Job>> ChargeEarlyUsingPUTAsyncWithHttpInfo (long? subscriptionId)
+        {
+            // verify the required parameter 'subscriptionId' is set
+            if (subscriptionId == null)
+                throw new ApiException(400, "Missing required parameter 'subscriptionId' when calling SubscriptionResourceApi->ChargeEarlyUsingPUT");
+
+            var localVarPath = "/api/subscriptions/charge/{subscriptionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (subscriptionId != null) localVarPathParams.Add("subscriptionId", Configuration.ApiClient.ParameterToString(subscriptionId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ChargeEarlyUsingPUT", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Job>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Job) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Job)));
         }
 
         /// <summary>
@@ -967,6 +1503,167 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         }
 
         /// <summary>
+        /// getAllSubscriptionsByOffer 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>List&lt;Subsription&gt;</returns>
+        public List<Subsription> GetAllSubscriptionsByOfferUsingGET (long? id, int? page = null, int? size = null, List<string> sort = null)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = GetAllSubscriptionsByOfferUsingGETWithHttpInfo(id, page, size, sort);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// getAllSubscriptionsByOffer 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        public ApiResponse< List<Subsription> > GetAllSubscriptionsByOfferUsingGETWithHttpInfo (long? id, int? page = null, int? size = null, List<string> sort = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling SubscriptionResourceApi->GetAllSubscriptionsByOfferUsingGET");
+
+            var localVarPath = "/api/subscriptions/offer/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
+            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAllSubscriptionsByOfferUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
+        }
+
+        /// <summary>
+        /// getAllSubscriptionsByOffer 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Subsription>> GetAllSubscriptionsByOfferUsingGETAsync (long? id, int? page = null, int? size = null, List<string> sort = null)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = await GetAllSubscriptionsByOfferUsingGETAsyncWithHttpInfo(id, page, size, sort);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// getAllSubscriptionsByOffer 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetAllSubscriptionsByOfferUsingGETAsyncWithHttpInfo (long? id, int? page = null, int? size = null, List<string> sort = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling SubscriptionResourceApi->GetAllSubscriptionsByOfferUsingGET");
+
+            var localVarPath = "/api/subscriptions/offer/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
+            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAllSubscriptionsByOfferUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
+        }
+
+        /// <summary>
         /// getSubscription 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1107,6 +1804,328 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             return new ApiResponse<Subsription>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Subsription) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Subsription)));
+        }
+
+        /// <summary>
+        /// getSubscriptionsByMerchantSubscriberId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>List&lt;Subsription&gt;</returns>
+        public List<Subsription> GetSubscriptionsByMerchantSubscriberIdUsingGET (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = GetSubscriptionsByMerchantSubscriberIdUsingGETWithHttpInfo(merchantSubscriberId, page, size, sort);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// getSubscriptionsByMerchantSubscriberId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        public ApiResponse< List<Subsription> > GetSubscriptionsByMerchantSubscriberIdUsingGETWithHttpInfo (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null)
+        {
+            // verify the required parameter 'merchantSubscriberId' is set
+            if (merchantSubscriberId == null)
+                throw new ApiException(400, "Missing required parameter 'merchantSubscriberId' when calling SubscriptionResourceApi->GetSubscriptionsByMerchantSubscriberIdUsingGET");
+
+            var localVarPath = "/api/subscriptions/subscriber/m/{merchantSubscriberId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (merchantSubscriberId != null) localVarPathParams.Add("merchantSubscriberId", Configuration.ApiClient.ParameterToString(merchantSubscriberId)); // path parameter
+            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
+            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubscriptionsByMerchantSubscriberIdUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
+        }
+
+        /// <summary>
+        /// getSubscriptionsByMerchantSubscriberId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Subsription>> GetSubscriptionsByMerchantSubscriberIdUsingGETAsync (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = await GetSubscriptionsByMerchantSubscriberIdUsingGETAsyncWithHttpInfo(merchantSubscriberId, page, size, sort);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// getSubscriptionsByMerchantSubscriberId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetSubscriptionsByMerchantSubscriberIdUsingGETAsyncWithHttpInfo (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null)
+        {
+            // verify the required parameter 'merchantSubscriberId' is set
+            if (merchantSubscriberId == null)
+                throw new ApiException(400, "Missing required parameter 'merchantSubscriberId' when calling SubscriptionResourceApi->GetSubscriptionsByMerchantSubscriberIdUsingGET");
+
+            var localVarPath = "/api/subscriptions/subscriber/m/{merchantSubscriberId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (merchantSubscriberId != null) localVarPathParams.Add("merchantSubscriberId", Configuration.ApiClient.ParameterToString(merchantSubscriberId)); // path parameter
+            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
+            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubscriptionsByMerchantSubscriberIdUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
+        }
+
+        /// <summary>
+        /// getSubscriptionsByStatus 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>List&lt;Subsription&gt;</returns>
+        public List<Subsription> GetSubscriptionsByStatusUsingGET (string status, int? page = null, int? size = null, List<string> sort = null)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = GetSubscriptionsByStatusUsingGETWithHttpInfo(status, page, size, sort);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// getSubscriptionsByStatus 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>ApiResponse of List&lt;Subsription&gt;</returns>
+        public ApiResponse< List<Subsription> > GetSubscriptionsByStatusUsingGETWithHttpInfo (string status, int? page = null, int? size = null, List<string> sort = null)
+        {
+            // verify the required parameter 'status' is set
+            if (status == null)
+                throw new ApiException(400, "Missing required parameter 'status' when calling SubscriptionResourceApi->GetSubscriptionsByStatusUsingGET");
+
+            var localVarPath = "/api/subscriptions/status/{status}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (status != null) localVarPathParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // path parameter
+            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
+            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubscriptionsByStatusUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
+        }
+
+        /// <summary>
+        /// getSubscriptionsByStatus 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of List&lt;Subsription&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Subsription>> GetSubscriptionsByStatusUsingGETAsync (string status, int? page = null, int? size = null, List<string> sort = null)
+        {
+             ApiResponse<List<Subsription>> localVarResponse = await GetSubscriptionsByStatusUsingGETAsyncWithHttpInfo(status, page, size, sort);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// getSubscriptionsByStatus 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;Subsription&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Subsription>>> GetSubscriptionsByStatusUsingGETAsyncWithHttpInfo (string status, int? page = null, int? size = null, List<string> sort = null)
+        {
+            // verify the required parameter 'status' is set
+            if (status == null)
+                throw new ApiException(400, "Missing required parameter 'status' when calling SubscriptionResourceApi->GetSubscriptionsByStatusUsingGET");
+
+            var localVarPath = "/api/subscriptions/status/{status}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (status != null) localVarPathParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // path parameter
+            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
+            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubscriptionsByStatusUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Subsription>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Subsription>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Subsription>)));
         }
 
         /// <summary>

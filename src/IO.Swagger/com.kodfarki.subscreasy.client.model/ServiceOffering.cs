@@ -41,7 +41,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Company">Company.</param>
         /// <param name="Description">Description.</param>
         /// <param name="Id">Id.</param>
-        /// <param name="Offer">Offer (required).</param>
+        /// <param name="Offer">Offer.</param>
         /// <param name="OverUsagePrice">OverUsagePrice.</param>
         /// <param name="OverUsageQuota">OverUsageQuota.</param>
         /// <param name="Price">Price.</param>
@@ -50,15 +50,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="UnitName">UnitName.</param>
         public ServiceOffering(Company Company = default(Company), string Description = default(string), long? Id = default(long?), Offer Offer = default(Offer), decimal? OverUsagePrice = default(decimal?), decimal? OverUsageQuota = default(decimal?), decimal? Price = default(decimal?), decimal? QuotaAmount = default(decimal?), Service Service = default(Service), string UnitName = default(string))
         {
-            // to ensure "Offer" is required (not null)
-            if (Offer == null)
-            {
-                throw new InvalidDataException("Offer is a required property for ServiceOffering and cannot be null");
-            }
-            else
-            {
-                this.Offer = Offer;
-            }
             // to ensure "QuotaAmount" is required (not null)
             if (QuotaAmount == null)
             {
@@ -71,6 +62,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.Company = Company;
             this.Description = Description;
             this.Id = Id;
+            this.Offer = Offer;
             this.OverUsagePrice = OverUsagePrice;
             this.OverUsageQuota = OverUsageQuota;
             this.Price = Price;

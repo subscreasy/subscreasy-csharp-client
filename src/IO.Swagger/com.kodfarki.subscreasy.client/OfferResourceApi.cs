@@ -25,6 +25,27 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
     {
         #region Synchronous Operations
         /// <summary>
+        /// archiveOffer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns></returns>
+        void ArchiveOfferUsingPUT (long? id);
+
+        /// <summary>
+        /// archiveOffer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ArchiveOfferUsingPUTWithHttpInfo (long? id);
+        /// <summary>
         /// createOffer
         /// </summary>
         /// <remarks>
@@ -107,6 +128,27 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <returns>ApiResponse of Offer</returns>
         ApiResponse<Offer> GetOfferUsingGETWithHttpInfo (long? id);
         /// <summary>
+        /// sendOfferPriceChangedEmail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="offerId">offerId</param>
+        /// <returns></returns>
+        void SendOfferPriceChangedEmailUsingPUT (long? offerId);
+
+        /// <summary>
+        /// sendOfferPriceChangedEmail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="offerId">offerId</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> SendOfferPriceChangedEmailUsingPUTWithHttpInfo (long? offerId);
+        /// <summary>
         /// updateOffer
         /// </summary>
         /// <remarks>
@@ -127,8 +169,52 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <param name="offer">offer</param>
         /// <returns>ApiResponse of Offer</returns>
         ApiResponse<Offer> UpdateOfferUsingPUTWithHttpInfo (Offer offer);
+        /// <summary>
+        /// uploadFile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file">file</param>
+        /// <param name="offerId">offerId</param>
+        /// <returns>Offer</returns>
+        Offer UploadFileUsingPOST1 (System.IO.Stream file, long? offerId);
+
+        /// <summary>
+        /// uploadFile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file">file</param>
+        /// <param name="offerId">offerId</param>
+        /// <returns>ApiResponse of Offer</returns>
+        ApiResponse<Offer> UploadFileUsingPOST1WithHttpInfo (System.IO.Stream file, long? offerId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
+        /// <summary>
+        /// archiveOffer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ArchiveOfferUsingPUTAsync (long? id);
+
+        /// <summary>
+        /// archiveOffer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ArchiveOfferUsingPUTAsyncWithHttpInfo (long? id);
         /// <summary>
         /// createOffer
         /// </summary>
@@ -212,6 +298,27 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <returns>Task of ApiResponse (Offer)</returns>
         System.Threading.Tasks.Task<ApiResponse<Offer>> GetOfferUsingGETAsyncWithHttpInfo (long? id);
         /// <summary>
+        /// sendOfferPriceChangedEmail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="offerId">offerId</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task SendOfferPriceChangedEmailUsingPUTAsync (long? offerId);
+
+        /// <summary>
+        /// sendOfferPriceChangedEmail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="offerId">offerId</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SendOfferPriceChangedEmailUsingPUTAsyncWithHttpInfo (long? offerId);
+        /// <summary>
         /// updateOffer
         /// </summary>
         /// <remarks>
@@ -232,6 +339,29 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <param name="offer">offer</param>
         /// <returns>Task of ApiResponse (Offer)</returns>
         System.Threading.Tasks.Task<ApiResponse<Offer>> UpdateOfferUsingPUTAsyncWithHttpInfo (Offer offer);
+        /// <summary>
+        /// uploadFile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file">file</param>
+        /// <param name="offerId">offerId</param>
+        /// <returns>Task of Offer</returns>
+        System.Threading.Tasks.Task<Offer> UploadFileUsingPOST1Async (System.IO.Stream file, long? offerId);
+
+        /// <summary>
+        /// uploadFile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file">file</param>
+        /// <param name="offerId">offerId</param>
+        /// <returns>Task of ApiResponse (Offer)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Offer>> UploadFileUsingPOST1AsyncWithHttpInfo (System.IO.Stream file, long? offerId);
         #endregion Asynchronous Operations
     }
 
@@ -330,6 +460,149 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
+        }
+
+        /// <summary>
+        /// archiveOffer 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns></returns>
+        public void ArchiveOfferUsingPUT (long? id)
+        {
+             ArchiveOfferUsingPUTWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// archiveOffer 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> ArchiveOfferUsingPUTWithHttpInfo (long? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling OfferResourceApi->ArchiveOfferUsingPUT");
+
+            var localVarPath = "/api/offers/archive/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ArchiveOfferUsingPUT", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// archiveOffer 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ArchiveOfferUsingPUTAsync (long? id)
+        {
+             await ArchiveOfferUsingPUTAsyncWithHttpInfo(id);
+
+        }
+
+        /// <summary>
+        /// archiveOffer 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ArchiveOfferUsingPUTAsyncWithHttpInfo (long? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling OfferResourceApi->ArchiveOfferUsingPUT");
+
+            var localVarPath = "/api/offers/archive/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ArchiveOfferUsingPUT", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
@@ -907,6 +1180,149 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         }
 
         /// <summary>
+        /// sendOfferPriceChangedEmail 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="offerId">offerId</param>
+        /// <returns></returns>
+        public void SendOfferPriceChangedEmailUsingPUT (long? offerId)
+        {
+             SendOfferPriceChangedEmailUsingPUTWithHttpInfo(offerId);
+        }
+
+        /// <summary>
+        /// sendOfferPriceChangedEmail 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="offerId">offerId</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> SendOfferPriceChangedEmailUsingPUTWithHttpInfo (long? offerId)
+        {
+            // verify the required parameter 'offerId' is set
+            if (offerId == null)
+                throw new ApiException(400, "Missing required parameter 'offerId' when calling OfferResourceApi->SendOfferPriceChangedEmailUsingPUT");
+
+            var localVarPath = "/api/offers/sendOfferPriceChangedEmail/{offerId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (offerId != null) localVarPathParams.Add("offerId", Configuration.ApiClient.ParameterToString(offerId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SendOfferPriceChangedEmailUsingPUT", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// sendOfferPriceChangedEmail 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="offerId">offerId</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task SendOfferPriceChangedEmailUsingPUTAsync (long? offerId)
+        {
+             await SendOfferPriceChangedEmailUsingPUTAsyncWithHttpInfo(offerId);
+
+        }
+
+        /// <summary>
+        /// sendOfferPriceChangedEmail 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="offerId">offerId</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> SendOfferPriceChangedEmailUsingPUTAsyncWithHttpInfo (long? offerId)
+        {
+            // verify the required parameter 'offerId' is set
+            if (offerId == null)
+                throw new ApiException(400, "Missing required parameter 'offerId' when calling OfferResourceApi->SendOfferPriceChangedEmailUsingPUT");
+
+            var localVarPath = "/api/offers/sendOfferPriceChangedEmail/{offerId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (offerId != null) localVarPathParams.Add("offerId", Configuration.ApiClient.ParameterToString(offerId)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SendOfferPriceChangedEmailUsingPUT", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
         /// updateOffer 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1057,6 +1473,163 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("UpdateOfferUsingPUT", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Offer>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Offer) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Offer)));
+        }
+
+        /// <summary>
+        /// uploadFile 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file">file</param>
+        /// <param name="offerId">offerId</param>
+        /// <returns>Offer</returns>
+        public Offer UploadFileUsingPOST1 (System.IO.Stream file, long? offerId)
+        {
+             ApiResponse<Offer> localVarResponse = UploadFileUsingPOST1WithHttpInfo(file, offerId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// uploadFile 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file">file</param>
+        /// <param name="offerId">offerId</param>
+        /// <returns>ApiResponse of Offer</returns>
+        public ApiResponse< Offer > UploadFileUsingPOST1WithHttpInfo (System.IO.Stream file, long? offerId)
+        {
+            // verify the required parameter 'file' is set
+            if (file == null)
+                throw new ApiException(400, "Missing required parameter 'file' when calling OfferResourceApi->UploadFileUsingPOST1");
+            // verify the required parameter 'offerId' is set
+            if (offerId == null)
+                throw new ApiException(400, "Missing required parameter 'offerId' when calling OfferResourceApi->UploadFileUsingPOST1");
+
+            var localVarPath = "/api/offers/uploadFile/{offerId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (offerId != null) localVarPathParams.Add("offerId", Configuration.ApiClient.ParameterToString(offerId)); // path parameter
+            if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UploadFileUsingPOST1", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Offer>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Offer) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Offer)));
+        }
+
+        /// <summary>
+        /// uploadFile 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file">file</param>
+        /// <param name="offerId">offerId</param>
+        /// <returns>Task of Offer</returns>
+        public async System.Threading.Tasks.Task<Offer> UploadFileUsingPOST1Async (System.IO.Stream file, long? offerId)
+        {
+             ApiResponse<Offer> localVarResponse = await UploadFileUsingPOST1AsyncWithHttpInfo(file, offerId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// uploadFile 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="file">file</param>
+        /// <param name="offerId">offerId</param>
+        /// <returns>Task of ApiResponse (Offer)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Offer>> UploadFileUsingPOST1AsyncWithHttpInfo (System.IO.Stream file, long? offerId)
+        {
+            // verify the required parameter 'file' is set
+            if (file == null)
+                throw new ApiException(400, "Missing required parameter 'file' when calling OfferResourceApi->UploadFileUsingPOST1");
+            // verify the required parameter 'offerId' is set
+            if (offerId == null)
+                throw new ApiException(400, "Missing required parameter 'offerId' when calling OfferResourceApi->UploadFileUsingPOST1");
+
+            var localVarPath = "/api/offers/uploadFile/{offerId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (offerId != null) localVarPathParams.Add("offerId", Configuration.ApiClient.ParameterToString(offerId)); // path parameter
+            if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UploadFileUsingPOST1", localVarResponse);
                 if (exception != null) throw exception;
             }
 

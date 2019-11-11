@@ -34,7 +34,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// Initializes a new instance of the <see cref="PaymentCard" /> class.
         /// </summary>
         /// <param name="CardAlias">CardAlias.</param>
-        /// <param name="CardExpiry">CardExpiry.</param>
         /// <param name="CardFamily">CardFamily.</param>
         /// <param name="CardHolderName">CardHolderName.</param>
         /// <param name="CardNumber">CardNumber.</param>
@@ -44,10 +43,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="ExpireMonth">ExpireMonth.</param>
         /// <param name="ExpireYear">ExpireYear.</param>
         /// <param name="RegisterCard">RegisterCard.</param>
-        public PaymentCard(string CardAlias = default(string), string CardExpiry = default(string), string CardFamily = default(string), string CardHolderName = default(string), string CardNumber = default(string), string CardToken = default(string), string CardUserKey = default(string), string Cvc = default(string), string ExpireMonth = default(string), string ExpireYear = default(string), int? RegisterCard = default(int?))
+        public PaymentCard(string CardAlias = default(string), string CardFamily = default(string), string CardHolderName = default(string), string CardNumber = default(string), string CardToken = default(string), string CardUserKey = default(string), string Cvc = default(string), string ExpireMonth = default(string), string ExpireYear = default(string), int? RegisterCard = default(int?))
         {
             this.CardAlias = CardAlias;
-            this.CardExpiry = CardExpiry;
             this.CardFamily = CardFamily;
             this.CardHolderName = CardHolderName;
             this.CardNumber = CardNumber;
@@ -64,12 +62,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// </summary>
         [DataMember(Name="cardAlias", EmitDefaultValue=false)]
         public string CardAlias { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CardExpiry
-        /// </summary>
-        [DataMember(Name="cardExpiry", EmitDefaultValue=false)]
-        public string CardExpiry { get; set; }
 
         /// <summary>
         /// Gets or Sets CardFamily
@@ -134,7 +126,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             var sb = new StringBuilder();
             sb.Append("class PaymentCard {\n");
             sb.Append("  CardAlias: ").Append(CardAlias).Append("\n");
-            sb.Append("  CardExpiry: ").Append(CardExpiry).Append("\n");
             sb.Append("  CardFamily: ").Append(CardFamily).Append("\n");
             sb.Append("  CardHolderName: ").Append(CardHolderName).Append("\n");
             sb.Append("  CardNumber: ").Append(CardNumber).Append("\n");
@@ -182,11 +173,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.CardAlias == input.CardAlias ||
                     (this.CardAlias != null &&
                     this.CardAlias.Equals(input.CardAlias))
-                ) && 
-                (
-                    this.CardExpiry == input.CardExpiry ||
-                    (this.CardExpiry != null &&
-                    this.CardExpiry.Equals(input.CardExpiry))
                 ) && 
                 (
                     this.CardFamily == input.CardFamily ||
@@ -246,8 +232,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                 int hashCode = 41;
                 if (this.CardAlias != null)
                     hashCode = hashCode * 59 + this.CardAlias.GetHashCode();
-                if (this.CardExpiry != null)
-                    hashCode = hashCode * 59 + this.CardExpiry.GetHashCode();
                 if (this.CardFamily != null)
                     hashCode = hashCode * 59 + this.CardFamily.GetHashCode();
                 if (this.CardHolderName != null)

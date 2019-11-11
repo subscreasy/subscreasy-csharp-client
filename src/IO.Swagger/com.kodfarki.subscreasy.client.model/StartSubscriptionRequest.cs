@@ -47,7 +47,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             /// Enum CC for value: CC
             /// </summary>
             [EnumMember(Value = "CC")]
-            CC = 2
+            CC = 2,
+            
+            /// <summary>
+            /// Enum MOBILE for value: MOBILE
+            /// </summary>
+            [EnumMember(Value = "MOBILE")]
+            MOBILE = 3
         }
 
         /// <summary>
@@ -55,6 +61,31 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// </summary>
         [DataMember(Name="paymentType", EmitDefaultValue=false)]
         public PaymentTypeEnum? PaymentType { get; set; }
+        /// <summary>
+        /// Defines ProductType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ProductTypeEnum
+        {
+            
+            /// <summary>
+            /// Enum PHYSICAL for value: PHYSICAL
+            /// </summary>
+            [EnumMember(Value = "PHYSICAL")]
+            PHYSICAL = 1,
+            
+            /// <summary>
+            /// Enum SERVICE for value: SERVICE
+            /// </summary>
+            [EnumMember(Value = "SERVICE")]
+            SERVICE = 2
+        }
+
+        /// <summary>
+        /// Gets or Sets ProductType
+        /// </summary>
+        [DataMember(Name="productType", EmitDefaultValue=false)]
+        public ProductTypeEnum? ProductType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="StartSubscriptionRequest" /> class.
         /// </summary>
@@ -67,8 +98,10 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="PaymentType">PaymentType.</param>
         /// <param name="Price">Price.</param>
         /// <param name="PrivacyPolicyUrl">PrivacyPolicyUrl.</param>
+        /// <param name="ProductType">ProductType.</param>
         /// <param name="Subscriber">Subscriber.</param>
-        public StartSubscriptionRequest(string CallbackUrl = default(string), string CompanySiteName = default(string), string CouponCode = default(string), bool? Editable = default(bool?), Offer Offer = default(Offer), PaymentCard PaymentCard = default(PaymentCard), PaymentTypeEnum? PaymentType = default(PaymentTypeEnum?), decimal? Price = default(decimal?), bool? PrivacyPolicyUrl = default(bool?), Subscriber Subscriber = default(Subscriber))
+        /// <param name="SubscriberFromDb">SubscriberFromDb.</param>
+        public StartSubscriptionRequest(string CallbackUrl = default(string), string CompanySiteName = default(string), string CouponCode = default(string), bool? Editable = default(bool?), Offer Offer = default(Offer), PaymentCard PaymentCard = default(PaymentCard), PaymentTypeEnum? PaymentType = default(PaymentTypeEnum?), decimal? Price = default(decimal?), bool? PrivacyPolicyUrl = default(bool?), ProductTypeEnum? ProductType = default(ProductTypeEnum?), Subscriber Subscriber = default(Subscriber), Subscriber SubscriberFromDb = default(Subscriber))
         {
             this.CallbackUrl = CallbackUrl;
             this.CompanySiteName = CompanySiteName;
@@ -79,7 +112,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.PaymentType = PaymentType;
             this.Price = Price;
             this.PrivacyPolicyUrl = PrivacyPolicyUrl;
+            this.ProductType = ProductType;
             this.Subscriber = Subscriber;
+            this.SubscriberFromDb = SubscriberFromDb;
         }
         
         /// <summary>
@@ -131,11 +166,18 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         [DataMember(Name="privacyPolicyUrl", EmitDefaultValue=false)]
         public bool? PrivacyPolicyUrl { get; set; }
 
+
         /// <summary>
         /// Gets or Sets Subscriber
         /// </summary>
         [DataMember(Name="subscriber", EmitDefaultValue=false)]
         public Subscriber Subscriber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SubscriberFromDb
+        /// </summary>
+        [DataMember(Name="subscriberFromDb", EmitDefaultValue=false)]
+        public Subscriber SubscriberFromDb { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -154,7 +196,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  PaymentType: ").Append(PaymentType).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("  PrivacyPolicyUrl: ").Append(PrivacyPolicyUrl).Append("\n");
+            sb.Append("  ProductType: ").Append(ProductType).Append("\n");
             sb.Append("  Subscriber: ").Append(Subscriber).Append("\n");
+            sb.Append("  SubscriberFromDb: ").Append(SubscriberFromDb).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,9 +279,19 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.PrivacyPolicyUrl.Equals(input.PrivacyPolicyUrl))
                 ) && 
                 (
+                    this.ProductType == input.ProductType ||
+                    (this.ProductType != null &&
+                    this.ProductType.Equals(input.ProductType))
+                ) && 
+                (
                     this.Subscriber == input.Subscriber ||
                     (this.Subscriber != null &&
                     this.Subscriber.Equals(input.Subscriber))
+                ) && 
+                (
+                    this.SubscriberFromDb == input.SubscriberFromDb ||
+                    (this.SubscriberFromDb != null &&
+                    this.SubscriberFromDb.Equals(input.SubscriberFromDb))
                 );
         }
 
@@ -268,8 +322,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 if (this.PrivacyPolicyUrl != null)
                     hashCode = hashCode * 59 + this.PrivacyPolicyUrl.GetHashCode();
+                if (this.ProductType != null)
+                    hashCode = hashCode * 59 + this.ProductType.GetHashCode();
                 if (this.Subscriber != null)
                     hashCode = hashCode * 59 + this.Subscriber.GetHashCode();
+                if (this.SubscriberFromDb != null)
+                    hashCode = hashCode * 59 + this.SubscriberFromDb.GetHashCode();
                 return hashCode;
             }
         }

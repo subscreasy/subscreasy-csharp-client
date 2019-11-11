@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **City** | **string** |  | [optional] 
+**CompanyId** | **long?** |  | [optional] 
 **Country** | **string** |  | [optional] 
 **Id** | **long?** |  | [optional] 
 **Name** | **string** |  | [optional] 

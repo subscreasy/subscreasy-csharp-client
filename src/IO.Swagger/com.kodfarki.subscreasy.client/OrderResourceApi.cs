@@ -31,9 +31,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderRequest">orderRequest</param>
+        /// <param name="order">order</param>
         /// <returns>Order</returns>
-        Order CreateOrderUsingPOST (CreateOrderRequest orderRequest);
+        Order CreateOrderUsingPOST (Order order);
 
         /// <summary>
         /// createOrder
@@ -42,9 +42,30 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderRequest">orderRequest</param>
+        /// <param name="order">order</param>
         /// <returns>ApiResponse of Order</returns>
-        ApiResponse<Order> CreateOrderUsingPOSTWithHttpInfo (CreateOrderRequest orderRequest);
+        ApiResponse<Order> CreateOrderUsingPOSTWithHttpInfo (Order order);
+        /// <summary>
+        /// deleteOrder
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns></returns>
+        void DeleteOrderUsingDELETE (long? id);
+
+        /// <summary>
+        /// deleteOrder
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteOrderUsingDELETEWithHttpInfo (long? id);
         /// <summary>
         /// getAllOrders
         /// </summary>
@@ -115,9 +136,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderRequest">orderRequest</param>
+        /// <param name="order">order</param>
         /// <returns>Task of Order</returns>
-        System.Threading.Tasks.Task<Order> CreateOrderUsingPOSTAsync (CreateOrderRequest orderRequest);
+        System.Threading.Tasks.Task<Order> CreateOrderUsingPOSTAsync (Order order);
 
         /// <summary>
         /// createOrder
@@ -126,9 +147,30 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderRequest">orderRequest</param>
+        /// <param name="order">order</param>
         /// <returns>Task of ApiResponse (Order)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Order>> CreateOrderUsingPOSTAsyncWithHttpInfo (CreateOrderRequest orderRequest);
+        System.Threading.Tasks.Task<ApiResponse<Order>> CreateOrderUsingPOSTAsyncWithHttpInfo (Order order);
+        /// <summary>
+        /// deleteOrder
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteOrderUsingDELETEAsync (long? id);
+
+        /// <summary>
+        /// deleteOrder
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteOrderUsingDELETEAsyncWithHttpInfo (long? id);
         /// <summary>
         /// getAllOrders
         /// </summary>
@@ -294,11 +336,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// createOrder 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderRequest">orderRequest</param>
+        /// <param name="order">order</param>
         /// <returns>Order</returns>
-        public Order CreateOrderUsingPOST (CreateOrderRequest orderRequest)
+        public Order CreateOrderUsingPOST (Order order)
         {
-             ApiResponse<Order> localVarResponse = CreateOrderUsingPOSTWithHttpInfo(orderRequest);
+             ApiResponse<Order> localVarResponse = CreateOrderUsingPOSTWithHttpInfo(order);
              return localVarResponse.Data;
         }
 
@@ -306,13 +348,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// createOrder 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderRequest">orderRequest</param>
+        /// <param name="order">order</param>
         /// <returns>ApiResponse of Order</returns>
-        public ApiResponse< Order > CreateOrderUsingPOSTWithHttpInfo (CreateOrderRequest orderRequest)
+        public ApiResponse< Order > CreateOrderUsingPOSTWithHttpInfo (Order order)
         {
-            // verify the required parameter 'orderRequest' is set
-            if (orderRequest == null)
-                throw new ApiException(400, "Missing required parameter 'orderRequest' when calling OrderResourceApi->CreateOrderUsingPOST");
+            // verify the required parameter 'order' is set
+            if (order == null)
+                throw new ApiException(400, "Missing required parameter 'order' when calling OrderResourceApi->CreateOrderUsingPOST");
 
             var localVarPath = "/api/orders";
             var localVarPathParams = new Dictionary<String, String>();
@@ -324,25 +366,25 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded;charset=UTF-8"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "text/html;charset=UTF-8"
+                "*/*"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (orderRequest != null && orderRequest.GetType() != typeof(byte[]))
+            if (order != null && order.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(orderRequest); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(order); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = orderRequest; // byte array
+                localVarPostBody = order; // byte array
             }
 
             // authentication (apiKey) required
@@ -373,11 +415,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// createOrder 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderRequest">orderRequest</param>
+        /// <param name="order">order</param>
         /// <returns>Task of Order</returns>
-        public async System.Threading.Tasks.Task<Order> CreateOrderUsingPOSTAsync (CreateOrderRequest orderRequest)
+        public async System.Threading.Tasks.Task<Order> CreateOrderUsingPOSTAsync (Order order)
         {
-             ApiResponse<Order> localVarResponse = await CreateOrderUsingPOSTAsyncWithHttpInfo(orderRequest);
+             ApiResponse<Order> localVarResponse = await CreateOrderUsingPOSTAsyncWithHttpInfo(order);
              return localVarResponse.Data;
 
         }
@@ -386,13 +428,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// createOrder 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderRequest">orderRequest</param>
+        /// <param name="order">order</param>
         /// <returns>Task of ApiResponse (Order)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Order>> CreateOrderUsingPOSTAsyncWithHttpInfo (CreateOrderRequest orderRequest)
+        public async System.Threading.Tasks.Task<ApiResponse<Order>> CreateOrderUsingPOSTAsyncWithHttpInfo (Order order)
         {
-            // verify the required parameter 'orderRequest' is set
-            if (orderRequest == null)
-                throw new ApiException(400, "Missing required parameter 'orderRequest' when calling OrderResourceApi->CreateOrderUsingPOST");
+            // verify the required parameter 'order' is set
+            if (order == null)
+                throw new ApiException(400, "Missing required parameter 'order' when calling OrderResourceApi->CreateOrderUsingPOST");
 
             var localVarPath = "/api/orders";
             var localVarPathParams = new Dictionary<String, String>();
@@ -404,25 +446,25 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded;charset=UTF-8"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "text/html;charset=UTF-8"
+                "*/*"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (orderRequest != null && orderRequest.GetType() != typeof(byte[]))
+            if (order != null && order.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(orderRequest); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(order); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = orderRequest; // byte array
+                localVarPostBody = order; // byte array
             }
 
             // authentication (apiKey) required
@@ -447,6 +489,147 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             return new ApiResponse<Order>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Order) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Order)));
+        }
+
+        /// <summary>
+        /// deleteOrder 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns></returns>
+        public void DeleteOrderUsingDELETE (long? id)
+        {
+             DeleteOrderUsingDELETEWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// deleteOrder 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DeleteOrderUsingDELETEWithHttpInfo (long? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling OrderResourceApi->DeleteOrderUsingDELETE");
+
+            var localVarPath = "/api/orders/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteOrderUsingDELETE", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// deleteOrder 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteOrderUsingDELETEAsync (long? id)
+        {
+             await DeleteOrderUsingDELETEAsyncWithHttpInfo(id);
+
+        }
+
+        /// <summary>
+        /// deleteOrder 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteOrderUsingDELETEAsyncWithHttpInfo (long? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling OrderResourceApi->DeleteOrderUsingDELETE");
+
+            var localVarPath = "/api/orders/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteOrderUsingDELETE", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>

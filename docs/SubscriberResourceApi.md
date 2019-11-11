@@ -1,11 +1,12 @@
 # IO.Swagger.com.kodfarki.subscreasy.client.SubscriberResourceApi
 
-All URIs are relative to *https://localhost:8080*
+All URIs are relative to *https://app.subscreasy.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateSubscriberUsingPOST**](SubscriberResourceApi.md#createsubscriberusingpost) | **POST** /api/subscribers | createSubscriber
 [**DeleteSubscriberUsingDELETE**](SubscriberResourceApi.md#deletesubscriberusingdelete) | **DELETE** /api/subscribers/{id} | deleteSubscriber
+[**FindAllSubscribersUsingGET**](SubscriberResourceApi.md#findallsubscribersusingget) | **GET** /api/subscribers/find-all | findAllSubscribers
 [**GetAllSubscribersUsingGET**](SubscriberResourceApi.md#getallsubscribersusingget) | **GET** /api/subscribers | getAllSubscribers
 [**GetSubscriberByEmailUsingGET**](SubscriberResourceApi.md#getsubscriberbyemailusingget) | **GET** /api/subscribers/email/{email} | getSubscriberByEmail
 [**GetSubscriberByNameUsingGET**](SubscriberResourceApi.md#getsubscriberbynameusingget) | **GET** /api/subscribers/name/{name} | getSubscriberByName
@@ -141,6 +142,66 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="findallsubscribersusingget"></a>
+# **FindAllSubscribersUsingGET**
+> List<Subscriber> FindAllSubscribersUsingGET ()
+
+findAllSubscribers
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class FindAllSubscribersUsingGETExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new SubscriberResourceApi();
+
+            try
+            {
+                // findAllSubscribers
+                List&lt;Subscriber&gt; result = apiInstance.FindAllSubscribersUsingGET();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SubscriberResourceApi.FindAllSubscribersUsingGET: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List<Subscriber>**](Subscriber.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getallsubscribersusingget"></a>
 # **GetAllSubscribersUsingGET**
 > List<Subscriber> GetAllSubscribersUsingGET (int? page = null, int? size = null, List<string> sort = null)
@@ -211,7 +272,7 @@ Name | Type | Description  | Notes
 
 <a name="getsubscriberbyemailusingget"></a>
 # **GetSubscriberByEmailUsingGET**
-> List<Subscriber> GetSubscriberByEmailUsingGET (string email)
+> List<Subscriber> GetSubscriberByEmailUsingGET (string email, int? page = null, int? size = null, List<string> sort = null)
 
 getSubscriberByEmail
 
@@ -236,11 +297,14 @@ namespace Example
 
             var apiInstance = new SubscriberResourceApi();
             var email = email_example;  // string | email
+            var page = 56;  // int? | Page number of the requested page (optional) 
+            var size = 56;  // int? | Size of a page (optional) 
+            var sort = new List<string>(); // List<string> | Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional) 
 
             try
             {
                 // getSubscriberByEmail
-                List&lt;Subscriber&gt; result = apiInstance.GetSubscriberByEmailUsingGET(email);
+                List&lt;Subscriber&gt; result = apiInstance.GetSubscriberByEmailUsingGET(email, page, size, sort);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -257,6 +321,9 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **string**| email | 
+ **page** | **int?**| Page number of the requested page | [optional] 
+ **size** | **int?**| Size of a page | [optional] 
+ **sort** | [**List&lt;string&gt;**](string.md)| Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. | [optional] 
 
 ### Return type
 
@@ -275,7 +342,7 @@ Name | Type | Description  | Notes
 
 <a name="getsubscriberbynameusingget"></a>
 # **GetSubscriberByNameUsingGET**
-> List<Subscriber> GetSubscriberByNameUsingGET (string name)
+> List<Subscriber> GetSubscriberByNameUsingGET (string name, int? page = null, int? size = null, List<string> sort = null)
 
 getSubscriberByName
 
@@ -300,11 +367,14 @@ namespace Example
 
             var apiInstance = new SubscriberResourceApi();
             var name = name_example;  // string | name
+            var page = 56;  // int? | Page number of the requested page (optional) 
+            var size = 56;  // int? | Size of a page (optional) 
+            var sort = new List<string>(); // List<string> | Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional) 
 
             try
             {
                 // getSubscriberByName
-                List&lt;Subscriber&gt; result = apiInstance.GetSubscriberByNameUsingGET(name);
+                List&lt;Subscriber&gt; result = apiInstance.GetSubscriberByNameUsingGET(name, page, size, sort);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -321,6 +391,9 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| name | 
+ **page** | **int?**| Page number of the requested page | [optional] 
+ **size** | **int?**| Size of a page | [optional] 
+ **sort** | [**List&lt;string&gt;**](string.md)| Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. | [optional] 
 
 ### Return type
 

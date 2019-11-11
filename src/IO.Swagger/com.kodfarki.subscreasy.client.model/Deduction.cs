@@ -36,17 +36,21 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Amount">Amount.</param>
         /// <param name="Id">Id.</param>
         /// <param name="ServiceId">ServiceId.</param>
+        /// <param name="ServiceName">ServiceName.</param>
+        /// <param name="SubscriberEmail">SubscriberEmail.</param>
+        /// <param name="SubscriberSecureId">SubscriberSecureId.</param>
         /// <param name="UsageEndTime">UsageEndTime.</param>
         /// <param name="UsageStartTime">UsageStartTime.</param>
-        /// <param name="UserId">UserId.</param>
-        public Deduction(long? Amount = default(long?), long? Id = default(long?), long? ServiceId = default(long?), DateTime? UsageEndTime = default(DateTime?), DateTime? UsageStartTime = default(DateTime?), string UserId = default(string))
+        public Deduction(long? Amount = default(long?), long? Id = default(long?), long? ServiceId = default(long?), string ServiceName = default(string), string SubscriberEmail = default(string), string SubscriberSecureId = default(string), DateTime? UsageEndTime = default(DateTime?), DateTime? UsageStartTime = default(DateTime?))
         {
             this.Amount = Amount;
             this.Id = Id;
             this.ServiceId = ServiceId;
+            this.ServiceName = ServiceName;
+            this.SubscriberEmail = SubscriberEmail;
+            this.SubscriberSecureId = SubscriberSecureId;
             this.UsageEndTime = UsageEndTime;
             this.UsageStartTime = UsageStartTime;
-            this.UserId = UserId;
         }
         
         /// <summary>
@@ -68,6 +72,24 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public long? ServiceId { get; set; }
 
         /// <summary>
+        /// Gets or Sets ServiceName
+        /// </summary>
+        [DataMember(Name="serviceName", EmitDefaultValue=false)]
+        public string ServiceName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SubscriberEmail
+        /// </summary>
+        [DataMember(Name="subscriberEmail", EmitDefaultValue=false)]
+        public string SubscriberEmail { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SubscriberSecureId
+        /// </summary>
+        [DataMember(Name="subscriberSecureId", EmitDefaultValue=false)]
+        public string SubscriberSecureId { get; set; }
+
+        /// <summary>
         /// Gets or Sets UsageEndTime
         /// </summary>
         [DataMember(Name="usageEndTime", EmitDefaultValue=false)]
@@ -80,12 +102,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public DateTime? UsageStartTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets UserId
-        /// </summary>
-        [DataMember(Name="userId", EmitDefaultValue=false)]
-        public string UserId { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -96,9 +112,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ServiceId: ").Append(ServiceId).Append("\n");
+            sb.Append("  ServiceName: ").Append(ServiceName).Append("\n");
+            sb.Append("  SubscriberEmail: ").Append(SubscriberEmail).Append("\n");
+            sb.Append("  SubscriberSecureId: ").Append(SubscriberSecureId).Append("\n");
             sb.Append("  UsageEndTime: ").Append(UsageEndTime).Append("\n");
             sb.Append("  UsageStartTime: ").Append(UsageStartTime).Append("\n");
-            sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -149,6 +167,21 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.ServiceId.Equals(input.ServiceId))
                 ) && 
                 (
+                    this.ServiceName == input.ServiceName ||
+                    (this.ServiceName != null &&
+                    this.ServiceName.Equals(input.ServiceName))
+                ) && 
+                (
+                    this.SubscriberEmail == input.SubscriberEmail ||
+                    (this.SubscriberEmail != null &&
+                    this.SubscriberEmail.Equals(input.SubscriberEmail))
+                ) && 
+                (
+                    this.SubscriberSecureId == input.SubscriberSecureId ||
+                    (this.SubscriberSecureId != null &&
+                    this.SubscriberSecureId.Equals(input.SubscriberSecureId))
+                ) && 
+                (
                     this.UsageEndTime == input.UsageEndTime ||
                     (this.UsageEndTime != null &&
                     this.UsageEndTime.Equals(input.UsageEndTime))
@@ -157,11 +190,6 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.UsageStartTime == input.UsageStartTime ||
                     (this.UsageStartTime != null &&
                     this.UsageStartTime.Equals(input.UsageStartTime))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
                 );
         }
 
@@ -180,12 +208,16 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.ServiceId != null)
                     hashCode = hashCode * 59 + this.ServiceId.GetHashCode();
+                if (this.ServiceName != null)
+                    hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
+                if (this.SubscriberEmail != null)
+                    hashCode = hashCode * 59 + this.SubscriberEmail.GetHashCode();
+                if (this.SubscriberSecureId != null)
+                    hashCode = hashCode * 59 + this.SubscriberSecureId.GetHashCode();
                 if (this.UsageEndTime != null)
                     hashCode = hashCode * 59 + this.UsageEndTime.GetHashCode();
                 if (this.UsageStartTime != null)
                     hashCode = hashCode * 59 + this.UsageStartTime.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 return hashCode;
             }
         }

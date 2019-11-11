@@ -101,7 +101,13 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             /// Enum ENDOFPERIODCANCELLATIONREQUESTED for value: ENDOFPERIOD_CANCELLATION_REQUESTED
             /// </summary>
             [EnumMember(Value = "ENDOFPERIOD_CANCELLATION_REQUESTED")]
-            ENDOFPERIODCANCELLATIONREQUESTED = 11
+            ENDOFPERIODCANCELLATIONREQUESTED = 11,
+            
+            /// <summary>
+            /// Enum PRICEUPDATED for value: PRICE_UPDATED
+            /// </summary>
+            [EnumMember(Value = "PRICE_UPDATED")]
+            PRICEUPDATED = 12
         }
 
         /// <summary>

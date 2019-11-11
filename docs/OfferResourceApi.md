@@ -1,15 +1,81 @@
 # IO.Swagger.com.kodfarki.subscreasy.client.OfferResourceApi
 
-All URIs are relative to *https://localhost:8080*
+All URIs are relative to *https://app.subscreasy.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ArchiveOfferUsingPUT**](OfferResourceApi.md#archiveofferusingput) | **PUT** /api/offers/archive/{id} | archiveOffer
 [**CreateOfferUsingPOST**](OfferResourceApi.md#createofferusingpost) | **POST** /api/offers | createOffer
 [**DeleteOfferUsingDELETE**](OfferResourceApi.md#deleteofferusingdelete) | **DELETE** /api/offers/{id} | deleteOffer
 [**GetAllOffersUsingGET**](OfferResourceApi.md#getalloffersusingget) | **GET** /api/offers | getAllOffers
 [**GetOfferUsingGET**](OfferResourceApi.md#getofferusingget) | **GET** /api/offers/{id} | getOffer
+[**SendOfferPriceChangedEmailUsingPUT**](OfferResourceApi.md#sendofferpricechangedemailusingput) | **PUT** /api/offers/sendOfferPriceChangedEmail/{offerId} | sendOfferPriceChangedEmail
 [**UpdateOfferUsingPUT**](OfferResourceApi.md#updateofferusingput) | **PUT** /api/offers | updateOffer
+[**UploadFileUsingPOST1**](OfferResourceApi.md#uploadfileusingpost1) | **POST** /api/offers/uploadFile/{offerId} | uploadFile
 
+
+<a name="archiveofferusingput"></a>
+# **ArchiveOfferUsingPUT**
+> void ArchiveOfferUsingPUT (long? id)
+
+archiveOffer
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class ArchiveOfferUsingPUTExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new OfferResourceApi();
+            var id = 789;  // long? | id
+
+            try
+            {
+                // archiveOffer
+                apiInstance.ArchiveOfferUsingPUT(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OfferResourceApi.ArchiveOfferUsingPUT: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **long?**| id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="createofferusingpost"></a>
 # **CreateOfferUsingPOST**
@@ -262,6 +328,69 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="sendofferpricechangedemailusingput"></a>
+# **SendOfferPriceChangedEmailUsingPUT**
+> void SendOfferPriceChangedEmailUsingPUT (long? offerId)
+
+sendOfferPriceChangedEmail
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class SendOfferPriceChangedEmailUsingPUTExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new OfferResourceApi();
+            var offerId = 789;  // long? | offerId
+
+            try
+            {
+                // sendOfferPriceChangedEmail
+                apiInstance.SendOfferPriceChangedEmailUsingPUT(offerId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OfferResourceApi.SendOfferPriceChangedEmailUsingPUT: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **offerId** | **long?**| offerId | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="updateofferusingput"></a>
 # **UpdateOfferUsingPUT**
 > Offer UpdateOfferUsingPUT (Offer offer)
@@ -322,6 +451,72 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="uploadfileusingpost1"></a>
+# **UploadFileUsingPOST1**
+> Offer UploadFileUsingPOST1 (System.IO.Stream file, long? offerId)
+
+uploadFile
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class UploadFileUsingPOST1Example
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new OfferResourceApi();
+            var file = new System.IO.Stream(); // System.IO.Stream | file
+            var offerId = 789;  // long? | offerId
+
+            try
+            {
+                // uploadFile
+                Offer result = apiInstance.UploadFileUsingPOST1(file, offerId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OfferResourceApi.UploadFileUsingPOST1: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **System.IO.Stream**| file | 
+ **offerId** | **long?**| offerId | 
+
+### Return type
+
+[**Offer**](Offer.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -38,23 +38,31 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="CardAssociation">CardAssociation.</param>
         /// <param name="CardBankCode">CardBankCode.</param>
         /// <param name="CardBankName">CardBankName.</param>
+        /// <param name="CardCVV">CardCVV.</param>
         /// <param name="CardFamily">CardFamily.</param>
         /// <param name="CardToken">CardToken.</param>
         /// <param name="CardUserKey">CardUserKey.</param>
         /// <param name="CartType">CartType.</param>
+        /// <param name="CompanyId">CompanyId.</param>
+        /// <param name="ExpireDate">ExpireDate.</param>
         /// <param name="Id">Id.</param>
-        public SavedCard(string BinNumber = default(string), string CardAlias = default(string), string CardAssociation = default(string), long? CardBankCode = default(long?), string CardBankName = default(string), string CardFamily = default(string), string CardToken = default(string), string CardUserKey = default(string), string CartType = default(string), long? Id = default(long?))
+        /// <param name="SubscriberId">SubscriberId.</param>
+        public SavedCard(string BinNumber = default(string), string CardAlias = default(string), string CardAssociation = default(string), long? CardBankCode = default(long?), string CardBankName = default(string), string CardCVV = default(string), string CardFamily = default(string), string CardToken = default(string), string CardUserKey = default(string), string CartType = default(string), long? CompanyId = default(long?), DateTime? ExpireDate = default(DateTime?), long? Id = default(long?), long? SubscriberId = default(long?))
         {
             this.BinNumber = BinNumber;
             this.CardAlias = CardAlias;
             this.CardAssociation = CardAssociation;
             this.CardBankCode = CardBankCode;
             this.CardBankName = CardBankName;
+            this.CardCVV = CardCVV;
             this.CardFamily = CardFamily;
             this.CardToken = CardToken;
             this.CardUserKey = CardUserKey;
             this.CartType = CartType;
+            this.CompanyId = CompanyId;
+            this.ExpireDate = ExpireDate;
             this.Id = Id;
+            this.SubscriberId = SubscriberId;
         }
         
         /// <summary>
@@ -88,6 +96,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string CardBankName { get; set; }
 
         /// <summary>
+        /// Gets or Sets CardCVV
+        /// </summary>
+        [DataMember(Name="cardCVV", EmitDefaultValue=false)]
+        public string CardCVV { get; set; }
+
+        /// <summary>
         /// Gets or Sets CardFamily
         /// </summary>
         [DataMember(Name="cardFamily", EmitDefaultValue=false)]
@@ -112,10 +126,28 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string CartType { get; set; }
 
         /// <summary>
+        /// Gets or Sets CompanyId
+        /// </summary>
+        [DataMember(Name="companyId", EmitDefaultValue=false)]
+        public long? CompanyId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExpireDate
+        /// </summary>
+        [DataMember(Name="expireDate", EmitDefaultValue=false)]
+        public DateTime? ExpireDate { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public long? Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SubscriberId
+        /// </summary>
+        [DataMember(Name="subscriberId", EmitDefaultValue=false)]
+        public long? SubscriberId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -130,11 +162,15 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  CardAssociation: ").Append(CardAssociation).Append("\n");
             sb.Append("  CardBankCode: ").Append(CardBankCode).Append("\n");
             sb.Append("  CardBankName: ").Append(CardBankName).Append("\n");
+            sb.Append("  CardCVV: ").Append(CardCVV).Append("\n");
             sb.Append("  CardFamily: ").Append(CardFamily).Append("\n");
             sb.Append("  CardToken: ").Append(CardToken).Append("\n");
             sb.Append("  CardUserKey: ").Append(CardUserKey).Append("\n");
             sb.Append("  CartType: ").Append(CartType).Append("\n");
+            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
+            sb.Append("  ExpireDate: ").Append(ExpireDate).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  SubscriberId: ").Append(SubscriberId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -195,6 +231,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.CardBankName.Equals(input.CardBankName))
                 ) && 
                 (
+                    this.CardCVV == input.CardCVV ||
+                    (this.CardCVV != null &&
+                    this.CardCVV.Equals(input.CardCVV))
+                ) && 
+                (
                     this.CardFamily == input.CardFamily ||
                     (this.CardFamily != null &&
                     this.CardFamily.Equals(input.CardFamily))
@@ -215,9 +256,24 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.CartType.Equals(input.CartType))
                 ) && 
                 (
+                    this.CompanyId == input.CompanyId ||
+                    (this.CompanyId != null &&
+                    this.CompanyId.Equals(input.CompanyId))
+                ) && 
+                (
+                    this.ExpireDate == input.ExpireDate ||
+                    (this.ExpireDate != null &&
+                    this.ExpireDate.Equals(input.ExpireDate))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.SubscriberId == input.SubscriberId ||
+                    (this.SubscriberId != null &&
+                    this.SubscriberId.Equals(input.SubscriberId))
                 );
         }
 
@@ -240,6 +296,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.CardBankCode.GetHashCode();
                 if (this.CardBankName != null)
                     hashCode = hashCode * 59 + this.CardBankName.GetHashCode();
+                if (this.CardCVV != null)
+                    hashCode = hashCode * 59 + this.CardCVV.GetHashCode();
                 if (this.CardFamily != null)
                     hashCode = hashCode * 59 + this.CardFamily.GetHashCode();
                 if (this.CardToken != null)
@@ -248,8 +306,14 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.CardUserKey.GetHashCode();
                 if (this.CartType != null)
                     hashCode = hashCode * 59 + this.CartType.GetHashCode();
+                if (this.CompanyId != null)
+                    hashCode = hashCode * 59 + this.CompanyId.GetHashCode();
+                if (this.ExpireDate != null)
+                    hashCode = hashCode * 59 + this.ExpireDate.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.SubscriberId != null)
+                    hashCode = hashCode * 59 + this.SubscriberId.GetHashCode();
                 return hashCode;
             }
         }

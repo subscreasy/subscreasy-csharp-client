@@ -1,6 +1,6 @@
 # IO.Swagger.com.kodfarki.subscreasy.client.BankAccountResourceApi
 
-All URIs are relative to *https://localhost:8080*
+All URIs are relative to *https://app.subscreasy.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DeleteBankAccountUsingDELETE**](BankAccountResourceApi.md#deletebankaccountusingdelete) | **DELETE** /api/bank-accounts/{id} | deleteBankAccount
 [**GetAllBankAccountsUsingGET**](BankAccountResourceApi.md#getallbankaccountsusingget) | **GET** /api/bank-accounts | getAllBankAccounts
 [**GetBankAccountUsingGET**](BankAccountResourceApi.md#getbankaccountusingget) | **GET** /api/bank-accounts/{id} | getBankAccount
+[**GetBankAccountsByCompanyUsingGET**](BankAccountResourceApi.md#getbankaccountsbycompanyusingget) | **GET** /api/bank-accounts/company/{companyId} | getBankAccountsByCompany
 [**UpdateBankAccountUsingPUT**](BankAccountResourceApi.md#updatebankaccountusingput) | **PUT** /api/bank-accounts | updateBankAccount
 
 
@@ -250,6 +251,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BankAccount**](BankAccount.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getbankaccountsbycompanyusingget"></a>
+# **GetBankAccountsByCompanyUsingGET**
+> List<BankAccount> GetBankAccountsByCompanyUsingGET (long? companyId)
+
+getBankAccountsByCompany
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.com.kodfarki.subscreasy.client;
+using IO.Swagger.Client;
+using IO.Swagger.com.kodfarki.subscreasy.client.model;
+
+namespace Example
+{
+    public class GetBankAccountsByCompanyUsingGETExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: apiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new BankAccountResourceApi();
+            var companyId = 789;  // long? | companyId
+
+            try
+            {
+                // getBankAccountsByCompany
+                List&lt;BankAccount&gt; result = apiInstance.GetBankAccountsByCompanyUsingGET(companyId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling BankAccountResourceApi.GetBankAccountsByCompanyUsingGET: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **companyId** | **long?**| companyId | 
+
+### Return type
+
+[**List<BankAccount>**](BankAccount.md)
 
 ### Authorization
 

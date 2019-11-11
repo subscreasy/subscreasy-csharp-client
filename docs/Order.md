@@ -3,11 +3,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address** | [**Address**](Address.md) |  | 
-**CreateDate** | **DateTime?** |  | 
+**Buyer** | [**Subscriber**](Subscriber.md) |  | 
+**Company** | [**Company**](Company.md) |  | 
+**CreateDate** | **DateTime?** |  | [optional] 
 **Id** | **long?** |  | [optional] 
-**OrderItems** | [**List&lt;OrderItem&gt;**](OrderItem.md) |  | [optional] 
-**User** | [**User**](User.md) |  | 
+**Offer** | [**Offer**](Offer.md) |  | 
+**Payment** | [**ChargingLog**](ChargingLog.md) |  | [optional] 
+**ShippingAddress** | **long?** |  | [optional] 
+**ShippingCode** | **string** |  | [optional] 
+**ShippingCompany** | **string** |  | [optional] 
+**Status** | **string** |  | 
+**Subscription** | **long?** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

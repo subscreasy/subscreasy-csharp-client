@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **Company** | [**Company**](Company.md) |  | [optional] 
 **Description** | **string** |  | [optional] 
 **Id** | **long?** |  | [optional] 
-**Offer** | [**Offer**](Offer.md) |  | 
+**Offer** | [**Offer**](Offer.md) |  | [optional] 
 **OverUsagePrice** | **decimal?** |  | [optional] 
 **OverUsageQuota** | **decimal?** |  | [optional] 
 **Price** | **decimal?** |  | [optional] 

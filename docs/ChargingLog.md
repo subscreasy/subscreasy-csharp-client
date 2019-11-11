@@ -19,12 +19,15 @@ Name | Type | Description | Notes
 **PaymentId** | **string** |  | [optional] 
 **Price** | **decimal?** |  | [optional] 
 **Reason** | **string** |  | [optional] 
+**RefundDate** | **DateTime?** |  | [optional] 
 **SavedCard** | [**SavedCard**](SavedCard.md) |  | [optional] 
 **SavedCardId** | **long?** |  | [optional] 
 **ServiceInstanceId** | **long?** |  | [optional] 
 **Status** | **string** |  | [optional] 
+**SubscriberId** | **long?** |  | [optional] 
 **SubscriberSecureId** | **string** |  | [optional] 
 **SubscriptionId** | **long?** |  | [optional] 
+**Threeds** | **bool?** |  | [optional] 
 **TransactionId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

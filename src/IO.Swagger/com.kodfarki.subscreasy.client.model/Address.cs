@@ -34,15 +34,17 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// Initializes a new instance of the <see cref="Address" /> class.
         /// </summary>
         /// <param name="City">City.</param>
+        /// <param name="CompanyId">CompanyId.</param>
         /// <param name="Country">Country.</param>
         /// <param name="Id">Id.</param>
         /// <param name="Name">Name.</param>
         /// <param name="PostalCode">PostalCode.</param>
         /// <param name="StateProvince">StateProvince.</param>
         /// <param name="StreetAddress">StreetAddress.</param>
-        public Address(string City = default(string), string Country = default(string), long? Id = default(long?), string Name = default(string), string PostalCode = default(string), string StateProvince = default(string), string StreetAddress = default(string))
+        public Address(string City = default(string), long? CompanyId = default(long?), string Country = default(string), long? Id = default(long?), string Name = default(string), string PostalCode = default(string), string StateProvince = default(string), string StreetAddress = default(string))
         {
             this.City = City;
+            this.CompanyId = CompanyId;
             this.Country = Country;
             this.Id = Id;
             this.Name = Name;
@@ -56,6 +58,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// </summary>
         [DataMember(Name="city", EmitDefaultValue=false)]
         public string City { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CompanyId
+        /// </summary>
+        [DataMember(Name="companyId", EmitDefaultValue=false)]
+        public long? CompanyId { get; set; }
 
         /// <summary>
         /// Gets or Sets Country
@@ -102,6 +110,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             var sb = new StringBuilder();
             sb.Append("class Address {\n");
             sb.Append("  City: ").Append(City).Append("\n");
+            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -148,6 +157,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.City.Equals(input.City))
                 ) && 
                 (
+                    this.CompanyId == input.CompanyId ||
+                    (this.CompanyId != null &&
+                    this.CompanyId.Equals(input.CompanyId))
+                ) && 
+                (
                     this.Country == input.Country ||
                     (this.Country != null &&
                     this.Country.Equals(input.Country))
@@ -190,6 +204,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                 int hashCode = 41;
                 if (this.City != null)
                     hashCode = hashCode * 59 + this.City.GetHashCode();
+                if (this.CompanyId != null)
+                    hashCode = hashCode * 59 + this.CompanyId.GetHashCode();
                 if (this.Country != null)
                     hashCode = hashCode * 59 + this.Country.GetHashCode();
                 if (this.Id != null)

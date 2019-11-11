@@ -113,30 +113,59 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <returns>ApiResponse of ChargingLog</returns>
         ApiResponse<ChargingLog> GetChargingLogUsingGETWithHttpInfo (long? id);
         /// <summary>
-        /// getUnpaidChargingLogs
+        /// getChargingLogsByStatus
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
         /// <param name="page">Page number of the requested page (optional)</param>
         /// <param name="size">Size of a page (optional)</param>
         /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>List&lt;ChargingLog&gt;</returns>
-        List<ChargingLog> GetUnpaidChargingLogsUsingGET (int? page = null, int? size = null, List<string> sort = null);
+        List<ChargingLog> GetChargingLogsByStatusUsingGET (string status, int? page = null, int? size = null, List<string> sort = null);
 
         /// <summary>
-        /// getUnpaidChargingLogs
+        /// getChargingLogsByStatus
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
         /// <param name="page">Page number of the requested page (optional)</param>
         /// <param name="size">Size of a page (optional)</param>
         /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>ApiResponse of List&lt;ChargingLog&gt;</returns>
-        ApiResponse<List<ChargingLog>> GetUnpaidChargingLogsUsingGETWithHttpInfo (int? page = null, int? size = null, List<string> sort = null);
+        ApiResponse<List<ChargingLog>> GetChargingLogsByStatusUsingGETWithHttpInfo (string status, int? page = null, int? size = null, List<string> sort = null);
+        /// <summary>
+        /// getPaymentsByMerchantSubscriberId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>List&lt;ChargingLog&gt;</returns>
+        List<ChargingLog> GetPaymentsByMerchantSubscriberIdUsingGET (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null);
+
+        /// <summary>
+        /// getPaymentsByMerchantSubscriberId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>ApiResponse of List&lt;ChargingLog&gt;</returns>
+        ApiResponse<List<ChargingLog>> GetPaymentsByMerchantSubscriberIdUsingGETWithHttpInfo (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null);
         /// <summary>
         /// refund
         /// </summary>
@@ -270,30 +299,59 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         /// <returns>Task of ApiResponse (ChargingLog)</returns>
         System.Threading.Tasks.Task<ApiResponse<ChargingLog>> GetChargingLogUsingGETAsyncWithHttpInfo (long? id);
         /// <summary>
-        /// getUnpaidChargingLogs
+        /// getChargingLogsByStatus
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
         /// <param name="page">Page number of the requested page (optional)</param>
         /// <param name="size">Size of a page (optional)</param>
         /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>Task of List&lt;ChargingLog&gt;</returns>
-        System.Threading.Tasks.Task<List<ChargingLog>> GetUnpaidChargingLogsUsingGETAsync (int? page = null, int? size = null, List<string> sort = null);
+        System.Threading.Tasks.Task<List<ChargingLog>> GetChargingLogsByStatusUsingGETAsync (string status, int? page = null, int? size = null, List<string> sort = null);
 
         /// <summary>
-        /// getUnpaidChargingLogs
+        /// getChargingLogsByStatus
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
         /// <param name="page">Page number of the requested page (optional)</param>
         /// <param name="size">Size of a page (optional)</param>
         /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;ChargingLog&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ChargingLog>>> GetUnpaidChargingLogsUsingGETAsyncWithHttpInfo (int? page = null, int? size = null, List<string> sort = null);
+        System.Threading.Tasks.Task<ApiResponse<List<ChargingLog>>> GetChargingLogsByStatusUsingGETAsyncWithHttpInfo (string status, int? page = null, int? size = null, List<string> sort = null);
+        /// <summary>
+        /// getPaymentsByMerchantSubscriberId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of List&lt;ChargingLog&gt;</returns>
+        System.Threading.Tasks.Task<List<ChargingLog>> GetPaymentsByMerchantSubscriberIdUsingGETAsync (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null);
+
+        /// <summary>
+        /// getPaymentsByMerchantSubscriberId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;ChargingLog&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ChargingLog>>> GetPaymentsByMerchantSubscriberIdUsingGETAsyncWithHttpInfo (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null);
         /// <summary>
         /// refund
         /// </summary>
@@ -1029,31 +1087,36 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         }
 
         /// <summary>
-        /// getUnpaidChargingLogs 
+        /// getChargingLogsByStatus 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
         /// <param name="page">Page number of the requested page (optional)</param>
         /// <param name="size">Size of a page (optional)</param>
         /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>List&lt;ChargingLog&gt;</returns>
-        public List<ChargingLog> GetUnpaidChargingLogsUsingGET (int? page = null, int? size = null, List<string> sort = null)
+        public List<ChargingLog> GetChargingLogsByStatusUsingGET (string status, int? page = null, int? size = null, List<string> sort = null)
         {
-             ApiResponse<List<ChargingLog>> localVarResponse = GetUnpaidChargingLogsUsingGETWithHttpInfo(page, size, sort);
+             ApiResponse<List<ChargingLog>> localVarResponse = GetChargingLogsByStatusUsingGETWithHttpInfo(status, page, size, sort);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// getUnpaidChargingLogs 
+        /// getChargingLogsByStatus 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
         /// <param name="page">Page number of the requested page (optional)</param>
         /// <param name="size">Size of a page (optional)</param>
         /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>ApiResponse of List&lt;ChargingLog&gt;</returns>
-        public ApiResponse< List<ChargingLog> > GetUnpaidChargingLogsUsingGETWithHttpInfo (int? page = null, int? size = null, List<string> sort = null)
+        public ApiResponse< List<ChargingLog> > GetChargingLogsByStatusUsingGETWithHttpInfo (string status, int? page = null, int? size = null, List<string> sort = null)
         {
+            // verify the required parameter 'status' is set
+            if (status == null)
+                throw new ApiException(400, "Missing required parameter 'status' when calling ChargingLogResourceApi->GetChargingLogsByStatusUsingGET");
 
-            var localVarPath = "/api/charging-logs/unpaid";
+            var localVarPath = "/api/charging-logs/status/{status}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1074,6 +1137,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (status != null) localVarPathParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // path parameter
             if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
             if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
@@ -1093,7 +1157,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetUnpaidChargingLogsUsingGET", localVarResponse);
+                Exception exception = ExceptionFactory("GetChargingLogsByStatusUsingGET", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1103,32 +1167,37 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
         }
 
         /// <summary>
-        /// getUnpaidChargingLogs 
+        /// getChargingLogsByStatus 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
         /// <param name="page">Page number of the requested page (optional)</param>
         /// <param name="size">Size of a page (optional)</param>
         /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>Task of List&lt;ChargingLog&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ChargingLog>> GetUnpaidChargingLogsUsingGETAsync (int? page = null, int? size = null, List<string> sort = null)
+        public async System.Threading.Tasks.Task<List<ChargingLog>> GetChargingLogsByStatusUsingGETAsync (string status, int? page = null, int? size = null, List<string> sort = null)
         {
-             ApiResponse<List<ChargingLog>> localVarResponse = await GetUnpaidChargingLogsUsingGETAsyncWithHttpInfo(page, size, sort);
+             ApiResponse<List<ChargingLog>> localVarResponse = await GetChargingLogsByStatusUsingGETAsyncWithHttpInfo(status, page, size, sort);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// getUnpaidChargingLogs 
+        /// getChargingLogsByStatus 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">status</param>
         /// <param name="page">Page number of the requested page (optional)</param>
         /// <param name="size">Size of a page (optional)</param>
         /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;ChargingLog&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<ChargingLog>>> GetUnpaidChargingLogsUsingGETAsyncWithHttpInfo (int? page = null, int? size = null, List<string> sort = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<ChargingLog>>> GetChargingLogsByStatusUsingGETAsyncWithHttpInfo (string status, int? page = null, int? size = null, List<string> sort = null)
         {
+            // verify the required parameter 'status' is set
+            if (status == null)
+                throw new ApiException(400, "Missing required parameter 'status' when calling ChargingLogResourceApi->GetChargingLogsByStatusUsingGET");
 
-            var localVarPath = "/api/charging-logs/unpaid";
+            var localVarPath = "/api/charging-logs/status/{status}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1149,6 +1218,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (status != null) localVarPathParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // path parameter
             if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
             if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
@@ -1168,7 +1238,168 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetUnpaidChargingLogsUsingGET", localVarResponse);
+                Exception exception = ExceptionFactory("GetChargingLogsByStatusUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<ChargingLog>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<ChargingLog>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ChargingLog>)));
+        }
+
+        /// <summary>
+        /// getPaymentsByMerchantSubscriberId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>List&lt;ChargingLog&gt;</returns>
+        public List<ChargingLog> GetPaymentsByMerchantSubscriberIdUsingGET (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null)
+        {
+             ApiResponse<List<ChargingLog>> localVarResponse = GetPaymentsByMerchantSubscriberIdUsingGETWithHttpInfo(merchantSubscriberId, page, size, sort);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// getPaymentsByMerchantSubscriberId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>ApiResponse of List&lt;ChargingLog&gt;</returns>
+        public ApiResponse< List<ChargingLog> > GetPaymentsByMerchantSubscriberIdUsingGETWithHttpInfo (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null)
+        {
+            // verify the required parameter 'merchantSubscriberId' is set
+            if (merchantSubscriberId == null)
+                throw new ApiException(400, "Missing required parameter 'merchantSubscriberId' when calling ChargingLogResourceApi->GetPaymentsByMerchantSubscriberIdUsingGET");
+
+            var localVarPath = "/api/charging-logs/subscriber/m/{merchantSubscriberId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (merchantSubscriberId != null) localVarPathParams.Add("merchantSubscriberId", Configuration.ApiClient.ParameterToString(merchantSubscriberId)); // path parameter
+            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
+            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPaymentsByMerchantSubscriberIdUsingGET", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<ChargingLog>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<ChargingLog>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ChargingLog>)));
+        }
+
+        /// <summary>
+        /// getPaymentsByMerchantSubscriberId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of List&lt;ChargingLog&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ChargingLog>> GetPaymentsByMerchantSubscriberIdUsingGETAsync (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null)
+        {
+             ApiResponse<List<ChargingLog>> localVarResponse = await GetPaymentsByMerchantSubscriberIdUsingGETAsyncWithHttpInfo(merchantSubscriberId, page, size, sort);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// getPaymentsByMerchantSubscriberId 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantSubscriberId">merchantSubscriberId</param>
+        /// <param name="page">Page number of the requested page (optional)</param>
+        /// <param name="size">Size of a page (optional)</param>
+        /// <param name="sort">Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;ChargingLog&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<ChargingLog>>> GetPaymentsByMerchantSubscriberIdUsingGETAsyncWithHttpInfo (string merchantSubscriberId, int? page = null, int? size = null, List<string> sort = null)
+        {
+            // verify the required parameter 'merchantSubscriberId' is set
+            if (merchantSubscriberId == null)
+                throw new ApiException(400, "Missing required parameter 'merchantSubscriberId' when calling ChargingLogResourceApi->GetPaymentsByMerchantSubscriberIdUsingGET");
+
+            var localVarPath = "/api/charging-logs/subscriber/m/{merchantSubscriberId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (merchantSubscriberId != null) localVarPathParams.Add("merchantSubscriberId", Configuration.ApiClient.ParameterToString(merchantSubscriberId)); // path parameter
+            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (size != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "size", size)); // query parameter
+            if (sort != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sort", sort)); // query parameter
+
+            // authentication (apiKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPaymentsByMerchantSubscriberIdUsingGET", localVarResponse);
                 if (exception != null) throw exception;
             }
 

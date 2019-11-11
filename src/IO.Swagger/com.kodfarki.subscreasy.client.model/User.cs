@@ -41,6 +41,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="Activated">Activated (required).</param>
         /// <param name="Authorities">Authorities.</param>
         /// <param name="Company">Company.</param>
+        /// <param name="CompanyOwner">CompanyOwner (required).</param>
         /// <param name="CreatedDate">CreatedDate.</param>
         /// <param name="Email">Email.</param>
         /// <param name="FirstName">FirstName.</param>
@@ -50,8 +51,9 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// <param name="LastModifiedDate">LastModifiedDate.</param>
         /// <param name="LastName">LastName.</param>
         /// <param name="Login">Login (required).</param>
+        /// <param name="LoginCount">LoginCount.</param>
         /// <param name="ResetDate">ResetDate.</param>
-        public User(bool? Activated = default(bool?), List<Authority> Authorities = default(List<Authority>), Company Company = default(Company), DateTime? CreatedDate = default(DateTime?), string Email = default(string), string FirstName = default(string), long? Id = default(long?), string ImageUrl = default(string), string LangKey = default(string), DateTime? LastModifiedDate = default(DateTime?), string LastName = default(string), string Login = default(string), DateTime? ResetDate = default(DateTime?))
+        public User(bool? Activated = default(bool?), List<Authority> Authorities = default(List<Authority>), Company Company = default(Company), bool? CompanyOwner = default(bool?), DateTime? CreatedDate = default(DateTime?), string Email = default(string), string FirstName = default(string), long? Id = default(long?), string ImageUrl = default(string), string LangKey = default(string), DateTime? LastModifiedDate = default(DateTime?), string LastName = default(string), string Login = default(string), long? LoginCount = default(long?), DateTime? ResetDate = default(DateTime?))
         {
             // to ensure "Activated" is required (not null)
             if (Activated == null)
@@ -61,6 +63,15 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             else
             {
                 this.Activated = Activated;
+            }
+            // to ensure "CompanyOwner" is required (not null)
+            if (CompanyOwner == null)
+            {
+                throw new InvalidDataException("CompanyOwner is a required property for User and cannot be null");
+            }
+            else
+            {
+                this.CompanyOwner = CompanyOwner;
             }
             // to ensure "Login" is required (not null)
             if (Login == null)
@@ -81,6 +92,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             this.LangKey = LangKey;
             this.LastModifiedDate = LastModifiedDate;
             this.LastName = LastName;
+            this.LoginCount = LoginCount;
             this.ResetDate = ResetDate;
         }
         
@@ -101,6 +113,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         /// </summary>
         [DataMember(Name="company", EmitDefaultValue=false)]
         public Company Company { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CompanyOwner
+        /// </summary>
+        [DataMember(Name="companyOwner", EmitDefaultValue=false)]
+        public bool? CompanyOwner { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
@@ -157,6 +175,12 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
         public string Login { get; set; }
 
         /// <summary>
+        /// Gets or Sets LoginCount
+        /// </summary>
+        [DataMember(Name="loginCount", EmitDefaultValue=false)]
+        public long? LoginCount { get; set; }
+
+        /// <summary>
         /// Gets or Sets ResetDate
         /// </summary>
         [DataMember(Name="resetDate", EmitDefaultValue=false)]
@@ -173,6 +197,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  Activated: ").Append(Activated).Append("\n");
             sb.Append("  Authorities: ").Append(Authorities).Append("\n");
             sb.Append("  Company: ").Append(Company).Append("\n");
+            sb.Append("  CompanyOwner: ").Append(CompanyOwner).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
@@ -182,6 +207,7 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
             sb.Append("  LastModifiedDate: ").Append(LastModifiedDate).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  Login: ").Append(Login).Append("\n");
+            sb.Append("  LoginCount: ").Append(LoginCount).Append("\n");
             sb.Append("  ResetDate: ").Append(ResetDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -233,6 +259,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Company.Equals(input.Company))
                 ) && 
                 (
+                    this.CompanyOwner == input.CompanyOwner ||
+                    (this.CompanyOwner != null &&
+                    this.CompanyOwner.Equals(input.CompanyOwner))
+                ) && 
+                (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
@@ -278,6 +309,11 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     this.Login.Equals(input.Login))
                 ) && 
                 (
+                    this.LoginCount == input.LoginCount ||
+                    (this.LoginCount != null &&
+                    this.LoginCount.Equals(input.LoginCount))
+                ) && 
+                (
                     this.ResetDate == input.ResetDate ||
                     (this.ResetDate != null &&
                     this.ResetDate.Equals(input.ResetDate))
@@ -299,6 +335,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.Authorities.GetHashCode();
                 if (this.Company != null)
                     hashCode = hashCode * 59 + this.Company.GetHashCode();
+                if (this.CompanyOwner != null)
+                    hashCode = hashCode * 59 + this.CompanyOwner.GetHashCode();
                 if (this.CreatedDate != null)
                     hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
                 if (this.Email != null)
@@ -317,6 +355,8 @@ namespace IO.Swagger.com.kodfarki.subscreasy.client.model
                     hashCode = hashCode * 59 + this.LastName.GetHashCode();
                 if (this.Login != null)
                     hashCode = hashCode * 59 + this.Login.GetHashCode();
+                if (this.LoginCount != null)
+                    hashCode = hashCode * 59 + this.LoginCount.GetHashCode();
                 if (this.ResetDate != null)
                     hashCode = hashCode * 59 + this.ResetDate.GetHashCode();
                 return hashCode;
